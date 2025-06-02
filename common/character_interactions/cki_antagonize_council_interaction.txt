@@ -66,7 +66,7 @@
 	## Focused on Success Chance.
 	send_option = {
 		flag = agent_focus_success
-		current_description = start_murder_interact222ion.tt.agent_focus_success
+		current_description = start_murder_interaction.tt.agent_focus_success
 	}
 
 

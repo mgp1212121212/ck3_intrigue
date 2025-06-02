@@ -1,29 +1,30 @@
-Scheme Types
-x	- Tarnish Reputation
-x		- Lose Prestige
-x		- Gain bad general opinion modifier
-	- Tell lies to spouse
-		- Gain bad spouse opinion modifier
-	- Harrass
-		- Gain stress
-		- May become rival
-		- May get grudge
-	- Instigate rebellion
-	- Convert Faith
-	- Propaganda Against Country
-	- Tell lies to council
 
-	- Mentor
-	- Negotate Trade Agreement
-	- Start fires in their Capital
-	- 
+Requirements
+- Travel the Distance
 
-Character Interactions
-	- Demand Prisonner
-	- Offer Prisonner
-	- Insult
 
-Tests and adjust the victim notifications
-Review invalidations
-Fix icons/gfx
-review ai_probability
+Outstanding Bugs
+- Some agent packages stopped to fire schemes (secret & speed on most/all schemes)
+- Some localization
+
+Improvements
+- Victim notifications customization & localization
+- Scheme Invalidation actions
+- Icons & gfx for everything
+- ai_probability ai_will_do ai_recipients for all schemes
+- Interactions shown/is_valid & interface priority & trait-based stress hits
+- Success changes & odds prediction for all schemes
+- Rules to turn off/on/unlock schemes
+- Secrets for all schemes & penalty when they're made public
+
+New Features Ideas 
+- Economic Schemes/Interactions
+	- Trade Agreement (income)
+	- Research Agreement (development)
+- Targetted find secrets
+- Investigate true parents
+- Start fires in capital (development hit)
+- ... 
+
+Testing
+- All

@@ -1,7 +1,7 @@
 ﻿#############################
 #THEFT SCHEME
 #############################
-theft_scheme = {
+county_propaganda_scheme = {
 	# Basic Setup
 	skill = intrigue
 	desc = theft_scheme_general_desc
