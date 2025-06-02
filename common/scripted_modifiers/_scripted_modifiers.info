@@ -1,0 +1,7 @@
+﻿#scheme distance difficulty
+scheme_distance_modifier = {
+		modifier = {
+			desc = SCHEME_DISTANCE_MODIFIER_DESC	
+			add = -100
+		}
+}

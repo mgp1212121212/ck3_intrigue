@@ -1,0 +1,188 @@
+﻿start_antagonize_council_interaction = {
+	icon = icon_gold  #ICON
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+
+	ignores_pending_interaction_block = yes
+
+	scheme = antagonize_council_scheme
+
+	send_name = START_SCHEME
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = antagonize_council_scheme
+				target_character = scope:recipient
+			}
+		}
+		scope:recipient = { 
+			NOT = { 
+				has_strong_hook = scope:actor 
+				has_opinion_modifier = {target = scope:actor modifier = antagonize_council_discovered_opinion}
+			} 
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_landless_adventurer = yes
+				}
+			}
+			#Has to be used instead of diplo range checks in laamp to landed interactions
+			ep3_laamp_diplo_range_trigger = {
+				TARGET = scope:recipient
+				LAAMP = scope:actor
+			}
+		}
+	}
+
+	desc = {
+		triggered_desc = {
+			trigger = {
+				scope:actor = {
+					can_start_scheme = {
+						type = antagonize_council_scheme
+						target_character = scope:recipient
+					}
+				}
+			}
+			desc = scheme_interaction_tt_antagonize_council_approved
+		}
+	}
+
+	# Scheme Starter Packages
+	options_heading = schemes.t.agent_packages
+	send_options_exclusive = yes
+	## Balanced agents.
+	send_option = {
+		flag = agent_focus_balance
+		current_description = start_murder_interaction.tt.agent_focus_balance
+	}
+	## Focused on Success Chance.
+	send_option = {
+		flag = agent_focus_success
+		current_description = start_murder_interact222ion.tt.agent_focus_success
+	}
+
+
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				compassionate = major_stress_impact_gain
+				honest = medium_stress_impact_gain
+				just = medium_stress_impact_gain
+			}
+		}
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = start_antagonize_council_interaction_notification
+
+				left_icon = scope:actor					
+				right_icon = scope:recipient
+
+								# Success.
+				if = {
+					limit = { scope:agent_focus_success ?= yes }
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = antagonize_council_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Success.
+						AGENT_1 = agent_poet
+						AGENT_2 = agent_shill
+						AGENT_3 = agent_shill
+						# Speed.
+						AGENT_4 = agent_planner
+						# Secrecy.
+						AGENT_5 = agent_lookout
+					}
+				}
+				# Balanced.
+				else = {
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = antagonize_council_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Success.
+						AGENT_1 = agent_shill
+						AGENT_2 = agent_poet
+						# Speed.
+						AGENT_3 = agent_socialite
+						AGENT_4 = agent_planner
+						# Secrecy.
+						AGENT_5 = agent_lookout
+					}
+				}
+			}
+		}
+	}
+	
+	auto_accept = yes
+	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_frequency = 36
+
+	ai_potential = {
+		gold < 500
+	}
+
+	ai_will_do = {
+		# They shouldn't always do this.
+		base = -100
+
+		# Obvious factor.
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = -1
+		}
+		ai_value_modifier = { ai_honor = -1 }
+		# Traits.
+		## Disloyal.
+		modifier = {
+			add = 80
+			has_trait = disloyal
+		}
+		## Ambitious.
+		modifier = {
+			add = 75
+			has_trait = ambitious
+		}
+		## Arrogant.
+		modifier = {
+			add = 25
+			has_trait = arrogant
+		}
+		## Fickle.
+		modifier = {
+			add = 25
+			has_trait = fickle
+		}
+		## Callous.
+		modifier = {
+			add = 25
+			has_trait = callous
+		}
+		## Compassionate.
+		modifier = {
+			add = -50
+			has_trait = compassionate
+		}
+		## Content.
+		modifier = {
+			add = -100
+			has_trait = content
+		}
+		## Greedy.
+		modifier = {
+			add = 80
+			has_trait = greedy
+		}
+	}
+}
+
+

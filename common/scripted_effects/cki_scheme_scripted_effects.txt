@@ -1,0 +1,754 @@
+﻿##########################
+# Scheme Scripted Effects
+##########################
+
+##################################################
+# General Scheme Effects
+
+##################################################
+# Theft Scheme Effects
+
+theft_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 1
+			}	
+	}
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:cki_scheme_critical_moments.1000
+	}
+	#SET GOLD VALUE
+	scope:scheme = {
+		set_variable = {
+			name = theft_gold
+			value = {
+				value = scope:target.gold
+				divide = 3
+				round = yes
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+theft_success_effect = {
+	scope:target = {
+		pay_short_term_gold = {
+						target = scope:owner
+						gold = scope:scheme.var:theft_gold
+					}
+	}
+	scope:scheme = {
+			scope:owner = {			
+				scope:owner = {
+					add_cki_trait_positive_xp_effect = yes
+					give_or_update_embezzler_secret_effect = {
+					TARGET = scope:target
+					STAKE = scope:scheme.var:theft_gold
+					}
+				}
+			}
+	}
+}
+
+theft_partial_success_effect = {
+	scope:target = {
+		pay_short_term_gold = {
+						target = scope:owner
+						gold = scope:scheme.var:theft_gold
+					}
+		add_opinion = {
+			target = scope:owner
+			modifier = theft_discovered_opinion
+		}
+	}
+	scope:owner = {
+		add_cki_trait_positive_xp_effect = yes
+		add_cki_trait_negative_xp_effect = yes
+					}	
+}
+
+theft_partial_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}	
+}
+
+theft_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+					scope:owner = {
+						add_cki_trait_negative_xp_effect = yes
+					}	
+					scope:target = {
+						# ADD OPINION MODIFIER
+						add_opinion = {
+							target = scope:owner
+							modifier = theft_discovered_opinion
+						}
+					}
+	}
+}
+
+##################################################
+# Tarnish Reputation Scheme Effects
+
+tarnish_rep_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 2
+			}	
+	}
+	save_scope_as = scheme
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+tarnish_rep_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = tarnish_rep_modifier
+			years = 5
+		}
+	}
+	scope:scheme = {
+			scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+			}
+	}
+}
+
+tarnish_rep_partial_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = tarnish_rep_modifier
+			years = 5
+		}
+		add_opinion = {
+			target = scope:owner
+			modifier = tarnish_rep_opinion
+		}
+	}
+	scope:owner = {
+		add_cki_trait_positive_xp_effect = yes
+		add_cki_trait_negative_xp_effect = yes
+					}	
+}
+
+tarnish_rep_partial_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}	
+}
+
+tarnish_rep_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+					scope:owner = {
+						add_cki_trait_negative_xp_effect = yes
+					}	
+					scope:target = {
+						# ADD OPINION MODIFIER
+						add_opinion = {
+							target = scope:owner
+							modifier = tarnish_rep_opinion
+						}
+					}
+	}
+}
+
+##################################################
+# Instigate Revolt Scheme Effects
+
+revolt_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 3
+			}	
+	}
+	save_scope_as = scheme
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+revolt_success_effect = {
+	scope:target = {
+		start_war = {
+			cb = depose_war
+			target = scope:target.liege
+		}
+	}
+	scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+	}
+}
+
+revolt_partial_success_effect = {
+	scope:target = {
+		start_war = {
+			cb = depose_war
+			target = scope:target.liege
+		}
+		add_opinion = {
+			target = scope:owner
+			modifier = revolt_scheme_opinion
+		}
+	}
+	scope:target.liege = {
+		add_opinion = {
+			target = scope:owner
+			modifier = revolt_scheme_opinion
+		}
+	}
+	scope:owner = {
+		add_cki_trait_positive_xp_effect = yes
+		add_cki_trait_negative_xp_effect = yes
+	}	
+}
+
+revolt_partial_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}	
+}
+
+revolt_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:owner = {
+				add_cki_trait_negative_xp_effect = yes
+			}	
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = revolt_scheme_opinion
+				}
+			}
+			scope:target.liege = {
+				add_opinion = {
+					target = scope:owner
+					modifier = revolt_scheme_opinion
+				}
+			}
+	}
+}
+
+##################################################
+# Intimidate Scheme Effects
+
+intimidate_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 4
+			}	
+	}
+	save_scope_as = scheme
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+intimidate_success_effect = {
+	scope:target = {
+		add_stress = 100
+		add_opinion = {
+			target = scope:owner
+			modifier = intimidate_scheme_success_opinion
+		}
+		if = {
+			limit = {
+				opinion = {target = scope:owner value < 0}
+			}
+			random = {
+				chance = {opinion_value = {target = scope:owner}}
+			}
+		}
+	}
+	scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+				add_dread = 5
+	}
+	
+}
+
+
+intimidate_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:owner = {
+				#add_cki_trait_negative_xp_effect = yes
+			}	
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = intimidate_scheme_failure_opinion
+				}
+				if = {
+					limit = {
+						opinion = {target = scope:owner value < 0}
+					}
+					random = {
+						chance = {opinion_value = {target = scope:owner}}
+					}
+				}		
+			}
+	}
+}
+
+
+##################################################
+# Convert Scheme Effects
+convert_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1040 }
+}
+
+convert_success_effect = {
+
+	scope:target = {
+		add_stress = 20
+		add_opinion = {
+			target = scope:owner
+			modifier = convert_scheme_success_opinion
+		}
+		set_character_faith = scope:owner.faith
+	}
+	scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+
+
+convert_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = convert_scheme_failure_opinion
+				}	
+			}
+	}
+}
+
+##################################################
+# Mentor Scheme Effects
+mentor_diplomacy_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1061 }
+}
+mentor_martial_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1062 }
+}
+mentor_stewardship_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1063 }
+}
+mentor_intrigue_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1064 }
+}
+mentor_learning_scheme_prep_effect = {
+	scheme_owner = { trigger_event = cki_scheme_critical_moments.1065 }
+}
+
+mentor_diplomacy_success_effect = {
+	scope:target = {
+		add_stress = 10
+		add_opinion = {
+			target = scope:owner
+			modifier = mentor_scheme_success_opinion
+		}
+		add_character_modifier = {modifier = mentor_diplomacy_modifier}
+		if = {
+			limit = {scope:target.age > 16}
+		}
+		add_diplomacy_lifestyle_xp = 250
+	}
+	scope:owner = {			
+				#add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+mentor_martial_success_effect = {
+	scope:target = {
+		add_stress = 10
+		add_opinion = {
+			target = scope:owner
+			modifier = mentor_scheme_success_opinion
+		}
+		add_character_modifier = {modifier = mentor_martial_modifier}
+		if = {
+			limit = {scope:target.age > 16}
+		}
+		add_martial_lifestyle_xp = 250
+	}
+	scope:owner = {			
+				#add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+mentor_stewardship_success_effect = {
+	scope:target = {
+		add_stress = 10
+		add_opinion = {
+			target = scope:owner
+			modifier = mentor_scheme_success_opinion
+		}
+		add_character_modifier = {modifier = mentor_stewardship_modifier}
+		if = {
+			limit = {scope:target.age > 16}
+		}
+		add_stewardship_lifestyle_xp = 250
+	}
+	scope:owner = {			
+				#add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+mentor_intrigue_success_effect = {
+	scope:target = {
+		add_stress = 10
+		add_opinion = {
+			target = scope:owner
+			modifier = mentor_scheme_success_opinion
+		}
+		add_character_modifier = {modifier = mentor_intrigue_modifier}
+		if = {
+			limit = {scope:target.age > 16}
+		}
+		add_intrigue_lifestyle_xp = 250
+	}
+	scope:owner = {			
+				#add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+mentor_learning_success_effect = {
+	scope:target = {
+		add_stress = 10
+		add_opinion = {
+			target = scope:owner
+			modifier = mentor_scheme_success_opinion
+		}
+		add_character_modifier = {modifier = mentor_learning_modifier}
+		if = {
+			limit = {scope:target.age > 16}
+		}
+		add_learning_lifestyle_xp = 250
+	}
+	scope:owner = {			
+				#add_cki_trait_positive_xp_effect = yes
+				add_piety = 50
+	}
+	
+}
+
+
+mentor_failure_effect = {
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = mentor_scheme_failure_opinion
+				}	
+			}
+	}
+}
+
+##################################################
+# Antagonize Council Scheme Effects
+
+antagonize_council_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 5
+			}	
+	}
+	save_scope_as = scheme
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+antagonize_council_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = antagonize_council_modifier
+			years = 5
+		}
+	}
+	scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+	}
+}
+
+antagonize_council_partial_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = antagonize_council_modifier
+			years = 5
+		}
+		add_opinion = {
+			target = scope:owner
+			modifier = antagonize_council_opinion
+		}
+	}
+	scope:owner = {
+		#add_cki_trait_positive_xp_effect = yes
+		#add_cki_trait_negative_xp_effect = yes
+	}	
+}
+
+antagonize_council_partial_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}	
+}
+
+antagonize_council_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:owner = {
+				#add_cki_trait_negative_xp_effect = yes
+			}	
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = antagonize_council_opinion
+				}
+			}
+	}
+}
+##################################################
+# Antagonize Spouse Scheme Effects
+
+antagonize_spouse_scheme_prep_effect = {
+	scope:owner = {
+		set_variable = {
+				name = scheme_type
+				value = 6
+			}	
+	}
+	save_scope_as = scheme
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = cki_scheme_critical_moments.0002 }
+	}
+}
+
+antagonize_spouse_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = antagonize_spouse_modifier
+			years = 5
+		}
+	}
+	scope:owner = {			
+				add_cki_trait_positive_xp_effect = yes
+	}
+}
+
+antagonize_spouse_partial_success_effect = {
+	scope:target = {
+		add_character_modifier = {
+			modifier = antagonize_spouse_modifier
+			years = 5
+		}
+		add_opinion = {
+			target = scope:owner
+			modifier = antagonize_spouse_opinion
+		}
+	}
+	scope:owner = {
+		#add_cki_trait_positive_xp_effect = yes
+		#add_cki_trait_negative_xp_effect = yes
+	}	
+}
+
+antagonize_spouse_partial_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}	
+}
+
+antagonize_spouse_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {	
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# Determine if we can retry based on secrecy
+	scope:scheme = {
+			scope:scheme = {
+						end_scheme = yes
+					}
+			scope:owner = {
+				#add_cki_trait_negative_xp_effect = yes
+			}	
+			scope:target = {
+				# ADD OPINION MODIFIER
+				add_opinion = {
+					target = scope:owner
+					modifier = antagonize_spouse_opinion
+				}
+			}
+	}
+}
+
+################################################
+# Levelled trait XP changes
+add_cki_trait_positive_xp_effect = {
+	if = {
+		limit = {
+			has_trait = cki_track
+		}
+		add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
+	}
+	else = {
+		add_trait = cki_track
+		add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
+	}
+}
+
+add_cki_trait_negative_xp_effect = {
+	if = {
+		limit = {
+			has_trait = cki_track
+		}
+		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+	}
+	else = {
+		add_trait = cki_track
+		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+	}
+}
+
+remove_cki_trait_negative_xp_effect = {
+	if = {
+		limit = {
+			has_trait = cki_track
+		}
+		add_trait_xp = { trait = cki_track track = cki_negative value = -1 }
+	}
+}

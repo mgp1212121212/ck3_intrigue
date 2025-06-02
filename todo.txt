@@ -1,0 +1,29 @@
+Scheme Types
+x	- Tarnish Reputation
+x		- Lose Prestige
+x		- Gain bad general opinion modifier
+	- Tell lies to spouse
+		- Gain bad spouse opinion modifier
+	- Harrass
+		- Gain stress
+		- May become rival
+		- May get grudge
+	- Instigate rebellion
+	- Convert Faith
+	- Propaganda Against Country
+	- Tell lies to council
+
+	- Mentor
+	- Negotate Trade Agreement
+	- Start fires in their Capital
+	- 
+
+Character Interactions
+	- Demand Prisonner
+	- Offer Prisonner
+	- Insult
+
+Tests and adjust the victim notifications
+Review invalidations
+Fix icons/gfx
+review ai_probability

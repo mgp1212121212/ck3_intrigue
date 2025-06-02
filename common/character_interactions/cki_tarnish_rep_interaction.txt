@@ -1,0 +1,228 @@
+﻿start_tarnish_rep_interaction = {
+	icon = "diplomacy_negative.dds"  #ICON
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+
+	ignores_pending_interaction_block = yes
+
+	scheme = tarnish_rep_scheme
+
+	send_name = START_SCHEME
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = tarnish_rep_scheme
+				target_character = scope:recipient
+			}
+		}
+		scope:recipient = { 
+			NOT = { 
+				has_strong_hook = scope:actor 
+				has_opinion_modifier = {target = scope:actor modifier = tarnish_rep_opinion}
+			} 
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_landless_adventurer = yes
+				}
+			}
+			#Has to be used instead of diplo range checks in laamp to landed interactions
+			ep3_laamp_diplo_range_trigger = {
+				TARGET = scope:recipient
+				LAAMP = scope:actor
+			}
+		}
+	}
+
+	desc = {
+		triggered_desc = {
+			trigger = {
+				scope:actor = {
+					can_start_scheme = {
+						type = tarnish_rep_scheme
+						target_character = scope:recipient
+					}
+				}
+			}
+			desc = scheme_interaction_tt_tarnish_rep_approved
+		}
+	}
+
+	# Scheme Starter Packages
+	options_heading = schemes.t.agent_packages
+	send_options_exclusive = yes
+	## Balanced agents.
+	send_option = {
+		flag = agent_focus_balance
+		current_description = start_murder_interaction.tt.agent_focus_balance
+	}
+	## Focused on Success Chance.
+	send_option = {
+		flag = agent_focus_success
+		current_description = start_murder_interaction.tt.agent_focus_success
+	}
+	## Focused on Speed.
+	send_option = {
+		flag = agent_focus_speed
+		current_description = start_murder_interaction.tt.agent_focus_speed
+	}
+	## Focused on Secrecy.
+	send_option = {
+		flag = agent_focus_secrecy
+		current_description = start_murder_interaction.tt.agent_focus_secrecy
+	}
+
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				compassionate = major_stress_impact_gain
+				honest = medium_stress_impact_gain
+				just = medium_stress_impact_gain
+			}
+		}
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = start_tarnish_rep_interaction_notification
+
+				left_icon = scope:actor					
+				right_icon = scope:recipient
+
+				# Success.
+				if = {
+					limit = { scope:agent_focus_success ?= yes }
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = tarnish_rep_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Success.
+						AGENT_1 = agent_poet
+						AGENT_2 = agent_shill
+						AGENT_3 = agent_shill
+						# Speed.
+						AGENT_4 = agent_planner
+						# Secrecy.
+						AGENT_5 = agent_lookout
+					}
+				}
+				# Speed.
+				else_if = {
+					limit = { scope:agent_focus_speed ?= yes }
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = tarnish_rep_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Speed.
+						AGENT_1 = agent_planner
+						AGENT_2 = agent_herald
+						AGENT_3 = agent_socialite
+						# Success.
+						AGENT_1 = agent_shill
+						# Secrecy.
+						AGENT_5 = agent_lookout
+					}
+				}
+				# Secrecy.
+				else_if = {
+					limit = { scope:agent_focus_secrecy ?= yes }
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = tarnish_rep_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Secrecy.
+						AGENT_1 = agent_alibi
+						AGENT_2 = agent_lookout
+						AGENT_3 = agent_lookout
+						# Success.
+						AGENT_1 = agent_shill
+						# Speed.
+						AGENT_5 = agent_planner
+					}
+				}
+				# Balanced.
+				else = {
+					begin_scheme_with_agents_effect = {
+						SCHEME_TYPE = tarnish_rep_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+						# Success.
+						AGENT_1 = agent_shill
+						AGENT_2 = agent_poet
+						# Speed.
+						AGENT_3 = agent_socialite
+						AGENT_4 = agent_planner
+						# Secrecy.
+						AGENT_5 = agent_lookout
+					}
+				}
+			}
+		}
+	}
+	
+	auto_accept = yes
+	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_frequency = 36
+
+	ai_potential = {
+	}
+
+	ai_will_do = {
+		# They shouldn't always do this.
+		base = -100
+
+		# Obvious factor.
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = -1
+		}
+		ai_value_modifier = { ai_honor = -1 }
+		# Traits.
+		## Disloyal.
+		modifier = {
+			add = 80
+			has_trait = disloyal
+		}
+		## Ambitious.
+		modifier = {
+			add = 75
+			has_trait = ambitious
+		}
+		## Arrogant.
+		modifier = {
+			add = 25
+			has_trait = arrogant
+		}
+		## Fickle.
+		modifier = {
+			add = 25
+			has_trait = fickle
+		}
+		## Callous.
+		modifier = {
+			add = 25
+			has_trait = callous
+		}
+		## Compassionate.
+		modifier = {
+			add = -50
+			has_trait = compassionate
+		}
+		## Content.
+		modifier = {
+			add = -100
+			has_trait = content
+		}
+		## Greedy.
+		modifier = {
+			add = 80
+			has_trait = greedy
+		}
+	}
+}

@@ -1,0 +1,389 @@
+# Standard Values
+@pos_compat_high = 30
+@pos_compat_medium = 15
+@pos_compat_low = 5
+
+@neg_compat_high = -30
+@neg_compat_medium = -15
+@neg_compat_low = -5
+
+# INTRIGUE OUTCOMES
+cki_track = {
+	category = lifestyle
+	
+	ai_honor = -20
+	ai_energy = 20
+	#legitimacy_gain_mult = -0.25
+	#legitimacy_loss_mult = 0.25
+
+	#same_opinion = 20
+	icon = "cki_trait.dds"
+	name = {
+		first_valid = {
+			#King of Shadows - male
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 90
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value <= 40
+						}
+						is_male = yes
+					}
+				}
+				desc = trait_cki_high_low_male
+			}
+			#King of Shadows - female
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 90
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value <= 40
+						}
+						is_male = no
+					}
+				}
+				desc = trait_cki_high_low_female
+			}
+			#Ruthless Schemer
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 70
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 70
+						}
+					}
+				}
+				desc = trait_cki_high_high
+			}
+			#Known Thief
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 0
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 50
+						}
+					}
+				}
+				desc = trait_cki_low_high
+			}
+			#Schmeing Adept
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 0
+						}
+					}
+				}
+				desc = trait_cki_default
+			}
+		}
+	}
+
+	# Loc
+	desc = {
+		first_valid = {
+			#King of Shadows
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 90
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value <= 40
+						}
+					}
+				}
+				desc = trait_cki_high_low_desc
+			}
+			#Ruthless Schemer
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 70
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 70
+						}
+					}
+				}
+				desc = trait_cki_high_high_desc
+			}
+			#Known Criminal
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 0
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 50
+						}
+					}
+				}
+				desc = trait_cki_low_high_desc
+			}
+			#Schmeing Adept
+			triggered_desc = {
+				trigger = {
+					exists = this
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 0
+						}
+					}
+				}
+				desc = trait_cki_default_desc
+			}
+		}
+	}
+
+	tracks = {
+		# Successfully scheming gives XP
+		cki_positive = {
+			10 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			20 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			30 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			40 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			50 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			60 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			70 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			80 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			90 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				#max_hostile_schemes_add = 0
+			}
+			100 = {
+				monthly_intrigue_lifestyle_xp_gain_mult = 0.05
+				owned_hostile_scheme_success_chance_max_add = 2
+				hostile_scheme_phase_duration_add = -3
+				owned_scheme_secrecy_add = 2
+				max_hostile_schemes_add = 0
+			}
+			
+			
+		}
+		# Getting caught gives XP
+		cki_negative = {
+			10 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+				legitimacy_gain_mult = -0.25
+				legitimacy_loss_mult = 0.25
+			}
+			20 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			30 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			40 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			50 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			60 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			70 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			80 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			90 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+			100 = {
+				general_opinion = -5
+				courtier_and_guest_opinion = 5
+				independent_ruler_opinion = -5
+				clergy_opinion = -5
+				dread_baseline_add = 2
+				monthly_prestige = -0.5
+				hostile_scheme_phase_duration_add = 10
+				owned_scheme_secrecy_add = -5
+			}
+		}
+
+		
+	}
+	
+	compatibility = {
+		schemer = @pos_compat_medium
+		seducer = @pos_compat_medium
+		torturer = @pos_compat_medium
+		deceitful = @pos_compat_low
+		honest = @neg_compat_low
+	}
+}
+
+	

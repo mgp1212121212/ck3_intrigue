@@ -1,0 +1,30 @@
+﻿cki_highest_held_title_tier_value = {
+	value = 0
+	if = {
+		limit = {
+			is_ruler = yes
+		}
+		if = {
+			limit = { highest_held_title_tier = tier_empire }
+			add = 5
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_kingdom }
+			add = 4
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_duchy }
+			add = 3
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_county }
+			add = 2
+		}
+		else_if = {
+			limit = { highest_held_title_tier = tier_barony }
+			add = 1
+		}
+	}
+	
+	min = 0
+}

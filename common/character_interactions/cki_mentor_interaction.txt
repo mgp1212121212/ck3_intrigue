@@ -1,0 +1,214 @@
+﻿start_mentor_interaction = {
+	icon = "diplomacy_positive.dds"  #ICON
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_friendly
+
+	ignores_pending_interaction_block = yes
+
+	scheme = mentor_scheme
+
+	send_name = START_SCHEME
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+					OR = {
+						can_start_scheme = {
+							type = mentor_diplomacy_scheme
+							target_character = scope:recipient
+						}
+						can_start_scheme = {
+							type = mentor_martial_scheme
+							target_character = scope:recipient
+						}
+						can_start_scheme = {
+							type = mentor_stewardship_scheme
+							target_character = scope:recipient
+						}
+						can_start_scheme = {
+							type = mentor_intrigue_scheme
+							target_character = scope:recipient
+						}
+						can_start_scheme = {
+							type = mentor_learning_scheme
+							target_character = scope:recipient
+						}
+					}
+				}
+		scope:recipient = { 
+			NOT = { 
+				has_strong_hook = scope:actor 
+				has_opinion_modifier = {target = scope:actor modifier = mentor_scheme_opinion}
+			} 
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_landless_adventurer = yes
+				}
+			}
+			#Has to be used instead of diplo range checks in laamp to landed interactions
+			ep3_laamp_diplo_range_trigger = {
+				TARGET = scope:recipient
+				LAAMP = scope:actor
+			}
+		}
+	}
+
+	desc = scheme_interaction_tt_mentor_approved
+
+	# Scheme Starter Packages
+	options_heading = start_mentor_interaction.t.options
+	send_options_exclusive = yes
+	## diplomacy
+	send_option = {
+		flag = mentor_diplomacy
+		current_description = start_mentor_interaction.tt.mentor_diplomacy
+	}
+	## martial
+	send_option = {
+		flag = mentor_martial
+		current_description = start_mentor_interaction.tt.mentor_martial
+	}
+	## Stewarship
+	send_option = {
+		flag = mentor_stewardship
+		current_description = start_mentor_interaction.tt.mentor_stewardship
+	}
+	## Intrigue
+	send_option = {
+		flag = mentor_intrigue
+		current_description = start_mentor_interaction.tt.mentor_intrigue
+	}
+	## Learning
+	send_option = {
+		flag = mentor_learning
+		current_description = start_mentor_interaction.tt.mentor_learning
+	}
+
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				compassionate = major_stress_impact_gain
+				honest = medium_stress_impact_gain
+				just = medium_stress_impact_gain
+			}
+		}
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = start_mentor_interaction_notification
+
+				left_icon = scope:actor					
+				right_icon = scope:recipient
+
+				# Success.
+				if = {
+					limit = { scope:mentor_diplomacy ?= yes }
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = mentor_diplomacy_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+					}
+				}
+				else_if = {
+					limit = { scope:mentor_martial ?= yes }
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = mentor_martial_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+					}
+				}
+				else_if = {
+					limit = { scope:mentor_stewardship ?= yes }
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = mentor_stewardship_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+					}
+				}
+				else_if = {
+					limit = { scope:mentor_intrigue ?= yes }
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = mentor_intrigue_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+					}
+				}
+				else_if = {
+					limit = { scope:mentor_learning ?= yes }
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = mentor_learning_scheme
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
+					}
+				}
+				
+			}
+		}
+	}
+	
+	auto_accept = yes
+	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_frequency = 36
+
+	ai_potential = {
+	}
+
+	ai_will_do = {
+		# They shouldn't always do this.
+		base = -100
+
+		# Obvious factor.
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = -1
+		}
+		ai_value_modifier = { ai_honor = -1 }
+		# Traits.
+		## Disloyal.
+		modifier = {
+			add = 80
+			has_trait = disloyal
+		}
+		## Ambitious.
+		modifier = {
+			add = 75
+			has_trait = ambitious
+		}
+		## Arrogant.
+		modifier = {
+			add = 25
+			has_trait = arrogant
+		}
+		## Fickle.
+		modifier = {
+			add = 25
+			has_trait = fickle
+		}
+		## Callous.
+		modifier = {
+			add = 25
+			has_trait = callous
+		}
+		## Compassionate.
+		modifier = {
+			add = -50
+			has_trait = compassionate
+		}
+		## Content.
+		modifier = {
+			add = -100
+			has_trait = content
+		}
+		## Greedy.
+		modifier = {
+			add = 80
+			has_trait = greedy
+		}
+	}
+}
