@@ -23,21 +23,22 @@ Requirements
 
 
 Outstanding Bugs
-- Some agent packages stopped to fire schemes (secret & speed on most/all schemes)
-- Some localization
+- Some agent packages stopped to fire schemes (secret & speed on most/all non-vanilla schemes)
+- Some missing localization
 
-Improvements
+Improvements/Todo
+- Mod Thumbnail
 - Victim notifications customization & localization
 - Scheme Invalidation actions
 - Icons & gfx for everything
 - ai_probability ai_will_do ai_recipients for all schemes
 - Interactions shown/is_valid & interface priority & trait-based stress hits
 - Success changes & odds prediction for all schemes
-- Rules to turn off/on/unlock schemes
+- Rules to turn off/on/unlock schemes (vanilla+mod)
 - Secrets for all schemes & penalty when they're made public
 - Implement trait XP on vanilla schemes
 
-New Features Ideas 
+New Features Plans/Ideas 
 - Economic Schemes/Interactions
 	- Trade Agreement (income)
 	- Research Agreement (development)
