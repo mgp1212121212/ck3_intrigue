@@ -359,6 +359,7 @@
  antagonize_spouse_modifier:0 "Spouse heard rumours"
 
 ## Secrets
+# Secret Types
  cki_revolt_secret:1 "Instigated a Revolt"
  cki_revolt_secret_desc:1 "Manipulated [TARGET_CHARACTER.GetShortUIName] into a revolt"
  cki_antagonize_council_secret:1 "Antagonize Council"
@@ -367,6 +368,28 @@
  cki_antagonize_spouse_secret_desc:1 "Antagonize Spouse of TARGET_CHARACTER.GetShortUIName]"
  cki_tarnish_rep_secret:1 "Tarnish Reputation"
  cki_tarnish_rep_secret_desc:1 "Tarnish Reputation of TARGET_CHARACTER.GetShortUIName]"
+# Secret Events
+# Revolt
+ cki_scheme_critical_moments.2001:0 "todo"
+ cki_scheme_critical_moments.2001.t:0 "todo"
+ cki_scheme_critical_moments.2001.desc:0 "todo"
+ cki_scheme_critical_moments.2001.a:0 "todo"
+# Antagonize Council
+ cki_scheme_critical_moments.2002:0 "todo"
+ cki_scheme_critical_moments.2002.t:0 "todo"
+ cki_scheme_critical_moments.2002.desc:0 "todo"
+ cki_scheme_critical_moments.2002.a:0 "todo"
+# Antagonize Spouse
+ cki_scheme_critical_moments.2003:0 "todo"
+ cki_scheme_critical_moments.2003.t:0 "todo"
+ cki_scheme_critical_moments.2003.desc:0 "todo"
+ cki_scheme_critical_moments.2003.a:0 "todo"
+# Tarnish Rep
+ cki_scheme_critical_moments.2004:0 "todo"
+ cki_scheme_critical_moments.2004.t:0 "todo"
+ cki_scheme_critical_moments.2004.desc:0 "todo"
+ cki_scheme_critical_moments.2004.a:0 "todo"
+
 
 ## Rules
  rule_cki_rule_antagonize_council:0 "Antagonize Council Scheme"

@@ -836,6 +836,13 @@ cki_revolt_secret_exposed_effect = {
 			modifier = revolt_scheme_opinion
 		}
 	}
+	scope:secret_owner = {
+		add_cki_trait_negative_xp_effect = yes
+		add_opinion = {
+			target = scope:secret_exposer
+			modifier = exposed_my_secret_opinion
+		}
+	}
 }
 cki_antagonize_council_secret_exposed_effect = {
 	scope:secret_target = {
@@ -847,6 +854,10 @@ cki_antagonize_council_secret_exposed_effect = {
 	}
 	scope:secret_owner = {
 		add_cki_trait_negative_xp_small_effect = yes
+		add_opinion = {
+			target = scope:secret_exposer
+			modifier = exposed_my_secret_opinion
+		}
 	}
 }
 cki_antagonize_spouse_secret_exposed_effect = {
@@ -859,6 +870,10 @@ cki_antagonize_spouse_secret_exposed_effect = {
 	}
 	scope:secret_owner = {
 		add_cki_trait_negative_xp_small_effect = yes
+		add_opinion = {
+			target = scope:secret_exposer
+			modifier = exposed_my_secret_opinion
+		}
 	}
 }
 cki_tarnish_rep_secret_exposed_effect = {
@@ -871,5 +886,9 @@ cki_tarnish_rep_secret_exposed_effect = {
 	}
 	scope:secret_owner = {
 		add_cki_trait_negative_xp_small_effect = yes
+		add_opinion = {
+			target = scope:secret_exposer
+			modifier = exposed_my_secret_opinion
+		}
 	}
 }

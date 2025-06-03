@@ -2551,3 +2551,70 @@ cki_scheme_critical_moments.1087 = {
 		name = cki_scheme_critical_moments.1087.a
 	}
 }
+
+## Secret Exposed Event
+# Revolt Secret
+cki_scheme_critical_moments.2001 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.2001.t
+	desc = cki_scheme_critical_moments.2001.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:secret_owner
+	right_portrait = scope:secret_exposer
+	lower_right_portrait = scope:secret_target
+	option = {
+		name = cki_scheme_critical_moments.2001.a
+		cki_revolt_secret_exposed_effect = yes
+	}
+}
+
+# Antagonize Council Secret
+cki_scheme_critical_moments.2002 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.2002.t
+	desc = cki_scheme_critical_moments.2002.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:secret_owner
+	right_portrait = scope:secret_exposer
+	lower_right_portrait = scope:secret_target
+	option = {
+		name = cki_scheme_critical_moments.2002.a
+		cki_antagonize_council_secret_exposed_effect = yes
+	}
+}
+# Antagonize Spouse Secret
+cki_scheme_critical_moments.2003 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.2003.t
+	desc = cki_scheme_critical_moments.2003.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:secret_owner
+	right_portrait = scope:secret_exposer
+	lower_right_portrait = scope:secret_target
+	option = {
+		name = cki_scheme_critical_moments.2003.a
+		cki_antagonize_spouse_secret_exposed_effect = yes
+	}
+}
+# Tarnish Reputation Secret
+cki_scheme_critical_moments.2004 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.2004.t
+	desc = cki_scheme_critical_moments.2004.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:secret_owner
+	right_portrait = scope:secret_exposer
+	lower_right_portrait = scope:secret_target
+	option = {
+		name = cki_scheme_critical_moments.2004.a
+		cki_tarnish_rep_secret_exposed_effect = yes
+	}
+}
+
+cki_antagonize_council_secret
+cki_antagonize_spouse_secret
+cki_tarnish_rep_secret

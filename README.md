@@ -39,8 +39,6 @@ Improvements/Todo
 - Code
     - ai_probability ai_will_do ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
-*   - Add/Fix Custom Secret Exposed Effect
-*   - Trait Negative XP when custom secrets are made public
 *   - Add trait xp for vanilla secret exposed
     - Interactions interface priority
     - Improve interaction trait-based stress further
@@ -56,4 +54,5 @@ New Features Plans/Ideas
 - ... 
 ------
 Testing
+- Test Custom Secret Exposed Effect
 - All
