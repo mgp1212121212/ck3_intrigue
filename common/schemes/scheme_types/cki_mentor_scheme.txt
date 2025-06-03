@@ -318,53 +318,42 @@ mentor_diplomacy_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated
-					custom_tooltip = learn_language_invalidated_dead_desc
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_dead
 					left_icon = scope:target
 				}
 			}
 		}
-		
-		if = {
+		else_if = {	
 			limit = {
-				scope:target = { 
-					NOT = { in_diplomatic_range = scope:owner }
+				scope:owner = {
+					is_at_war_with = scope:target
 				}
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated_title
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_war
+					left_icon = scope:target
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = cki_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
 						text = scheme_target_not_in_diplomatic_range
 					}
 				}
-			}
-		}
-		
-		scope:owner = {
-			if = {
-				limit = {
-					is_alive = yes
-					scope:target = {
-						OR = {
-							is_alive = no
-							NOT = { in_diplomatic_range = scope:owner }
-						}
-					}
-					NOR = {
-						culture = { # You can't learn your own native language
-							has_same_culture_language = scope:target.culture
-						}
-						knows_language_of_culture = scope:target.culture
-					}
-				}
-				set_variable = {
-					name = language_progress
-					value = prev.scheme_progress
-				}
-				trigger_event = learn_language_outcome.3000
 			}
 		}
 	}
@@ -686,53 +675,42 @@ mentor_martial_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated
-					custom_tooltip = learn_language_invalidated_dead_desc
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_dead
 					left_icon = scope:target
 				}
 			}
 		}
-		
-		if = {
+		else_if = {	
 			limit = {
-				scope:target = { 
-					NOT = { in_diplomatic_range = scope:owner }
+				scope:owner = {
+					is_at_war_with = scope:target
 				}
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated_title
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_war
+					left_icon = scope:target
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = cki_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
 						text = scheme_target_not_in_diplomatic_range
 					}
 				}
-			}
-		}
-		
-		scope:owner = {
-			if = {
-				limit = {
-					is_alive = yes
-					scope:target = {
-						OR = {
-							is_alive = no
-							NOT = { in_diplomatic_range = scope:owner }
-						}
-					}
-					NOR = {
-						culture = { # You can't learn your own native language
-							has_same_culture_language = scope:target.culture
-						}
-						knows_language_of_culture = scope:target.culture
-					}
-				}
-				set_variable = {
-					name = language_progress
-					value = prev.scheme_progress
-				}
-				trigger_event = learn_language_outcome.3000
 			}
 		}
 	}
@@ -1422,53 +1400,42 @@ mentor_intrigue_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated
-					custom_tooltip = learn_language_invalidated_dead_desc
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_dead
 					left_icon = scope:target
 				}
 			}
 		}
-		
-		if = {
+		else_if = {	
 			limit = {
-				scope:target = { 
-					NOT = { in_diplomatic_range = scope:owner }
+				scope:owner = {
+					is_at_war_with = scope:target
 				}
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated_title
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_war
+					left_icon = scope:target
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = cki_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
 						text = scheme_target_not_in_diplomatic_range
 					}
 				}
-			}
-		}
-		
-		scope:owner = {
-			if = {
-				limit = {
-					is_alive = yes
-					scope:target = {
-						OR = {
-							is_alive = no
-							NOT = { in_diplomatic_range = scope:owner }
-						}
-					}
-					NOR = {
-						culture = { # You can't learn your own native language
-							has_same_culture_language = scope:target.culture
-						}
-						knows_language_of_culture = scope:target.culture
-					}
-				}
-				set_variable = {
-					name = language_progress
-					value = prev.scheme_progress
-				}
-				trigger_event = learn_language_outcome.3000
 			}
 		}
 	}
@@ -1790,53 +1757,42 @@ mentor_learning_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated
-					custom_tooltip = learn_language_invalidated_dead_desc
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_dead
 					left_icon = scope:target
 				}
 			}
 		}
-		
-		if = {
+		else_if = {	
 			limit = {
-				scope:target = { 
-					NOT = { in_diplomatic_range = scope:owner }
+				scope:owner = {
+					is_at_war_with = scope:target
 				}
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = learn_language_invalidated_title
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_war
+					left_icon = scope:target
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = cki_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
 						text = scheme_target_not_in_diplomatic_range
 					}
 				}
-			}
-		}
-		
-		scope:owner = {
-			if = {
-				limit = {
-					is_alive = yes
-					scope:target = {
-						OR = {
-							is_alive = no
-							NOT = { in_diplomatic_range = scope:owner }
-						}
-					}
-					NOR = {
-						culture = { # You can't learn your own native language
-							has_same_culture_language = scope:target.culture
-						}
-						knows_language_of_culture = scope:target.culture
-					}
-				}
-				set_variable = {
-					name = language_progress
-					value = prev.scheme_progress
-				}
-				trigger_event = learn_language_outcome.3000
 			}
 		}
 	}
