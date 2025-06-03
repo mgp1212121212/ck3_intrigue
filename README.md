@@ -40,7 +40,6 @@ Improvements/Todo
     - Success changes & odds prediction for all schemes
     - Rules to turn off/on/unlock levelled trait.
     - Secrets for all schemes & penalty when they're made public
-    - Scheme Invalidation actions
 
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
