@@ -30,6 +30,7 @@ Improvements/Todo
 - Graphic Design
     - Mod Thumbnail
     - Icons & gfx for everything
+    - Trait + Trait Tracks Icons
 - Localization
     - Victim notifications localization
     - Agent packages localization
@@ -38,7 +39,6 @@ Improvements/Todo
     - Flavorize all localization
 - Code
     - ai_probability ai_will_do & ai_recipients for all schemes
-    - Add trait xp for vanilla secrets exposed
     - Works but can be improved
         - Improve interactions interface priority
         - Improve interaction trait-based stress further
