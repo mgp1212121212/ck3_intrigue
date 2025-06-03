@@ -6,7 +6,7 @@
 
 	ignores_pending_interaction_block = yes
 
-	scheme = mentor_scheme
+	#scheme = mentor_scheme
 
 	send_name = START_SCHEME
 
@@ -14,6 +14,7 @@
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_mentor_active
 		scope:recipient = {age>10}
+		
 	}
 
 	is_valid_showing_failures_only = {
@@ -44,7 +45,10 @@
 		scope:recipient = { 
 			NOT = { 
 				has_strong_hook = scope:actor 
-				has_opinion_modifier = {target = scope:actor modifier = mentor_scheme_opinion}
+				OR = {
+					has_opinion_modifier = {target = scope:actor modifier = intimidate_scheme_failure_opinion}
+					has_opinion_modifier = {target = scope:actor modifier = intimidate_scheme_success_opinion}
+				}
 			} 
 		}
 		trigger_if = {
@@ -97,11 +101,11 @@
 			stress_impact = {
 				compassionate = minor_stress_impact_loss
 				generous = minor_stress_impact_loss
-				learning_education_1 = minor_stress_impact_loss
-				learning_education_2 = minor_stress_impact_loss
-				learning_education_3 = minor_stress_impact_loss
-				learning_education_4 = minor_stress_impact_loss
-				learning_education_5 = minor_stress_impact_loss
+				education_learning_1 = minor_stress_impact_loss
+				education_learning_2 = minor_stress_impact_loss
+				education_learning_3 = minor_stress_impact_loss
+				education_learning_4 = minor_stress_impact_loss
+				education_learning_5 = minor_stress_impact_loss
 			}
 		}
 		scope:actor = {

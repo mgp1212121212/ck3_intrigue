@@ -1,8 +1,8 @@
 ﻿
 #############################
-#TARNISH REPUTATION SCHEME
+# CONVERT FAITH SCHEME
 #############################
-start_convert_interaction = {
+convert_scheme = {
 	# Basic Setup
 	skill = learning
 	desc = convert_scheme_general_desc

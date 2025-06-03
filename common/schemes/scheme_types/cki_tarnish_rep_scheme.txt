@@ -201,8 +201,8 @@ tarnish_rep_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = steal_back_artifact_invalidated_title
-					custom_tooltip = steal_back_artifact_invalidated_dead
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_dead
 					left_icon = scope:target
 				}
 			}
@@ -215,8 +215,8 @@ tarnish_rep_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = steal_back_artifact_invalidated_title
-					custom_tooltip = steal_back_artifact_invalidated_war
+					title = cki_scheme_invalidated_title
+					custom_tooltip = cki_scheme_invalidated_war
 					left_icon = scope:target
 				}
 			}
@@ -230,7 +230,7 @@ tarnish_rep_scheme = {
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = steal_back_artifact_invalidated_title
+					title = cki_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target

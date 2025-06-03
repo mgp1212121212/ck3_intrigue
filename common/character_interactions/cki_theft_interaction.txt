@@ -93,7 +93,7 @@
 				honest = medium_stress_impact_gain
 				just = medium_stress_impact_gain
 				greedy = medium_stress_impact_loss
-				avarious = medium_stress_impact_loss
+				avaricious = medium_stress_impact_loss
 			}
 		}
 		scope:actor = {

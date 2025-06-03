@@ -12812,6 +12812,7 @@ murder_failure_effect = {
 				}
 			}
 		}
+		else = {}
 	}
 	# Lastly, if our imaginary friend put us up to this, then we address that.
 	scope:owner = {

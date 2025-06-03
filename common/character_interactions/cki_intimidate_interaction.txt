@@ -37,7 +37,10 @@ start_intimidate_interaction = {
 		scope:recipient = { 
 			NOT = { 
 				has_strong_hook = scope:actor 
-				has_opinion_modifier = {target = scope:actor modifier = intimidate_scheme_opinion}
+				OR = {
+					has_opinion_modifier = {target = scope:actor modifier = intimidate_scheme_failure_opinion}
+					has_opinion_modifier = {target = scope:actor modifier = intimidate_scheme_success_opinion}
+				}
 			} 
 		}
 		trigger_if = {

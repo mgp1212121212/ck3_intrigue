@@ -29,7 +29,7 @@
 		scope:recipient = { 
 			NOT = { 
 				has_strong_hook = scope:actor 
-				has_opinion_modifier = {target = scope:actor modifier = antagonize_council_discovered_opinion}
+				has_opinion_modifier = {target = scope:actor modifier = antagonize_council_opinion}
 			} 
 			is_ruler = yes
 		}

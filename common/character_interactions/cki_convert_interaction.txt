@@ -1,4 +1,4 @@
-﻿convert_interaction = {
+﻿convert_scheme_interaction = {
 	icon = piety	
 	category = interaction_category_hostile
 	common_interaction = yes
@@ -6,7 +6,7 @@
 	send_name = START_SCHEME
 
 	interface_priority = 42
-	scheme = convert
+	scheme = convert_scheme
 	ignores_pending_interaction_block = yes
 
 	ai_targets = {

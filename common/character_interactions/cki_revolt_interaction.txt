@@ -31,9 +31,9 @@
 			is_independent_ruler = no
 			NOT = { 
 				has_strong_hook = scope:actor 
-				has_opinion_modifier = {target = scope:actor.liege modifier = revolt_opinion}
 			}
 			can_join_or_create_faction_against = scope:recipient.liege 
+			NOT = {liege = {has_opinion_modifier = {target = scope:actor modifier = revolt_scheme_opinion_liege}}}
 		}
 		trigger_if = {
 			limit = {
