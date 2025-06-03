@@ -61,22 +61,22 @@
 	## Balanced agents.
 	send_option = {
 		flag = agent_focus_balance
-		current_description = start_murder_interaction.tt.agent_focus_balance
+		current_description = start_tarnish_rep_interaction.tt.agent_focus_balance
 	}
 	## Focused on Success Chance.
 	send_option = {
 		flag = agent_focus_success
-		current_description = start_murder_interaction.tt.agent_focus_success
+		current_description = start_tarnish_rep_interaction.tt.agent_focus_success
 	}
 	## Focused on Speed.
 	send_option = {
 		flag = agent_focus_speed
-		current_description = start_murder_interaction.tt.agent_focus_speed
+		current_description = start_tarnish_rep_interaction.tt.agent_focus_speed
 	}
 	## Focused on Secrecy.
 	send_option = {
 		flag = agent_focus_secrecy
-		current_description = start_murder_interaction.tt.agent_focus_secrecy
+		current_description = start_tarnish_rep_interaction.tt.agent_focus_secrecy
 	}
 
 	on_accept = {
