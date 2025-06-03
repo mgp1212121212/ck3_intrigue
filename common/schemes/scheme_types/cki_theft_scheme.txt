@@ -6,7 +6,7 @@ theft_scheme = {
 	skill = intrigue
 	desc = theft_scheme_general_desc
 	success_desc = "THEFT_SUCCESS_DESC"
-	icon = intrigue
+	icon = icon_scheme_theft
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile
