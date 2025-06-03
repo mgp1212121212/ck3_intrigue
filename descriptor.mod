@@ -5,6 +5,6 @@ tags={
 	"Gameplay"
 	"Schemes"
 }
-name="More Plots - Test"
+name="ck3_intrigue"
+picture="thumbnail.png"
 supported_version="1.16.2"
-remote_file_id="3491168307"

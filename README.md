@@ -37,6 +37,7 @@ Improvements/Todo
 - Rules to turn off/on/unlock schemes (vanilla+mod)
 - Secrets for all schemes & penalty when they're made public
 - Implement trait XP on vanilla schemes
+- Update agent packages localization variables
 
 New Features Plans/Ideas 
 - Economic Schemes/Interactions

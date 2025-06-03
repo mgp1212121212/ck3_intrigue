@@ -61,10 +61,7 @@ start_intimidate_interaction = {
 	options_heading = schemes.t.agent_packages
 	send_options_exclusive = yes
 	## Balanced agents.
-	send_option = {
-		flag = agent_focus_balance
-		current_description = start_murder_interaction.tt.agent_focus_balance
-	}
+	
 
 	on_accept = {
 		scope:actor = {

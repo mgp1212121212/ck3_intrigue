@@ -61,22 +61,22 @@
 	## Balanced agents.
 	send_option = {
 		flag = agent_focus_balance
-		#current_description = start_murder_interaction.tt.agent_focus_balance
+		current_description = start_theft_interaction.tt.agent_focus_balance
 	}
 	## Focused on Success Chance.
 	send_option = {
 		flag = agent_focus_success
-		#current_description = start_murder_interaction.tt.agent_focus_success
+		current_description = start_theft_interaction.tt.agent_focus_success
 	}
 	## Focused on Speed.
 	send_option = {
 		flag = agent_focus_speed
-		#current_description = start_murder_interaction.tt.agent_focus_speed
+		current_description = start_theft_interaction.tt.agent_focus_speed
 	}
 	## Focused on Secrecy.
 	send_option = {
 		flag = agent_focus_secrecy
-		#current_description = start_murder_interaction.tt.agent_focus_secrecy
+		current_description = start_theft_interaction.tt.agent_focus_secrecy
 	}
 
 	on_accept = {
@@ -119,12 +119,12 @@
 						SCHEME_TYPE = theft_scheme
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
-						# Speed.
-						AGENT_1 = agent_infiltrator
-						AGENT_2 = agent_infiltrator
-						AGENT_3 = agent_footpad
 						# Success.
 						AGENT_1 = agent_thief
+						AGENT_2 = agent_ambusher
+						# Speed.
+						AGENT_3 = agent_infiltrator
+						AGENT_4 = agent_infiltrator
 						# Secrecy.
 						AGENT_5 = agent_lookout
 					}
@@ -136,14 +136,14 @@
 						SCHEME_TYPE = theft_scheme
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
-						# Secrecy.
-						AGENT_1 = agent_alibi
-						AGENT_2 = agent_alibi
-						AGENT_3 = agent_lookout
 						# Success.
 						AGENT_1 = agent_thief
 						# Speed.
-						AGENT_5 = agent_infiltrator
+						AGENT_2 = agent_infiltrator
+						# Secrecy.
+						AGENT_3 = agent_lookout
+						AGENT_4 = agent_lookout
+						AGENT_5 = agent_lookout
 					}
 				}
 				# Balanced.
