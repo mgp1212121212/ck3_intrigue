@@ -361,6 +361,12 @@
 ## Secrets
  cki_revolt_secret:1 "Instigated a Revolt"
  cki_revolt_secret_desc:1 "Manipulated [TARGET_CHARACTER.GetShortUIName] into a revolt"
+ cki_antagonize_council_secret:1 "Antagonize Council"
+ cki_antagonize_council_secret_desc:1 "Antagonize Council of TARGET_CHARACTER.GetShortUIName]"
+ cki_antagonize_spouse_secret:1 "Antagonize Spouse"
+ cki_antagonize_spouse_secret_desc:1 "Antagonize Spouse of TARGET_CHARACTER.GetShortUIName]"
+ cki_tarnish_rep_secret:1 "Tarnish Reputation"
+ cki_tarnish_rep_secret_desc:1 "Tarnish Reputation of TARGET_CHARACTER.GetShortUIName]"
 
 ## Rules
  rule_cki_rule_antagonize_council:0 "Antagonize Council Scheme"
