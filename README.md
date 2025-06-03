@@ -39,9 +39,8 @@ Improvements/Todo
     - Implement trait XP on vanilla schemes
     - ai_probability ai_will_do ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
-    - Rules to turn off/on/unlock schemes (vanilla+mod)
+    - Rules to turn off/on/unlock levelled trait.
     - Secrets for all schemes & penalty when they're made public
-    - Add trait negative XP monthly drain
     - Scheme Invalidation actions
 
 New Features Plans/Ideas 

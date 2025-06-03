@@ -749,21 +749,34 @@ add_cki_trait_negative_xp_small_effect = {
 		limit = {
 			has_trait = cki_track
 		}
-		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+		add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
 	}
 	else = {
 		add_trait = cki_track
-		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+		add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
 	}
 }
 
 remove_cki_trait_negative_xp_effect = {
 	if = {
 		limit = {
-			has_trait = cki_track
+			AND = {
+				has_trait = cki_track
+				has_trait_xp = {
+					trait = cki_track
+					track = cki_negative
+					value > 0
+				}
+			}
 		}
-		add_trait_xp = { trait = cki_track track = cki_negative value = -1 }
+		send_interface_message = {
+			type = event_intrigue_good
+			title = cki_trait_drain
+			right_icon = ROOT # References root instead of scope:actor to verify that root is defined
+			add_trait_xp = { trait = cki_track track = cki_negative value = -3 }
+		}
 	}
+	
 }
 
 cki_trait_negative_xp_roll_effect = {

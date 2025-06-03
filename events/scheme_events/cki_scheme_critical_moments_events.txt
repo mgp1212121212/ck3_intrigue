@@ -451,6 +451,26 @@ cki_scheme_critical_moments.0002 = {
 	}
 }
 
+# Trait XP Drain 
+cki_scheme_critical_moments.0003 = {
+	 hidden = yes
+	 immediate = {
+		if = {
+			limit = {
+				AND = {
+					has_trait = cki_track
+					has_trait_xp = {
+						trait = cki_track
+						track = cki_negative
+						value > 0
+					}
+				}
+			}
+			remove_cki_trait_negative_xp_effect = yes
+		}
+	}
+} 
+
 #######################################################
 ### Results event for the Theft scheme.
 #######################################################
