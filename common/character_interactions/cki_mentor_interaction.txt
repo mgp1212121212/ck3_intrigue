@@ -1,7 +1,7 @@
 ﻿start_mentor_interaction = {
 	icon = "diplomacy_positive.dds"  #ICON
 	common_interaction = yes
-	interface_priority = 90
+	interface_priority = 10
 	category = interaction_category_friendly
 
 	ignores_pending_interaction_block = yes

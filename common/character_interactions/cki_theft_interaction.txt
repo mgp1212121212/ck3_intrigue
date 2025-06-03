@@ -1,7 +1,7 @@
 ﻿start_theft_interaction = {
 	icon = icon_gold  #ICON
 	common_interaction = yes
-	interface_priority = 90
+	interface_priority = 10
 	category = interaction_category_hostile
 
 	ignores_pending_interaction_block = yes

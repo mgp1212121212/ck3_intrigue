@@ -5,7 +5,7 @@
 
 	send_name = START_SCHEME
 
-	interface_priority = 42
+	interface_priority = 10
 	scheme = convert_scheme
 	ignores_pending_interaction_block = yes
 

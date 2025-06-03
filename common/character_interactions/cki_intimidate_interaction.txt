@@ -3,7 +3,7 @@
 start_intimidate_interaction = {
 	icon = "diplomacy_negative.dds"  #ICON
 	common_interaction = yes
-	interface_priority = 90
+	interface_priority = 10
 	category = interaction_category_hostile
 
 	ignores_pending_interaction_block = yes
