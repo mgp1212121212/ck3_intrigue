@@ -484,4 +484,10 @@
  start_tarnish_rep_interaction.tt.agent_focus_success:0 "todo"
  start_tarnish_rep_interaction.tt.agent_focus_speed:0 "todo"
  start_tarnish_rep_interaction.tt.agent_focus_secrecy:0 "todo"
-
+ mentor_stewardship_scheme_desc_general:0 "todo"
+ start_convert_scheme_desc_general:0 "todo"
+ mentor_intrigue_scheme_desc_general:0 "todo"
+ mentor_diplomacy_scheme_desc_general:0 "todo"
+ mentor_learning_scheme_desc_general:0 "todo"
+ start_convert_interaction_desc_general:0 "todo"
+ mentor_martial_scheme_desc_general:0 "todo"
