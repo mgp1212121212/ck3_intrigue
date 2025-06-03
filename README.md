@@ -16,7 +16,7 @@ Current Features
     - Personal
         - Mentor Skill
 - Levelled-Trait with positive & negative tracks.
-- Rules to activate/deactivates schemes.
+- Rules to activate/deactivates schemes & levelled-trait
 
 Requirements
 - Travel the Distance
@@ -33,13 +33,14 @@ Improvements/Todo
     - Victim notifications localization
     - Agent packages localization
     - Rules localization
+    - Scheme Invalidated localization
     - Flavorize all localization
 - Code
     - Interactions shown/is_valid & interface priority & trait-based stress hits
     - ai_probability ai_will_do ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
-    - Rules to turn off/on/unlock levelled trait.
-    - Secrets for all schemes & penalty when they're made public
+    - Secrets for all schemes
+    - Trait Negative XP when secrets are made public
 
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
