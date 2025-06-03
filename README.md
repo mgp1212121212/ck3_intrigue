@@ -23,7 +23,6 @@ Requirements
 
 
 Outstanding Bugs
-- Some agent packages stopped to fire schemes (secret & speed on most/all non-vanilla schemes)
 - Some missing localization
 
 Improvements/Todo
