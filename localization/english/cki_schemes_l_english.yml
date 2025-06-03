@@ -359,7 +359,7 @@
  antagonize_spouse_modifier:0 "Spouse heard rumours"
 
 ## Rules
- rule_cki_rule_antagonize_council:0 "Antagonize Council"
+ rule_cki_rule_antagonize_council:0 "Antagonize Council Scheme"
  setting_cki_rule_antagonize_council_active:0 "Active"
  setting_cki_rule_antagonize_council_active_desc:0 "Active"
  setting_cki_rule_antagonize_council_inactive:0 "Inactive"
@@ -367,7 +367,7 @@
  setting_cki_rule_antagonize_council_earned:0 "Unlock"
  setting_cki_rule_antagonize_council_earned_desc:0 "Unlock"
 
- rule_cki_rule_antagonize_spouse:0 ""
+ rule_cki_rule_antagonize_spouse:0 "Antagonize Spouse Scheme"
  setting_cki_rule_antagonize_spouse_active:0 "Active"
  setting_cki_rule_antagonize_spouse_active_desc:0 "Active"
  setting_cki_rule_antagonize_spouse_inactive:0 "Inactive"
@@ -375,7 +375,7 @@
  setting_cki_rule_antagonize_spouse_earned:0 "Unlock"
  setting_cki_rule_antagonize_spouse_earned_desc:0 "Unlock"
 
- rule_cki_rule_convert:0 ""
+ rule_cki_rule_convert:0 "Convert Scheme"
  setting_cki_rule_convert_active:0 "Active"
  setting_cki_rule_convert_active_desc:0 "Active"
  setting_cki_rule_convert_inactive:0 "Inactive"
@@ -383,7 +383,7 @@
  setting_cki_rule_convert_earned:0 "Unlock"
  setting_cki_rule_convert_earned_desc:0 "Unlock"
 
- rule_cki_rule_intimidate:0 ""
+ rule_cki_rule_intimidate:0 "Intimidate Scheme"
  setting_cki_rule_intimidate_active:0 "Active"
  setting_cki_rule_intimidate_active_desc:0 "Active"
  setting_cki_rule_intimidate_inactive:0 "Inactive"
@@ -391,7 +391,7 @@
  setting_cki_rule_intimidate_earned:0 "Unlock"
  setting_cki_rule_intimidate_earned_desc:0 "Unlock"
 
- rule_cki_rule_mentor:0 ""
+ rule_cki_rule_mentor:0 "Mentor Scheme"
  setting_cki_rule_mentor_active:0 "Active"
  setting_cki_rule_mentor_active_desc:0 "Active"
  setting_cki_rule_mentor_inactive:0 "Inactive"
@@ -399,7 +399,7 @@
  setting_cki_rule_mentor_earned:0 "Unlock"
  setting_cki_rule_mentor_earned_desc:0 "Unlock"
 
- rule_cki_rule_revolt:0 ""
+ rule_cki_rule_revolt:0 "Instigate Revolt Scheme"
  setting_cki_rule_revolt_active:0 "Active"
  setting_cki_rule_revolt_active_desc:0 "Active"
  setting_cki_rule_revolt_inactive:0 "Inactive"
@@ -407,7 +407,7 @@
  setting_cki_rule_revolt_earned:0 "Unlock"
  setting_cki_rule_revolt_earned_desc:0 "Unlock"
 
- rule_cki_rule_tarnish_rep:0 ""
+ rule_cki_rule_tarnish_rep:0 "Tarnish Reputation Scheme"
  setting_cki_rule_tarnish_rep_active:0 "Active"
  setting_cki_rule_tarnish_rep_active_desc:0 "Active"
  setting_cki_rule_tarnish_rep_inactive:0 "Inactive"
@@ -415,13 +415,19 @@
  setting_cki_rule_tarnish_rep_earned:0 "Unlock"
  setting_cki_rule_tarnish_rep_earned_desc:0 "Unlock"
 
- rule_cki_rule_theft:0 ""
+ rule_cki_rule_theft:0 "Theft Scheme"
  setting_cki_rule_theft_active:0 "Active"
  setting_cki_rule_theft_active_desc:0 "Active"
  setting_cki_rule_theft_inactive:0 "Inactive"
  setting_cki_rule_theft_inactive_desc:0 "Inactive"
  setting_cki_rule_theft_earned:0 "Unlock"
  setting_cki_rule_theft_earned_desc:0 "Unlock"
+
+ rule_cki_rule_trait:0 "CKI Trait"
+ setting_cki_rule_trait_active:0 "Active"
+ setting_cki_rule_trait_active_desc:0 "Active"
+ setting_cki_rule_trait_inactive:0 "Inactive"
+ setting_cki_rule_trait_inactive_desc:0 "Inactive"
 
 
  ## Uncategorized.

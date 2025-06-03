@@ -719,77 +719,86 @@ antagonize_spouse_failure_effect = {
 ################################################
 # Levelled trait XP changes
 add_cki_trait_positive_xp_effect = {
-	if = {
-		limit = {
-			has_trait = cki_track
+	if = { limit = { has_game_rule = cki_rule_trait_active }
+		if = {
+			limit = {
+				has_trait = cki_track
+			}
+			add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
 		}
-		add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
-	}
-	else = {
-		add_trait = cki_track
-		add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
+		else = {
+			add_trait = cki_track
+			add_trait_xp = { trait = cki_track track = cki_positive value = 1 }
+		}
 	}
 }
 
 add_cki_trait_negative_xp_effect = {
-	if = {
-		limit = {
-			has_trait = cki_track
+	if = { limit = { has_game_rule = cki_rule_trait_active }
+		if = {
+			limit = {
+				has_trait = cki_track
+			}
+			add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
 		}
-		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
-	}
-	else = {
-		add_trait = cki_track
-		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+		else = {
+			add_trait = cki_track
+			add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+		}
 	}
 }
 
 add_cki_trait_negative_xp_small_effect = {
-	if = {
-		limit = {
-			has_trait = cki_track
+	if = { limit = { has_game_rule = cki_rule_trait_active }
+		if = {
+			limit = {
+				has_trait = cki_track
+			}
+			add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
 		}
-		add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
-	}
-	else = {
-		add_trait = cki_track
-		add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
+		else = {
+			add_trait = cki_track
+			add_trait_xp = { trait = cki_track track = cki_negative value = 1 }
+		}
 	}
 }
 
 remove_cki_trait_negative_xp_effect = {
-	if = {
-		limit = {
-			AND = {
-				has_trait = cki_track
-				has_trait_xp = {
-					trait = cki_track
-					track = cki_negative
-					value > 0
+	if = { limit = { has_game_rule = cki_rule_trait_active }
+		if = {
+			limit = {
+				AND = {
+					has_trait = cki_track
+					has_trait_xp = {
+						trait = cki_track
+						track = cki_negative
+						value > 0
+					}
 				}
 			}
-		}
-		send_interface_message = {
-			type = event_intrigue_good
-			title = cki_trait_drain
-			right_icon = ROOT # References root instead of scope:actor to verify that root is defined
-			add_trait_xp = { trait = cki_track track = cki_negative value = -3 }
+			send_interface_message = {
+				type = event_intrigue_good
+				title = cki_trait_drain
+				right_icon = ROOT # References root instead of scope:actor to verify that root is defined
+				add_trait_xp = { trait = cki_track track = cki_negative value = -3 }
+			}
 		}
 	}
-	
 }
 
 cki_trait_negative_xp_roll_effect = {
-	# Get secrecy and roll
-	save_scope_value_as = {
-			name = discovery_chance
-			value = {
-				value = 100
-				subtract = scope:scheme.scheme_secrecy
+	if = { limit = { has_game_rule = cki_rule_trait_active }
+		# Get secrecy and roll
+		save_scope_value_as = {
+				name = discovery_chance
+				value = {
+					value = 100
+					subtract = scope:scheme.scheme_secrecy
+				}
 			}
-		}
-	random = {
-			chance = scope:discovery_chance
-			add_cki_trait_negative_xp_effect = yes
-		}
+		random = {
+				chance = scope:discovery_chance
+				add_cki_trait_negative_xp_effect = yes
+			}
+	}
 }

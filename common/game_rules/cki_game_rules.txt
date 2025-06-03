@@ -1,5 +1,5 @@
 ﻿
-cki_ruler_antagonize_council = {
+cki_rule_antagonize_council = {
 	default = cki_rule_antagonize_council_active
 
 	categories = { CKI }
@@ -10,7 +10,7 @@ cki_ruler_antagonize_council = {
 	
 }
 
-cki_ruler_antagonize_spouse = {
+cki_rule_antagonize_spouse = {
     default = cki_rule_antagonize_spouse_active
 
     categories = { CKI }
@@ -21,7 +21,7 @@ cki_ruler_antagonize_spouse = {
     
 }
 
-cki_ruler_convert = {
+cki_rule_convert = {
     default = cki_rule_convert_active
 
     categories = { CKI }
@@ -33,7 +33,7 @@ cki_ruler_convert = {
 }
 
 
-cki_ruler_intimidate = {
+cki_rule_intimidate = {
     default = cki_rule_intimidate_active
 
     categories = { CKI }
@@ -45,7 +45,7 @@ cki_ruler_intimidate = {
 }
 
 
-cki_ruler_mentor = {
+cki_rule_mentor = {
     default = cki_rule_mentor_active
 
     categories = { CKI }
@@ -56,7 +56,7 @@ cki_ruler_mentor = {
     
 }
 
-cki_ruler_revolt = {
+cki_rule_revolt = {
     default = cki_rule_revolt_active
 
     categories = { CKI }
@@ -67,7 +67,7 @@ cki_ruler_revolt = {
     
 }
 
-cki_ruler_tarnish_rep = {
+cki_rule_tarnish_rep = {
     default = cki_rule_tarnish_rep_active
 
     categories = { CKI }
@@ -78,7 +78,7 @@ cki_ruler_tarnish_rep = {
     
 }
 
-cki_ruler_theft = {
+cki_rule_theft = {
     default = cki_rule_theft_active
 
     categories = { CKI }
@@ -86,5 +86,16 @@ cki_ruler_theft = {
     cki_rule_theft_active = {flag = GG_can_change_rule}
     cki_rule_theft_inactive = {flag = GG_can_change_rule}
     #cki_rule_theft_earned = {flag = GG_can_change_rule}
+    
+}
+
+cki_rule_trait = {
+    default = cki_rule_trait_active
+
+    categories = { CKI }
+
+    cki_rule_trait_active = {flag = GG_can_change_rule}
+    cki_rule_trait_inactive = {flag = GG_can_change_rule}
+    #cki_rule_antagonize_spouse_earned = {flag = GG_can_change_rule}
     
 }
