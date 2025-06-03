@@ -1,5 +1,5 @@
 ﻿convert_scheme_interaction = {
-	icon = piety	
+	icon = icon_convert
 	category = interaction_category_hostile
 	common_interaction = yes
 
