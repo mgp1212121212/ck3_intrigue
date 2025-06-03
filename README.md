@@ -44,6 +44,7 @@ Improvements/Todo
     - Interactions interface priority
     - Improve interaction trait-based stress further
 *   - Add trait xp for vanilla secret exposed
+    - Update countermeasure for schemes
 ------
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
