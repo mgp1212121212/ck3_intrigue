@@ -1,5 +1,5 @@
 ﻿start_tarnish_rep_interaction = {
-	icon = "diplomacy_negative.dds"  #ICON
+	icon = icon_tarnish_rep  #ICON
 	common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
