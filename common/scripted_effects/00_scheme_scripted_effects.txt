@@ -14098,6 +14098,7 @@ abduct_success_effect = {
 		TARGET = scope:target
 		IMPRISONER = scope:owner
 	}
+	scope:owner = { add_cki_trait_positive_xp_effect }
 }
 
 abduct_failure_effect = {
@@ -14114,6 +14115,7 @@ abduct_failure_effect = {
 	scope:target = {
 		trigger_event = abduct_outcome.5002
 	}
+	scope:owner = {cki_trait_negative_xp_roll_effect = yes}
 }
 
 successful_abduct_outcome_event_option_effect = {

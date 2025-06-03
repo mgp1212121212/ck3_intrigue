@@ -744,6 +744,19 @@ add_cki_trait_negative_xp_effect = {
 	}
 }
 
+add_cki_trait_negative_xp_small_effect = {
+	if = {
+		limit = {
+			has_trait = cki_track
+		}
+		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+	}
+	else = {
+		add_trait = cki_track
+		add_trait_xp = { trait = cki_track track = cki_negative value = 5 }
+	}
+}
+
 remove_cki_trait_negative_xp_effect = {
 	if = {
 		limit = {
@@ -751,4 +764,19 @@ remove_cki_trait_negative_xp_effect = {
 		}
 		add_trait_xp = { trait = cki_track track = cki_negative value = -1 }
 	}
+}
+
+cki_trait_negative_xp_roll_effect = {
+	# Get secrecy and roll
+	save_scope_value_as = {
+			name = discovery_chance
+			value = {
+				value = 100
+				subtract = scope:scheme.scheme_secrecy
+			}
+		}
+	random = {
+			chance = scope:discovery_chance
+			add_cki_trait_negative_xp_effect = yes
+		}
 }
