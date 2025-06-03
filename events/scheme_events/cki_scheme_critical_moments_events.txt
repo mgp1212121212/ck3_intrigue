@@ -551,7 +551,7 @@ cki_scheme_critical_moments.1001 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1005 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1005 
 		}
 	}
 }
@@ -594,7 +594,7 @@ cki_scheme_critical_moments.1002 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1005 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1006 
 		}
 	}
 }
@@ -671,6 +671,9 @@ cki_scheme_critical_moments.1004 = {
 			flag = had_cki_scheme_critical_moments_1004
 			years = 5
 		}
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1006 
+		}
 	}
 
 	option = {
@@ -683,19 +686,48 @@ cki_scheme_critical_moments.1004 = {
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1005 = {
 	type = character_event
 	window = scheme_target_event
 	title = cki_scheme_critical_moments.1005.t
 	desc = cki_scheme_critical_moments.1005.desc
 	theme = generic_intrigue_scheme
-	left_portrait = scope:owner
 
 	option = {
 		name = cki_scheme_critical_moments.1005.a
 	}
 }
+
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1006 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1006.t
+	desc = cki_scheme_critical_moments.1006.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1006.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1007 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1007.t
+	desc = cki_scheme_critical_moments.1007.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1007.a
+	}
+}
+
+
 
 #######################################################
 ### Results event for the Tarnish Reputation scheme.
@@ -797,7 +829,7 @@ cki_scheme_critical_moments.1011 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1015 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1015 
 		}
 	}
 }
@@ -840,7 +872,7 @@ cki_scheme_critical_moments.1012 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1015 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1016 
 		}
 	}
 }
@@ -926,22 +958,53 @@ cki_scheme_critical_moments.1014 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1017 
+		}
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1015 = {
 	type = character_event
 	window = scheme_target_event
 	title = cki_scheme_critical_moments.1015.t
 	desc = cki_scheme_critical_moments.1015.desc
 	theme = generic_intrigue_scheme
-	left_portrait = scope:owner
 
 	option = {
 		name = cki_scheme_critical_moments.1015.a
 	}
 }
+
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1016 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1016.t
+	desc = cki_scheme_critical_moments.1016.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1016.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1017 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1017.t
+	desc = cki_scheme_critical_moments.1017.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1017.a
+	}
+}
+
 
 #######################################################
 ### Results event for the Instigate Revolt scheme.
@@ -1043,7 +1106,7 @@ cki_scheme_critical_moments.1021 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1015 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1025 
 		}
 	}
 }
@@ -1086,7 +1149,7 @@ cki_scheme_critical_moments.1022 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1025 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1026 
 		}
 	}
 }
@@ -1172,23 +1235,52 @@ cki_scheme_critical_moments.1024 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1027 
+		}
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1025 = {
 	type = character_event
 	window = scheme_target_event
 	title = cki_scheme_critical_moments.1025.t
 	desc = cki_scheme_critical_moments.1025.desc
 	theme = generic_intrigue_scheme
-	left_portrait = scope:owner
 
 	option = {
 		name = cki_scheme_critical_moments.1025.a
 	}
 }
 
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1026 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1026.t
+	desc = cki_scheme_critical_moments.1026.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1026.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1027 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1027.t
+	desc = cki_scheme_critical_moments.1027.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1027.a
+	}
+}
 
 #######################################################
 ### Results event for the Intimidate scheme.
@@ -1263,7 +1355,7 @@ cki_scheme_critical_moments.1031 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1035 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1035 
 		}
 	}
 }
@@ -1294,23 +1386,38 @@ cki_scheme_critical_moments.1034 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1037 
+		} 
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1035 = {
 	type = character_event
 	window = scheme_target_event
-	title = cki_scheme_critical_moments.1025.t
-	desc = cki_scheme_critical_moments.1025.desc
+	title = cki_scheme_critical_moments.1035.t
+	desc = cki_scheme_critical_moments.1035.desc
+	theme = generic_intrigue_scheme
+
+	option = {
+		name = cki_scheme_critical_moments.1035.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1037 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1037.t
+	desc = cki_scheme_critical_moments.1037.desc
 	theme = generic_intrigue_scheme
 	left_portrait = scope:owner
 
 	option = {
-		name = cki_scheme_critical_moments.1025.a
+		name = cki_scheme_critical_moments.1037.a
 	}
 }
-
 
 #######################################################
 ### Results event for the Convert scheme.
@@ -1384,7 +1491,7 @@ cki_scheme_critical_moments.1041 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1045 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1045 
 		}
 	}
 }
@@ -1414,23 +1521,38 @@ cki_scheme_critical_moments.1044 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1047
+		}
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1045 = {
 	type = character_event
 	window = scheme_target_event
-	title = cki_scheme_critical_moments.1025.t
-	desc = cki_scheme_critical_moments.1025.desc
+	title = cki_scheme_critical_moments.1045.t
+	desc = cki_scheme_critical_moments.1045.desc
+	theme = generic_intrigue_scheme
+
+	option = {
+		name = cki_scheme_critical_moments.1045.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1047 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1047.t
+	desc = cki_scheme_critical_moments.1047.desc
 	theme = generic_intrigue_scheme
 	left_portrait = scope:owner
 
 	option = {
-		name = cki_scheme_critical_moments.1025.a
+		name = cki_scheme_critical_moments.1047.a
 	}
 }
-
 #######################################################
 ### Results event for the Mentor scheme.
 #######################################################
@@ -1628,7 +1750,7 @@ cki_scheme_critical_moments.1051 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1057 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1057 
 		}
 	}
 }
@@ -1670,7 +1792,7 @@ cki_scheme_critical_moments.1052 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1057 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1057 
 		}
 	}
 }
@@ -1712,7 +1834,7 @@ cki_scheme_critical_moments.1053 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1057 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1057 
 		}
 	}
 }
@@ -1754,7 +1876,7 @@ cki_scheme_critical_moments.1054 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1057 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1057 
 		}
 	}
 }
@@ -1796,7 +1918,7 @@ cki_scheme_critical_moments.1055 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1057 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1057 
 		}
 	}
 }
@@ -1826,24 +1948,39 @@ cki_scheme_critical_moments.1056 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1058 
+		}
 	}
 }
 
-# Generic successful to scheme target
+
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1057 = {
 	type = character_event
 	window = scheme_target_event
-	title = cki_scheme_critical_moments.1025.t
-	desc = cki_scheme_critical_moments.1025.desc
+	title = cki_scheme_critical_moments.1057.t
+	desc = cki_scheme_critical_moments.1057.desc
+	theme = generic_intrigue_scheme
+
+	option = {
+		name = cki_scheme_critical_moments.1057.a
+	}
+}
+
+# Failed Notification to scheme target
+cki_scheme_critical_moments.1058 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1058.t
+	desc = cki_scheme_critical_moments.1058.desc
 	theme = generic_intrigue_scheme
 	left_portrait = scope:owner
 
 	option = {
-		name = cki_scheme_critical_moments.1025.a
+		name = cki_scheme_critical_moments.1058.a
 	}
 }
-
-
 
 #######################################################
 ### Results event for the Antagonize Council scheme.
@@ -1945,7 +2082,7 @@ cki_scheme_critical_moments.1071 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1075 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1075 
 		}
 	}
 }
@@ -1988,7 +2125,7 @@ cki_scheme_critical_moments.1072 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1075 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1076 
 		}
 	}
 }
@@ -2074,23 +2211,52 @@ cki_scheme_critical_moments.1074 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1077 
+		}
 	}
 }
 
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1075 = {
 	type = character_event
 	window = scheme_target_event
-	title = cki_scheme_critical_moments.1075.t
-	desc = cki_scheme_critical_moments.1075.desc
+	title = cki_scheme_critical_moments.1005.t
+	desc = cki_scheme_critical_moments.1005.desc
+	theme = generic_intrigue_scheme
+
+	option = {
+		name = cki_scheme_critical_moments.1005.a
+	}
+}
+
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1076 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1076.t
+	desc = cki_scheme_critical_moments.1076.desc
 	theme = generic_intrigue_scheme
 	left_portrait = scope:owner
 
 	option = {
-		name = cki_scheme_critical_moments.1075.a
+		name = cki_scheme_critical_moments.1076.a
 	}
 }
 
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1077 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1077.t
+	desc = cki_scheme_critical_moments.1077.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1077.a
+	}
+}
 #######################################################
 ### Results event for the Antagonize Spouse scheme.
 #######################################################
@@ -2191,7 +2357,7 @@ cki_scheme_critical_moments.1081 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1085 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1085 
 		}
 	}
 }
@@ -2234,7 +2400,7 @@ cki_scheme_critical_moments.1082 = {
 		}
 
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1085 #Notify target that stuff's stolen
+			trigger_event = cki_scheme_critical_moments.1086 
 		}
 	}
 }
@@ -2320,19 +2486,48 @@ cki_scheme_critical_moments.1084 = {
 		scope:scheme = {
 			end_scheme = yes
 		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1087 
+		}
 	}
 }
-
-# Generic successful to scheme target
+# Successful Notification to scheme target
 cki_scheme_critical_moments.1085 = {
 	type = character_event
 	window = scheme_target_event
 	title = cki_scheme_critical_moments.1085.t
 	desc = cki_scheme_critical_moments.1085.desc
 	theme = generic_intrigue_scheme
-	left_portrait = scope:owner
 
 	option = {
 		name = cki_scheme_critical_moments.1085.a
+	}
+}
+
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1086 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1086.t
+	desc = cki_scheme_critical_moments.1086.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1086.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1087 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1087.t
+	desc = cki_scheme_critical_moments.1087.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1087.a
 	}
 }

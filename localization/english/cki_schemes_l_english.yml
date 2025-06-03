@@ -1,5 +1,6 @@
 ﻿l_english: 
 ## Scheme Critical Moments
+# Scheme Execute Event
  cki_scheme_critical_moments.0002.t: "Execute Scheme"
  cki_scheme_critical_moments.0002.t.scheme: "Execute Scheme"
  cki_scheme_critical_moments.0002.desc: "Spend your accumulated [scheme_opportunity_opportunities|E] to attempt completion of your [scheme.GetName] [scheme|E]. Spend more for powerful final bonuses."
@@ -95,6 +96,7 @@
  cki_scheme_critical_moments.1054.desc:0 "Your scheme failed"
  cki_scheme_critical_moments.1054.a:0 "Damnation"
 
+
 #Critical Antagonize Council
  cki_scheme_critical_moments.1071.t:0 "Total Success"
  cki_scheme_critical_moments.1071.desc:0 "Your scheme was successful and you were undiscovered"
@@ -123,6 +125,82 @@
  cki_scheme_critical_moments.1084.desc:0 "Your scheme failed and you were discovered"
  cki_scheme_critical_moments.1084.a:0 "Damnation"
 
+## Scheme Victim Notifications
+# Theft Scheme
+cki_scheme_critical_moments.1005.t:0 "todo"
+cki_scheme_critical_moments.1005.desc:0 "todo"
+cki_scheme_critical_moments.1005.a:0 "todo"
+cki_scheme_critical_moments.1006.t:0 "todo"
+cki_scheme_critical_moments.1006.desc:0 "todo"
+cki_scheme_critical_moments.1006.a:0 "todo"
+cki_scheme_critical_moments.1007.t:0 "todo"
+cki_scheme_critical_moments.1007.desc:0 "todo"
+cki_scheme_critical_moments.1007.a:0 "todo"
+# Tarnish Reputation Scheme
+cki_scheme_critical_moments.1015.t:0 "todo"
+cki_scheme_critical_moments.1015.desc:0 "todo"
+cki_scheme_critical_moments.1015.a:0 "todo"
+cki_scheme_critical_moments.1016.t:0 "todo"
+cki_scheme_critical_moments.1016.desc:0 "todo"
+cki_scheme_critical_moments.1016.a:0 "todo"
+cki_scheme_critical_moments.1017.t:0 "todo"
+cki_scheme_critical_moments.1017.desc:0 "todo"
+cki_scheme_critical_moments.1017.a:0 "todo"
+# Instigate Revolt Scheme
+cki_scheme_critical_moments.1025.t:0 "todo"
+cki_scheme_critical_moments.1025.desc:0 "todo"
+cki_scheme_critical_moments.1025.a:0 "todo"
+cki_scheme_critical_moments.1026.t:0 "todo"
+cki_scheme_critical_moments.1026.desc:0 "todo"
+cki_scheme_critical_moments.1026.a:0 "todo"
+cki_scheme_critical_moments.1027.t:0 "todo"
+cki_scheme_critical_moments.1027.desc:0 "todo"
+cki_scheme_critical_moments.1027.a:0 "todo"
+# Intimidate Scheme
+cki_scheme_critical_moments.1035.t:0 "todo"
+cki_scheme_critical_moments.1035.desc:0 "todo"
+cki_scheme_critical_moments.1035.a:0 "todo"
+cki_scheme_critical_moments.1037.t:0 "todo"
+cki_scheme_critical_moments.1037.desc:0 "todo"
+cki_scheme_critical_moments.1037.a:0 "todo"
+# Convert Faith Scheme
+cki_scheme_critical_moments.1045.t:0 "todo"
+cki_scheme_critical_moments.1045.desc:0 "todo"
+cki_scheme_critical_moments.1045.a:0 "todo"
+cki_scheme_critical_moments.1047.t:0 "todo"
+cki_scheme_critical_moments.1047.desc:0 "todo"
+cki_scheme_critical_moments.1047.a:0 "todo"
+
+
+# Mentor Scheme
+cki_scheme_critical_moments.1057.t:0 "todo"
+cki_scheme_critical_moments.1057.desc:0 "todo"
+cki_scheme_critical_moments.1057.a:0 "todo"
+cki_scheme_critical_moments.1058.t:0 "todo"
+cki_scheme_critical_moments.1058.desc:0 "todo"
+cki_scheme_critical_moments.1058.a:0 "todo"
+
+# Antagonize Council Scheme
+cki_scheme_critical_moments.1075.t:0 "todo"
+cki_scheme_critical_moments.1075.desc:0 "todo"
+cki_scheme_critical_moments.1075.a:0 "todo"
+cki_scheme_critical_moments.1076.t:0 "todo"
+cki_scheme_critical_moments.1076.desc:0 "todo"
+cki_scheme_critical_moments.1076.a:0 "todo"
+cki_scheme_critical_moments.1077.t:0 "todo"
+cki_scheme_critical_moments.1077.desc:0 "todo"
+cki_scheme_critical_moments.1077.a:0 "todo"
+
+# Antagonize Spouse Scheme
+cki_scheme_critical_moments.1085.t:0 "todo"
+cki_scheme_critical_moments.1085.desc:0 "todo"
+cki_scheme_critical_moments.1085.a:0 "todo"
+cki_scheme_critical_moments.1086.t:0 "todo"
+cki_scheme_critical_moments.1086.desc:0 "todo"
+cki_scheme_critical_moments.1086.a:0 "todo"
+cki_scheme_critical_moments.1087.t:0 "todo"
+cki_scheme_critical_moments.1087.desc:0 "todo"
+cki_scheme_critical_moments.1087.a:0 "todo"
 
 ## Schemes
 # Steal Scheme
