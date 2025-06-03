@@ -39,6 +39,7 @@
 				target_character = scope:recipient
 			}
 		}
+		scope:recipient = {is_ruler=yes}
 		#limit range for landless adventurers
 		trigger_if = {
 			limit = {
@@ -70,6 +71,11 @@
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}
+			}
+			stress_impact = {
+				zealous = medium_stress_impact_loss
+				honest = medium_stress_impact_gain
+				cynical = medium_stress_impact_gain
 			}
 		}
 	}

@@ -23,6 +23,10 @@ start_intimidate_interaction = {
 				type = intimidate_scheme
 				target_character = scope:recipient
 			}
+			has_dread_level_towards = {
+				target = scope:recipient
+				level >= 1
+			}
 		}
 		scope:recipient = { 
 			NOT = { 
@@ -70,6 +74,8 @@ start_intimidate_interaction = {
 				compassionate = major_stress_impact_gain
 				honest = medium_stress_impact_gain
 				just = medium_stress_impact_gain
+				craven = major_stress_impact_gain
+				arrogant = medium_stress_impact_loss
 			}
 		}
 		scope:actor = {

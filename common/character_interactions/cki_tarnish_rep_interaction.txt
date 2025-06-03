@@ -13,6 +13,7 @@
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_tarnish_rep_active
+		scope:recipient = {is_adult = yes}
 	}
 
 	is_valid_showing_failures_only = {
@@ -23,6 +24,7 @@
 			}
 		}
 		scope:recipient = { 
+			is_adult = yes
 			NOT = { 
 				has_strong_hook = scope:actor 
 				has_opinion_modifier = {target = scope:actor modifier = tarnish_rep_opinion}

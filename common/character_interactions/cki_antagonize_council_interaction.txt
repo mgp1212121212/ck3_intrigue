@@ -13,6 +13,10 @@
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_antagonize_council_active
+		scope:recipient = {
+			is_ruler = yes
+			highest_held_title_tier >= county
+		}
 	}
 
 	is_valid_showing_failures_only = {
@@ -27,6 +31,7 @@
 				has_strong_hook = scope:actor 
 				has_opinion_modifier = {target = scope:actor modifier = antagonize_council_discovered_opinion}
 			} 
+			is_ruler = yes
 		}
 		trigger_if = {
 			limit = {

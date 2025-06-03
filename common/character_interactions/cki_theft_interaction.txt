@@ -13,6 +13,10 @@
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_theft_active
+		scope:recipient = {
+			is_adult = yes
+			gold > 1	
+		}
 	}
 
 	is_valid_showing_failures_only = {
@@ -23,6 +27,8 @@
 			}
 		}
 		scope:recipient = { 
+			is_adult = yes
+			gold > 1
 			NOT = { 
 				has_strong_hook = scope:actor 
 				has_opinion_modifier = {target = scope:actor modifier = theft_discovered_opinion}
@@ -86,6 +92,8 @@
 				compassionate = major_stress_impact_gain
 				honest = medium_stress_impact_gain
 				just = medium_stress_impact_gain
+				greedy = medium_stress_impact_loss
+				avarious = medium_stress_impact_loss
 			}
 		}
 		scope:actor = {

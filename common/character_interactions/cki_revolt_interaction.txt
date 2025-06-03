@@ -27,6 +27,8 @@
 			}
 		}
 		scope:recipient = { 
+			is_ruler = yes
+			is_independent_ruler = no
 			NOT = { 
 				has_strong_hook = scope:actor 
 				has_opinion_modifier = {target = scope:actor.liege modifier = revolt_opinion}

@@ -226,6 +226,7 @@ revolt_success_effect = {
 	}
 	scope:owner = {			
 				add_cki_trait_positive_xp_effect = yes
+				cki_add_revolt_secret = yes
 	}
 }
 
@@ -259,6 +260,9 @@ revolt_partial_failure_effect = {
 			modifier = watchful_modifier
 			days = watchful_modifier_duration
 		}
+	}
+	scope:owner = {
+		cki_add_revolt_secret = yes
 	}	
 }
 
@@ -800,5 +804,29 @@ cki_trait_negative_xp_roll_effect = {
 				chance = scope:discovery_chance
 				add_cki_trait_negative_xp_effect = yes
 			}
+	}
+}
+## Add Secrets Effects
+cki_add_revolt_secret = {
+	add_secret = { 
+		type = cki_revolt_secret
+		target = scope:target 
+	}
+}
+
+## Secret Exposed Effects
+cki_revolt_secret_exposed_effect = {
+	scope:target = {
+		# ADD OPINION MODIFIER
+		add_opinion = {
+			target = scope:owner
+			modifier = revolt_scheme_opinion
+		}
+	}
+	scope:target.liege = {
+		add_opinion = {
+			target = scope:owner
+			modifier = revolt_scheme_opinion
+		}
 	}
 }

@@ -13,6 +13,7 @@
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_mentor_active
+		scope:recipient = {age>10}
 	}
 
 	is_valid_showing_failures_only = {
@@ -94,9 +95,13 @@
 	on_accept = {
 		scope:actor = {
 			stress_impact = {
-				compassionate = major_stress_impact_gain
-				honest = medium_stress_impact_gain
-				just = medium_stress_impact_gain
+				compassionate = minor_stress_impact_loss
+				generous = minor_stress_impact_loss
+				learning_education_1 = minor_stress_impact_loss
+				learning_education_2 = minor_stress_impact_loss
+				learning_education_3 = minor_stress_impact_loss
+				learning_education_4 = minor_stress_impact_loss
+				learning_education_5 = minor_stress_impact_loss
 			}
 		}
 		scope:actor = {

@@ -2551,3 +2551,9 @@ cki_scheme_critical_moments.1087 = {
 		name = cki_scheme_critical_moments.1087.a
 	}
 }
+
+## Secret Expose Events
+
+cki_scheme_critical_moments.2006 = {
+	cki_revolt_secret_exposed_effect = yes
+}
