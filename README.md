@@ -37,12 +37,20 @@ Improvements/Todo
     - Scheme Invalidated localization
     - Flavorize all localization
 - Code
-    - ai_probability ai_will_do ai_recipients for all schemes
+    - ai_probability ai_will_do & ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
-*   - Add trait xp for vanilla secret exposed
-    - Interactions interface priority
-    - Improve interaction trait-based stress further
-    - Update countermeasure for schemes
+        - Antagonize Council/Spouse
+        - Instigate Revolt
+        - Tarnish Reputation
+        - Theft
+        - Intimidate
+        - Convert
+        - Mentor
+    - Add trait xp for vanilla secrets exposed
+    - Works but can be improved
+        - Improve interactions interface priority
+        - Improve interaction trait-based stress further
+        - Update countermeasure for schemes
 ------
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
