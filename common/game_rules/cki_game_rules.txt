@@ -1,0 +1,11 @@
+﻿
+cki_ruler_antagonize_council = {
+	default = VIET_balanced_events
+
+	categories = { CKI }
+
+	cki_rule_antagonize_council_active = {flag = GG_can_change_rule}
+	cki_rule_antagonize_council_inactive = {flag = GG_can_change_rule}
+	#cki_rule_antagonize_council_earned = {flag = GG_can_change_rule}
+	
+}

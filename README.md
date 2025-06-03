@@ -26,18 +26,22 @@ Outstanding Bugs
 - Some missing localization
 
 Improvements/Todo
-- Mod Thumbnail
-- Victim notifications customization & localization
-- Scheme Invalidation actions
-- Icons & gfx for everything
-- ai_probability ai_will_do ai_recipients for all schemes
-- Interactions shown/is_valid & interface priority & trait-based stress hits
-- Success changes & odds prediction for all schemes
-- Rules to turn off/on/unlock schemes (vanilla+mod)
-- Secrets for all schemes & penalty when they're made public
-- Implement trait XP on vanilla schemes
-- Update agent packages localization variables
-- Add trait negative XP monthly drain
+- Graphic Design
+    - Mod Thumbnail
+    - Icons & gfx for everything
+- Localization
+    - Victim notifications localization
+    - Agent packages localization
+    - Flavorize all localization
+- Code
+    - Interactions shown/is_valid & interface priority & trait-based stress hits
+    - Implement trait XP on vanilla schemes
+    - ai_probability ai_will_do ai_recipients for all schemes
+    - Success changes & odds prediction for all schemes
+    - Rules to turn off/on/unlock schemes (vanilla+mod)
+    - Secrets for all schemes & penalty when they're made public
+    - Add trait negative XP monthly drain
+    - Scheme Invalidation actions
 
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
