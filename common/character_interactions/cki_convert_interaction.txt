@@ -28,6 +28,7 @@
 		}
 		NOT = { scope:actor = scope:recipient }
 		NOT = { scope:recipient = {is_courtier_of = scope:actor} }
+		has_game_rule = cki_rule_convert_active
 	}
 	
 

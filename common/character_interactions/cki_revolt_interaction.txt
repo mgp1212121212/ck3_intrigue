@@ -16,6 +16,7 @@
 			is_ruler = yes
 			is_independent_ruler = no
 		}
+		has_game_rule = cki_rule_revolt_active
 	}
 
 	is_valid_showing_failures_only = {

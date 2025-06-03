@@ -14,6 +14,7 @@ start_intimidate_interaction = {
 
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
+		has_game_rule = cki_rule_intimidate_active
 	}
 
 	is_valid_showing_failures_only = {

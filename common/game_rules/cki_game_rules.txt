@@ -1,9 +1,9 @@
 ﻿
 cki_ruler_antagonize_council = {
-	default = VIET_balanced_events
+	default = cki_rule_antagonize_council_active
 
 	categories = { CKI }
-
+	
 	cki_rule_antagonize_council_active = {flag = GG_can_change_rule}
 	cki_rule_antagonize_council_inactive = {flag = GG_can_change_rule}
 	#cki_rule_antagonize_council_earned = {flag = GG_can_change_rule}
@@ -11,7 +11,7 @@ cki_ruler_antagonize_council = {
 }
 
 cki_ruler_antagonize_spouse = {
-    default = VIET_balanced_events
+    default = cki_rule_antagonize_spouse_active
 
     categories = { CKI }
 
@@ -22,7 +22,7 @@ cki_ruler_antagonize_spouse = {
 }
 
 cki_ruler_convert = {
-    default = VIET_balanced_events
+    default = cki_rule_convert_active
 
     categories = { CKI }
 
@@ -34,7 +34,7 @@ cki_ruler_convert = {
 
 
 cki_ruler_intimidate = {
-    default = VIET_balanced_events
+    default = cki_rule_intimidate_active
 
     categories = { CKI }
 
@@ -46,7 +46,7 @@ cki_ruler_intimidate = {
 
 
 cki_ruler_mentor = {
-    default = VIET_balanced_events
+    default = cki_rule_mentor_active
 
     categories = { CKI }
 
@@ -57,7 +57,7 @@ cki_ruler_mentor = {
 }
 
 cki_ruler_revolt = {
-    default = VIET_balanced_events
+    default = cki_rule_revolt_active
 
     categories = { CKI }
 
@@ -68,7 +68,7 @@ cki_ruler_revolt = {
 }
 
 cki_ruler_tarnish_rep = {
-    default = VIET_balanced_events
+    default = cki_rule_tarnish_rep_active
 
     categories = { CKI }
 
@@ -79,7 +79,7 @@ cki_ruler_tarnish_rep = {
 }
 
 cki_ruler_theft = {
-    default = VIET_balanced_events
+    default = cki_rule_theft_active
 
     categories = { CKI }
 
