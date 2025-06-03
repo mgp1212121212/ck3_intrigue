@@ -12676,6 +12676,8 @@ murder_success_kill_effect = {
 			EXPOSER_REASON_POST = scope:murder_exposer
 			SHOW_UNKNOWN_ASSAILANT_TOOLTIP = no
 		}
+		scope:owner = {add_cki_trait_negative_xp_effect = yes}
+		scope:owner = {add_cki_trait_positive_xp_effect = yes}
 	}
 	# Otherwise, we process this anonymously.
 	else = {
@@ -12699,6 +12701,7 @@ murder_success_kill_effect = {
 				}
 			}
 		}
+		scope:owner = {add_cki_trait_positive_xp_effect = yes}
 		# Whereas for the target, we process the whole lot.
 		else_if = {
 			limit = { this = scope:target }
@@ -12759,6 +12762,8 @@ murder_failure_effect = {
 	# If the attempt was discovered, process the consequences of that.
 	if = {
 		limit = { exists = scope:scheme_discovered }
+		# Add cki_trait XP
+		add_cki_trait_negative_xp_effect = yes
 		# If we're a clan this affects unity
 		## Landed victims cost more unity.
 		if = {
@@ -14098,7 +14103,10 @@ abduct_success_effect = {
 		TARGET = scope:target
 		IMPRISONER = scope:owner
 	}
-	scope:owner = { add_cki_trait_positive_xp_effect }
+	scope:owner = { 
+		add_cki_trait_positive_xp_effect = yes
+		add_cki_trait_negative_xp_small_effect = yes
+	}
 }
 
 abduct_failure_effect = {
@@ -15184,6 +15192,7 @@ fabricate_hook_discovery_effect = {
 				}
 			}
 		}
+		scope:owner = {add_cki_trait_negative_xp_effect = yes}
 	}
 
 	hidden_effect  = {
@@ -15240,6 +15249,9 @@ fabricate_hook_success_effect = {
             end_scheme = yes
         }
     }
+	scope:owner = { 
+		add_cki_trait_positive_xp_effect = yes
+	}
 }
 
 fabricate_hook_decline_execution_effect = {
@@ -15887,6 +15899,10 @@ steal_back_artifact_success_effect = {
 			target = scope:owner
 			modifier = stole_artifact_from_me
 		}
+		# Give cki_trait XP 
+		scope:owner = { 
+			add_cki_trait_positive_xp_effect = yes
+		}
 		# Stolen House score and message effects
 		if = {
 			limit = {
@@ -15986,6 +16002,7 @@ steal_back_artifact_failure_effect = {
 			modifier = attempted_to_steal_artifact_from_me
 		}
 	}
+	scope:owner = {add_cki_trait_negative_xp_effect = yes}
 }
 
 ##################################################

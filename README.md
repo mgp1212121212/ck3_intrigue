@@ -36,7 +36,6 @@ Improvements/Todo
     - Flavorize all localization
 - Code
     - Interactions shown/is_valid & interface priority & trait-based stress hits
-    - Implement trait XP on vanilla schemes
     - ai_probability ai_will_do ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
     - Rules to turn off/on/unlock levelled trait.
