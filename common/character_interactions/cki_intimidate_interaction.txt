@@ -1,7 +1,7 @@
 ﻿
 ###### intimidate SCHEME
 start_intimidate_interaction = {
-	icon = "diplomacy_negative.dds"  #ICON
+	icon = icon_intimidate  #ICON
 	common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
