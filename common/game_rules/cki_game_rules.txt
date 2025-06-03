@@ -9,3 +9,82 @@ cki_ruler_antagonize_council = {
 	#cki_rule_antagonize_council_earned = {flag = GG_can_change_rule}
 	
 }
+
+cki_ruler_antagonize_spouse = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_antagonize_spouse_active = {flag = GG_can_change_rule}
+    cki_rule_antagonize_spouse_inactive = {flag = GG_can_change_rule}
+    #cki_rule_antagonize_spouse_earned = {flag = GG_can_change_rule}
+    
+}
+
+cki_ruler_convert = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_convert_active = {flag = GG_can_change_rule}
+    cki_rule_convert_inactive = {flag = GG_can_change_rule}
+    #cki_rule_convert_earned = {flag = GG_can_change_rule}
+    
+}
+
+
+cki_ruler_intimidate = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_intimidate_active = {flag = GG_can_change_rule}
+    cki_rule_intimidate_inactive = {flag = GG_can_change_rule}
+    #cki_rule_intimidate_earned = {flag = GG_can_change_rule}
+    
+}
+
+
+cki_ruler_mentor = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_mentor_active = {flag = GG_can_change_rule}
+    cki_rule_mentor_inactive = {flag = GG_can_change_rule}
+    #cki_rule_mentor_earned = {flag = GG_can_change_rule}
+    
+}
+
+cki_ruler_revolt = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_revolt_active = {flag = GG_can_change_rule}
+    cki_rule_revolt_inactive = {flag = GG_can_change_rule}
+    #cki_rule_revolt_earned = {flag = GG_can_change_rule}
+    
+}
+
+cki_ruler_tarnish_rep = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_tarnish_rep_active = {flag = GG_can_change_rule}
+    cki_rule_tarnish_rep_inactive = {flag = GG_can_change_rule}
+    #cki_rule_tarnish_rep_earned = {flag = GG_can_change_rule}
+    
+}
+
+cki_ruler_theft = {
+    default = VIET_balanced_events
+
+    categories = { CKI }
+
+    cki_rule_theft_active = {flag = GG_can_change_rule}
+    cki_rule_theft_inactive = {flag = GG_can_change_rule}
+    #cki_rule_theft_earned = {flag = GG_can_change_rule}
+    
+}
