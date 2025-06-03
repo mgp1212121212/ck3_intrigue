@@ -119,12 +119,12 @@
 						SCHEME_TYPE = revolt_scheme
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
-						# Speed.
-						AGENT_1 = agent_planner
-						AGENT_2 = agent_herald
-						AGENT_3 = agent_socialite
 						# Success.
 						AGENT_1 = agent_shill
+						# Speed.
+						AGENT_2 = agent_socialite
+						AGENT_3 = agent_socialite
+						AGENT_4 = agent_planner
 						# Secrecy.
 						AGENT_5 = agent_lookout
 					}

@@ -119,12 +119,12 @@
 						SCHEME_TYPE = tarnish_rep_scheme
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
-						# Speed.
-						AGENT_1 = agent_planner
-						AGENT_2 = agent_herald
-						AGENT_3 = agent_socialite
 						# Success.
-						AGENT_1 = agent_shill
+						AGENT_1 = agent_poet
+						AGENT_2 = agent_shill
+						AGENT_3 = agent_shill
+						# Speed.
+						AGENT_4 = agent_planner
 						# Secrecy.
 						AGENT_5 = agent_lookout
 					}
@@ -136,14 +136,14 @@
 						SCHEME_TYPE = tarnish_rep_scheme
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
-						# Secrecy.
-						AGENT_1 = agent_alibi
-						AGENT_2 = agent_lookout
-						AGENT_3 = agent_lookout
 						# Success.
-						AGENT_1 = agent_shill
+						AGENT_1 = agent_poet
 						# Speed.
-						AGENT_5 = agent_planner
+						AGENT_2 = agent_planner
+						AGENT_3 = agent_shill
+						# Secrecy.
+						AGENT_4 = agent_lookout
+						AGENT_5 = agent_lookout
 					}
 				}
 				# Balanced.
