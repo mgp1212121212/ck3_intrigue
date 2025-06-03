@@ -130,7 +130,7 @@ cki_scheme_critical_moments.0002 = {
 		# Flag that we're in the event, so no doubles pls.
 		add_character_flag = currently_in_scheme_preparations
 		# Sort some aesthetic stuff for the player.
-		scheme_critical_moments_0001_configure_portraits_effect = yes
+		#scheme_critical_moments_0001_configure_portraits_effect = yes
 	}
 
 	# Standard completion: no buffs.
@@ -2550,10 +2550,4 @@ cki_scheme_critical_moments.1087 = {
 	option = {
 		name = cki_scheme_critical_moments.1087.a
 	}
-}
-
-## Secret Expose Events
-
-cki_scheme_critical_moments.2006 = {
-	cki_revolt_secret_exposed_effect = yes
 }

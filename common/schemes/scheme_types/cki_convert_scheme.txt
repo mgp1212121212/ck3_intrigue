@@ -2,7 +2,7 @@
 #############################
 #TARNISH REPUTATION SCHEME
 #############################
-convert_scheme = {
+start_convert_interaction = {
 	# Basic Setup
 	skill = learning
 	desc = convert_scheme_general_desc

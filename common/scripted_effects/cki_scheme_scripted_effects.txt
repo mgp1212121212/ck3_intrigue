@@ -226,7 +226,7 @@ revolt_success_effect = {
 	}
 	scope:owner = {			
 				add_cki_trait_positive_xp_effect = yes
-				cki_add_revolt_secret = yes
+				cki_add_revolt_secret_effect = yes
 	}
 }
 
@@ -262,7 +262,7 @@ revolt_partial_failure_effect = {
 		}
 	}
 	scope:owner = {
-		cki_add_revolt_secret = yes
+		cki_add_revolt_secret_effect = yes
 	}	
 }
 
@@ -329,10 +329,14 @@ intimidate_success_effect = {
 				opinion = {target = scope:owner value < 0}
 			}
 			random = {
-				chance = {opinion_value = {target = scope:owner}}
+				chance = 20
+				scope:owner = {
+					set_relation_rival = { target = scope:target }
+				}
 			}
 		}
 	}
+	
 	scope:owner = {			
 				add_cki_trait_positive_xp_effect = yes
 				add_dread = 5
@@ -368,7 +372,10 @@ intimidate_failure_effect = {
 						opinion = {target = scope:owner value < 0}
 					}
 					random = {
-						chance = {opinion_value = {target = scope:owner}}
+						chance = 20
+						scope:owner = {
+							set_relation_rival = { target = scope:target }
+						}
 					}
 				}		
 			}
@@ -807,7 +814,7 @@ cki_trait_negative_xp_roll_effect = {
 	}
 }
 ## Add Secrets Effects
-cki_add_revolt_secret = {
+cki_add_revolt_secret_effect = {
 	add_secret = { 
 		type = cki_revolt_secret
 		target = scope:target 
@@ -816,16 +823,16 @@ cki_add_revolt_secret = {
 
 ## Secret Exposed Effects
 cki_revolt_secret_exposed_effect = {
-	scope:target = {
+	scope:secret_target = {
 		# ADD OPINION MODIFIER
 		add_opinion = {
-			target = scope:owner
+			target = scope:secret_owner
 			modifier = revolt_scheme_opinion
 		}
 	}
-	scope:target.liege = {
+	scope:secret_target.liege = {
 		add_opinion = {
-			target = scope:owner
+			target = scope:secret_owner
 			modifier = revolt_scheme_opinion
 		}
 	}

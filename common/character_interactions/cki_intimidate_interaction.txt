@@ -23,9 +23,15 @@ start_intimidate_interaction = {
 				type = intimidate_scheme
 				target_character = scope:recipient
 			}
-			has_dread_level_towards = {
-				target = scope:recipient
-				level >= 1
+			OR = {
+				prowess >= 10
+				dread >= 20
+			}
+			NOR = {
+				has_trait = incapable
+				has_trait = weak
+				has_trait = wounded_2
+				has_trait = wounded_3
 			}
 		}
 		scope:recipient = { 

@@ -358,6 +358,10 @@
  antagonize_council_modifier:0 "Conflicts with Council"
  antagonize_spouse_modifier:0 "Spouse heard rumours"
 
+## Secrets
+ cki_revolt_secret:1 "Instigated a Revolt"
+ cki_revolt_secret_desc:1 "Manipulated [TARGET_CHARACTER.GetShortUIName] into a revolt"
+
 ## Rules
  rule_cki_rule_antagonize_council:0 "Antagonize Council Scheme"
  setting_cki_rule_antagonize_council_active:0 "Active"
