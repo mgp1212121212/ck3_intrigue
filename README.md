@@ -38,18 +38,11 @@ Improvements/Todo
     - Flavorize all localization
 - Code
     - ai_probability ai_will_do & ai_recipients for all schemes
-    - Success changes & odds prediction for all schemes
-        - Antagonize Council/Spouse (odds)
-        - Instigate Revolt (both)
-        - Tarnish Reputation (both)
-        - Theft (both)
-        - Intimidate (both)
-        - Convert (odds)
-        - Mentor (both)
     - Add trait xp for vanilla secrets exposed
     - Works but can be improved
         - Improve interactions interface priority
         - Improve interaction trait-based stress further
+        - Success chances & odds prediction
         - Update countermeasure for schemes
 ------
 New Features Plans/Ideas 
