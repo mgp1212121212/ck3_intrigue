@@ -19,14 +19,13 @@ Current Features
     - Gain positive-track XP and bonuses as schemes are successful
     - Gain negative-track XP and maluses as schemes and secrets are exposed
 - Rules to activate/deactivates schemes & levelled-trait
-
+------
 Requirements
 - Travel the Distance
-
-
+------
 Outstanding Bugs
 - Some missing localization
-
+------
 Improvements/Todo
 - Graphic Design
     - Mod Thumbnail
@@ -41,11 +40,11 @@ Improvements/Todo
     - ai_probability ai_will_do ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
 *   - Secrets for all schemes
-    - Trait Negative XP when secrets are made public
+*   - Trait Negative XP when secrets are made public
     - Interactions interface priority
     - Improve interaction trait-based stress further
-    - Add trait xp for vanilla secret exposed
-
+*   - Add trait xp for vanilla secret exposed
+------
 New Features Plans/Ideas 
 - Economic Schemes/Interactions
 	- Trade Agreement (income)
@@ -54,6 +53,6 @@ New Features Plans/Ideas
 - Investigate true parents
 - Start fires in capital (development hit)
 - ... 
-
+------
 Testing
 - All
