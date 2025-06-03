@@ -1,5 +1,5 @@
 ﻿start_antagonize_spouse_interaction = {
-	icon = icon_gold  #ICON
+	icon = icon_antagonize_spouse  #ICON
 	common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
