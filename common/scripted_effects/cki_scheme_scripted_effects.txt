@@ -837,3 +837,39 @@ cki_revolt_secret_exposed_effect = {
 		}
 	}
 }
+cki_antagonize_council_secret_exposed_effect = {
+	scope:secret_target = {
+		# ADD OPINION MODIFIER
+		add_opinion = {
+			target = scope:secret_owner
+			modifier = antagonize_council_opinion
+		}
+	}
+	scope:secret_owner = {
+		add_cki_trait_negative_xp_small_effect = yes
+	}
+}
+cki_antagonize_spouse_secret_exposed_effect = {
+	scope:secret_target = {
+		# ADD OPINION MODIFIER
+		add_opinion = {
+			target = scope:secret_owner
+			modifier = antagonize_spouse_opinion
+		}
+	}
+	scope:secret_owner = {
+		add_cki_trait_negative_xp_small_effect = yes
+	}
+}
+cki_tarnish_rep_secret_exposed_effect = {
+	scope:secret_target = {
+		# ADD OPINION MODIFIER
+		add_opinion = {
+			target = scope:secret_owner
+			modifier = tarnish_rep_opinion
+		}
+	}
+	scope:secret_owner = {
+		add_cki_trait_negative_xp_small_effect = yes
+	}
+}
