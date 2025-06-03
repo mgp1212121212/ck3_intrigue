@@ -108,8 +108,9 @@ tarnish_rep_scheme = {
 
 	# Base Chances
 	base_success_chance = {
-		base = 0
+		base = -20
 		scheme_type_skill_success_chance_modifier = { SKILL = DIPLOMACY }
+		scheme_type_skill_success_chance_modifier = { SKILL = INTRIGUE }
 		#Distance modifier
 		ttd_major_distance_modifier = yes
 		# Countermeasures.

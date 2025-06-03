@@ -363,11 +363,11 @@
  cki_revolt_secret:1 "Instigated a Revolt"
  cki_revolt_secret_desc:1 "Manipulated [TARGET_CHARACTER.GetShortUIName] into a revolt"
  cki_antagonize_council_secret:1 "Antagonize Council"
- cki_antagonize_council_secret_desc:1 "Antagonize Council of TARGET_CHARACTER.GetShortUIName]"
+ cki_antagonize_council_secret_desc:1 "Antagonize Council of [TARGET_CHARACTER.GetShortUIName]"
  cki_antagonize_spouse_secret:1 "Antagonize Spouse"
- cki_antagonize_spouse_secret_desc:1 "Antagonize Spouse of TARGET_CHARACTER.GetShortUIName]"
+ cki_antagonize_spouse_secret_desc:1 "Antagonize Spouse of [TARGET_CHARACTER.GetShortUIName]"
  cki_tarnish_rep_secret:1 "Tarnish Reputation"
- cki_tarnish_rep_secret_desc:1 "Tarnish Reputation of TARGET_CHARACTER.GetShortUIName]"
+ cki_tarnish_rep_secret_desc:1 "Tarnish Reputation of [TARGET_CHARACTER.GetShortUIName]"
 # Secret Events
 # Revolt
  cki_scheme_critical_moments.2001:0 "todo"
@@ -389,6 +389,16 @@
  cki_scheme_critical_moments.2004.t:0 "todo"
  cki_scheme_critical_moments.2004.desc:0 "todo"
  cki_scheme_critical_moments.2004.a:0 "todo"
+
+## Scheme Window Localization
+ SCHEME_SUCCESS_LEARNING:1 "Target's learning': $VALUE|+0=$"
+ SCHEME_FERVOR_TARGET:1 "Target's Faith Fervor: $VALUE|+0=$"
+ SCHEME_FERVOR:1 "Your Faith's Fervor: $VALUE|+0=$"
+ scheme_education_learning_1:1 "[GetTrait('education_learning_1').GetName( owner.Self )]: $VALUE|+0=$"
+ scheme_education_learning_2:1 "[GetTrait('education_learning_2').GetName( owner.Self )]: $VALUE|+0=$"
+ scheme_education_learning_3:1 "[GetTrait('education_learning_3').GetName( owner.Self )]: $VALUE|+0=$"
+ scheme_education_learning_4:1 "[GetTrait('education_learning_4').GetName( owner.Self )]: $VALUE|+0=$"
+ scheme_education_learning_5:1 "[GetTrait('education_learning_5').GetName( owner.Self )]: $VALUE|+0=$"
 
 
 ## Rules
@@ -514,3 +524,4 @@
  mentor_learning_scheme_desc_general:0 "todo"
  start_convert_interaction_desc_general:0 "todo"
  mentor_martial_scheme_desc_general:0 "todo"
+

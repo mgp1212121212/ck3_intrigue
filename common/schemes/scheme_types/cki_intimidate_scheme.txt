@@ -3,7 +3,7 @@
 #############################
 intimidate_scheme = {
 	# Basic Setup
-	skill = prowess
+	skill = intrigue
 	desc = intimidate_scheme_general_desc
 	success_desc = "INTIMIDATE_SUCCESS_DESC"
 	icon = prowess
@@ -125,6 +125,11 @@ intimidate_scheme = {
 			add = -10
 			scope:owner = { has_character_modifier = hostile_schemes_distracted_modifier }
 			desc = hostile_schemes_distracted_modifier
+		}
+		modifier = {
+			desc = scheme_intimidation_dread
+			add = dread
+			multiply = 0.5
 		}
 	}
 	base_secrecy = {

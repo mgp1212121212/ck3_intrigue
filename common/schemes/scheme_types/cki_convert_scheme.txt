@@ -15,7 +15,7 @@ convert_scheme = {
 	is_secret = no
 	is_basic = yes
 	uses_resistance = yes
-	maximum_breaches = 5
+	maximum_breaches = 365
 	cooldown = { years = 30 }
 	
 	# Parameters
@@ -93,15 +93,12 @@ convert_scheme = {
 	# Base Chances
 	base_success_chance = {
 		base = 0
-		
-		modifier = {
-			add = {
-				value = scope:owner.learning
-				multiply = 3
-			}
-			desc = SCHEME_LEARNING_MODIFIER
-			scope:owner.learning > 0
-		}
+		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
+		#Distance modifier
+		ttd_major_distance_modifier = yes
+		# Countermeasures.
+		apply_calculated_scheme_success_chance_adjustments_modifier = yes
+		hostile_scheme_base_chance_modifier = yes
 		
 		modifier = {
 			add = {
@@ -115,184 +112,82 @@ convert_scheme = {
 			}
 		}
 		
-		modifier = {
-			add = scope:owner.cp:councillor_court_chaplain.learning
-			desc = SCHEME_CHAPLAIN_HELP_LEARNING_MODIFIER
-			exists = scope:owner.cp:councillor_court_chaplain
-			scope:owner.cp:councillor_court_chaplain.learning > 0
-		}
-		
-		modifier = {
-			add = {
-				value = 5
-				multiply = {
-					value = scope:owner.num_of_known_languages
-					subtract = 1
-				}
-			}
-			desc = SCHEME_KNOWN_LANGUAGES_MODIFIER
-			scope:owner.num_of_known_languages > 1
-		}
-		
-		modifier = {
-			add = {
-				value = 30
-				subtract = scope:owner.age
-				multiply = 2
-			}
-			desc = SCHEME_YOUTH_MODIFIER
-			scope:owner.age < 30
-		}
-		
-		modifier = {
-			add = 25
-			desc = SCHEME_HERITAGE_MODIFIER
-			scope:target.culture = {
-				has_same_culture_heritage = scope:owner.culture
-			}
-		}
-		
-		modifier = {
-			add = 50
-			desc = SCHEME_LOYAL_SOLDIERS_MODIFIER
-			scope:owner = {
-				culture = {
-					has_cultural_parameter = extra_learn_language_success_chance_vs_liege
-				}
-				any_liege_or_above = {
-					this = scope:target
-				}
-			}
-		}
-		
-		modifier = {
-			add = 30
-			desc = SCHEME_CULTURE_BLENDING_MODIFIER
-			scope:owner = {
-				culture = {
-					has_cultural_parameter = learns_more_languages
-				}
-			}
-		}
-
 		#Intellect good
 		modifier = {
 			desc = "scheme_intellect_good_1"
 			scope:owner = { has_trait = intellect_good_1 }
-			add = 10
+			add = 5
 		}
 		
 		modifier = {
 			desc = "scheme_intellect_good_2"
 			scope:owner = { has_trait = intellect_good_2 }
-			add = 20
+			add = 10
 		}
 		
 		modifier = {
 			desc = "scheme_intellect_good_3"
 			scope:owner = { has_trait = intellect_good_3 }
-			add = 30
+			add = 15
 		}
 		
 		modifier = {
 			scope:target = { has_trait = stubborn }
 			desc = "SCHEME_TRAIT_STUBBORN"
-			add = 10
+			add = -30
 		}
 		
 		modifier = {
-			scope:target = { has_trait = ambitious }
-			desc = "SCHEME_TRAIT_AMBITIOUS"
+			scope:target = { has_trait = zealous }
+			desc = "SCHEME_TRAIT_ZEALOUS"
+			add = -100
+		}
+
+		modifier = {
+			desc = "SCHEME_SUCCESS_LEARNING"
+			add = scope:target.learning
+			multiply = -1
+		}
+		modifier = {
+			desc = "SCHEME_FERVOR"
+			add = {
+				add = scope:owner.faith.fervor
+				multiply = 0.5
+			}
+		}
+		modifier = {
+			desc = "SCHEME_FERVOR_TARGET"
+			add = {
+				add = scope:target.faith.fervor
+				multiply = -0.5
+			}
+		}
+		modifier = {
+			desc = "scheme_education_learning_1"
+			scope:owner = { has_trait = education_learning_1 }
 			add = 5
 		}
-		
-		#Paranoid value is added automatically because of trait	parameter enemy_personal_scheme_success_chance_add 
-		
-		# Lifestyles
-
-		# Dynasty Kin Personal Scheme Success Chance on Dynasty Perk
 		modifier = {
-			add = kin_legacy_4_success_chance
-			desc = KIN_LEGACY_DESC
-			exists = scope:owner.dynasty
-			scope:owner.dynasty = {
-				has_dynasty_perk = kin_legacy_4
-			}
-			scope:target.dynasty = scope:owner.dynasty
+			desc = "scheme_education_learning_2"
+			scope:owner = { has_trait = education_learning_2 }
+			add = 10
 		}
-
-		# House Personal Scheme Success Chance on Cultural Parameter
 		modifier = {
-			add = cultural_house_personal_scheme_success_chance
-			desc = KIN_PARAMETER_DESC
-			exists = scope:owner.house
-			exists = scope:target.house
-			scope:owner.culture = {
-				has_cultural_parameter = cultural_house_personal_scheme_success_chance
-			}
-			scope:target.house = scope:owner.house
+			desc = "scheme_education_learning_3"
+			scope:owner = { has_trait = education_learning_3 }
+			add = 15
 		}
-
-		# Pedagogy Perk
 		modifier = {
+			desc = "scheme_education_learning_4"
+			scope:owner = { has_trait = education_learning_4 }
+			add = 20
+		}
+		modifier = {
+			desc = "scheme_education_learning_5"
+			scope:owner = { has_trait = education_learning_5 }
 			add = 25
-			desc = LEARN_LANGUAGE_PEDAGOGY_PERK_DESC
-			scope:owner = {
-				has_perk = pedagogy_perk
-			}
 		}
 
-		# Thicker Than Water Perk
-		modifier = {
-			add = thicker_than_water_bonus
-			desc = BEFRIEND_THICKER_THAN_WATER_PERK_DESC
-			scope:owner = {
-				has_perk = thicker_than_water_perk
-			}
-			scope:target = {
-				is_close_or_extended_family_of = scope:owner
-			}
-		}
-
-		# Modifiers
-		# house_head_request_interaction
-		modifier = {
-			add = personal_scheme_variable_list_value
-			scope:owner = {
-				has_variable_list = supporting_personal_schemes
-			}
-			desc = HOUSE_HEAD_SCHEME_SUPPORT_DESC
-		}
-		modifier = {
-			add = -10
-			scope:owner = { has_character_modifier = personal_schemes_distracted_modifier }
-			desc = personal_schemes_distracted_modifier
-		}
-		# Estate
-		modifier = {
-			scope:owner.domicile ?= {
-				has_domicile_parameter = increased_success_personal_schemes_1
-			}
-			add = estate_increased_personal_scheme_success_1_value
-		}
-		modifier = {
-			scope:owner.domicile ?= {
-				has_domicile_parameter = increased_success_personal_schemes_2
-			}
-			add = estate_increased_personal_scheme_success_2_value
-		}
-		modifier = {
-			scope:owner.domicile ?= {
-				has_domicile_parameter = increased_success_personal_schemes_3
-			}
-			add = estate_increased_personal_scheme_success_3_value
-		}
-
-		modifier = {
-			scope:owner.domicile ?={
-				has_domicile_parameter = 
-			}
-		}
 	}
 
 	# On Actions

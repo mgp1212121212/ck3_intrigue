@@ -39,13 +39,13 @@ Improvements/Todo
 - Code
     - ai_probability ai_will_do & ai_recipients for all schemes
     - Success changes & odds prediction for all schemes
-        - Antagonize Council/Spouse
-        - Instigate Revolt
-        - Tarnish Reputation
-        - Theft
-        - Intimidate
-        - Convert
-        - Mentor
+        - Antagonize Council/Spouse (odds)
+        - Instigate Revolt (both)
+        - Tarnish Reputation (both)
+        - Theft (both)
+        - Intimidate (both)
+        - Convert (odds)
+        - Mentor (both)
     - Add trait xp for vanilla secrets exposed
     - Works but can be improved
         - Improve interactions interface priority
