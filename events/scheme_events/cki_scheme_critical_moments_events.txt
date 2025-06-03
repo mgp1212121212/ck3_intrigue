@@ -2614,7 +2614,3 @@ cki_scheme_critical_moments.2004 = {
 		cki_tarnish_rep_secret_exposed_effect = yes
 	}
 }
-
-cki_antagonize_council_secret
-cki_antagonize_spouse_secret
-cki_tarnish_rep_secret
