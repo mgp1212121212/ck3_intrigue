@@ -29,8 +29,16 @@ Outstanding Bugs
 Improvements/Todo
 - Graphic Design
     - Mod Thumbnail
-    - Icons & gfx for everything
-    - Trait + Trait Tracks Icons
+    - Icons Schemes
+    - Icons Trait
+        - Sub-Trait Icons (positive/negative)
+            - Schmeing Adept (low/low)
+            - Known Thief (low/high)
+            - Ruthless Schemer (high/high)
+            - King/Queen of Shadows (high/low)
+        - Track Icons
+            - Prolific Schemer (positive)
+            - Known Schemer (negative)
 - Localization
     - Victim notifications localization
     - Agent packages localization
