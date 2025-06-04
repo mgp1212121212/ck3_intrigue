@@ -13,6 +13,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
         - Instigate Revolt
         - Tarnish Reputation
         - Theft
+        - Warfare Misinformation (-enemy_army_speed)
     - Personal
         - Mentor Skill
 - Levelled-Trait with positive & negative tracks.
@@ -63,7 +64,6 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Start fires in capital (development hit)
     - Warfare Schemes
         - Deploy Scouts (+army_speed)
-        - Feed Misinformation (-enemy_army_speed)
         - Attack Enemy Supply Routes (-enemy_army_supply)
         - Guerrila Warfare (+enemy_hostile_territory_attrition)
 ------

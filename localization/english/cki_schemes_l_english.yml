@@ -391,6 +391,9 @@
  mentor_learning_modifier:0 "Mentored in Learning"
  antagonize_council_modifier:0 "Conflicts with Council"
  antagonize_spouse_modifier:0 "Spouse heard rumours"
+ antagonize_spouse_modifier:0 "Spouse heard rumours"
+ enemy_army_speed_scheme_modifier:0 "Army Misinformed"
+ army_speed_scheme_modifier:0 "Army Scouts"
 
 ## Secrets
 # Secret Types

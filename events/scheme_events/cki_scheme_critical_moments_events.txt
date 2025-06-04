@@ -2577,6 +2577,286 @@ cki_scheme_critical_moments.1087 = {
 	}
 }
 
+#######################################################
+### Results event for the enemy_army_speed Scheme
+#######################################################
+# Determine outcome
+# Determine outcome
+cki_scheme_critical_moments.1090 = {
+	hidden = yes
+
+	immediate = {
+		scope:scheme = {
+			random = {
+				chance = scope:scheme.scheme_secrecy
+				save_scope_value_as = {
+					name = scheme_secret
+					value = yes
+				}
+			}
+			random = {
+				chance = scope:scheme.scheme_success_chance
+
+				save_scope_value_as = {
+					name = scheme_successful
+					value = yes
+				}
+			}
+			scope:owner = {			
+				if = {
+					limit = {
+						exists = scope:scheme_successful
+					}
+					if = {
+						limit = {
+							exists = scope:scheme_secret
+						}
+							trigger_event = {
+								id = cki_scheme_critical_moments.1091
+							}
+						}
+						else = {
+							trigger_event = {
+								id = cki_scheme_critical_moments.1092
+							}
+						}
+					}
+				else = {
+					if = {
+						limit = {
+							exists = scope:scheme_secret
+						}
+							trigger_event = {
+								id = cki_scheme_critical_moments.1093
+							}
+						}
+						else = {
+							trigger_event = {
+								id = cki_scheme_critical_moments.1094
+							}
+						}	
+				}
+			}
+		}
+	}
+}
+# Total Success
+cki_scheme_critical_moments.1091 = {
+	type = character_event
+	window = scheme_successful_event
+	title = cki_scheme_critical_moments.1091.t
+	desc = cki_scheme_critical_moments.1091.desc
+	theme = generic_intrigue_scheme
+	left_portrait = {
+		character = scope:owner
+		animation = happiness
+	}
+	lower_right_portrait = scope:target
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+	
+	immediate = {
+		root = { 
+			send_interface_message = {
+				type = event_intrigue_good
+				title = enemy_army_speed_scheme_success_message
+				left_icon = root
+				right_icon = scope:target
+			}
+		}
+	}
+
+	option = {
+		name = cki_scheme_critical_moments.1091.a
+		antagonize_spouse_success_effect = yes
+
+		scope:scheme = {
+			end_scheme = yes
+		}
+
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1095 
+		}
+	}
+}
+
+# Partial Success
+cki_scheme_critical_moments.1092 = {
+	type = character_event
+	window = scheme_successful_event
+	title = cki_scheme_critical_moments.1092.t
+	desc = cki_scheme_critical_moments.1092.desc
+	theme = generic_intrigue_scheme
+	left_portrait = {
+		character = scope:owner
+		animation = happiness
+	}
+	lower_right_portrait = scope:target
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+	
+	immediate = {
+		root = { 
+			send_interface_message = {
+				type = event_intrigue_good
+				title = enemy_army_speed_scheme_success_message
+				left_icon = root
+				right_icon = scope:target
+			}
+		}
+	}
+
+	option = {
+		name = cki_scheme_critical_moments.1092.a
+		antagonize_spouse_partial_success_effect = yes
+
+		scope:scheme = {
+			end_scheme = yes
+		}
+
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1096 
+		}
+	}
+}
+
+# Partial Failure
+cki_scheme_critical_moments.1093 = {
+	type = character_event
+	window = scheme_failed_event
+	title = cki_scheme_critical_moments.1093.t
+	desc = cki_scheme_critical_moments.1093
+	theme = generic_intrigue_scheme
+
+	left_portrait = {
+		character = scope:owner
+		animation = dismissal
+	}
+	lower_right_portrait = scope:target
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = had_cki_scheme_critical_moments_1083
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_cki_scheme_critical_moments_1083
+			years = 5
+		}
+	}
+
+	option = {
+		name = cki_scheme_critical_moments.1093.a
+
+		antagonize_spouse_partial_failure_effect = yes
+		scope:scheme = {
+			end_scheme = yes
+		 }
+	}
+}
+
+# Total Failure
+cki_scheme_critical_moments.1094 = {
+	type = character_event
+	window = scheme_failed_event
+	title = cki_scheme_critical_moments.1094.t
+	desc = cki_scheme_critical_moments.1094.desc
+	theme = generic_intrigue_scheme
+
+	left_portrait = {
+		character = scope:owner
+		animation = dismissal
+	}
+	lower_right_portrait = scope:target
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = had_cki_scheme_critical_moments_1084
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_cki_scheme_critical_moments_1084
+			years = 5
+		}
+	}
+
+	option = {
+		name = cki_scheme_critical_moments.1094.a
+
+		antagonize_spouse_failure_effect = yes
+		scope:scheme = {
+			end_scheme = yes
+		 }
+		scope:target = {
+			trigger_event = cki_scheme_critical_moments.1097 
+		}
+	}
+}
+# Successful Notification to scheme target
+cki_scheme_critical_moments.1095 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1095.t
+	desc = cki_scheme_critical_moments.1095.desc
+	theme = generic_intrigue_scheme
+
+	option = {
+		name = cki_scheme_critical_moments.1095.a
+	}
+}
+
+# Successful Not Secret Notification to scheme target
+cki_scheme_critical_moments.1096 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1096.t
+	desc = cki_scheme_critical_moments.1096.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1096.a
+	}
+}
+
+# Failed Not Secret Notification to scheme target
+cki_scheme_critical_moments.1097 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1097.t
+	desc = cki_scheme_critical_moments.1097.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1097.a
+	}
+}
+
+
+
+
+
 ## Secret Exposed Event
 # Revolt Secret
 cki_scheme_critical_moments.2001 = {

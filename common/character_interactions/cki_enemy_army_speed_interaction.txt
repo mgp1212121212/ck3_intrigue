@@ -1,0 +1,101 @@
+﻿enemy_army_speed_interaction = {
+	icon = icon_convert
+	category = interaction_category_hostile
+	common_interaction = yes
+
+	send_name = START_SCHEME
+
+	interface_priority = 10
+	scheme = enemy_army_speed
+	ignores_pending_interaction_block = yes
+
+	ai_targets = {
+		ai_recipients = vassals
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		max = 5
+	}
+	ai_frequency = 48
+
+	is_shown = {
+		scope:actor = {
+			NOT = {
+				faith = scope:recipient.faith
+				}
+		}
+		NOT = { scope:actor = scope:recipient }
+		NOT = { scope:recipient = {is_courtier_of = scope:actor} }
+		has_game_rule = cki_rule_convert_active
+	}
+	
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = convert
+				target_character = scope:recipient
+			}
+		}
+		scope:recipient = {is_ruler=yes}
+		#limit range for landless adventurers
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_landless_adventurer = yes
+				}
+			}
+			#Has to be used instead of diplo range checks in laamp to landed interactions
+			ep3_laamp_diplo_range_trigger = {
+				TARGET = scope:recipient
+				LAAMP = scope:actor
+			}
+		}
+	}
+
+	desc = scheme_interaction_tt_convert_approved
+
+	on_accept = {
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = convert_interaction_notification
+
+				left_icon = scope:actor					
+				right_icon = scope:recipient
+
+				begin_scheme_basic_effect = {
+					SCHEME_TYPE = enemy_army_speed
+					TARGET_TYPE = target_character
+					TARGET_SCOPE = scope:recipient
+				}
+			}
+			stress_impact = {
+				zealous = medium_stress_impact_loss
+				honest = medium_stress_impact_gain
+				cynical = medium_stress_impact_gain
+			}
+		}
+	}
+	
+	ai_potential = {
+		primary_title.tier >= tier_county
+		NOR = {
+			has_trait = lazy
+			has_trait = paranoid
+			scheme_generic_ai_blocker_trigger = yes
+			primary_title = {
+				is_mercenary_company = yes
+			}
+		}
+	}
+	
+	auto_accept = yes
+	
+	ai_will_do = {
+		base = 0
+
+	}
+}

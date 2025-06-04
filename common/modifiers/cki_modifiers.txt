@@ -40,3 +40,18 @@ antagonize_spouse_modifier = {
 	icon = diplomacy_negative
 	stackable = yes
 }
+
+
+enemy_army_speed_scheme_modifier = {
+	movement_speed = -0.1
+	naval_movement_speed_mult = -0.1
+	icon = martial_negative
+	stackable = no
+}
+
+army_speed_scheme_modifier = {
+	movement_speed = 0.1
+	naval_movement_speed_mult = 0.1
+	icon = martial_positive
+	stackable = no
+}
