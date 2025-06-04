@@ -3,18 +3,40 @@
 	general_opinion = -5
 	icon = diplomacy_negative
 }
-mentor_diplomacy_modifier = {diplomacy = 1 icon=diplomacy_positive}
-mentor_martial_modifier = {martial = 1 icon=martial_positive}
-mentor_stewardship_modifier = {stewardship = 1 icon=stewardship_positive}
-mentor_intrigue_modifier = {intrigue = 1 icon=intrigue_positive}
-mentor_learning_modifier = {learning = 1 icon=learning_positive}
+mentor_diplomacy_modifier = {
+	diplomacy = 1 
+	icon=diplomacy_positive
+	stackable = yes
+	}
+mentor_martial_modifier = {
+	martial = 1 
+	icon=martial_positive
+	stackable = yes
+	}
+mentor_stewardship_modifier = {
+	stewardship = 1 
+	icon=stewardship_positive
+	stackable = yes
+	}
+mentor_intrigue_modifier = {
+	intrigue = 1 
+	icon=intrigue_positive
+	stackable = yes
+	}
+mentor_learning_modifier = {
+	learning = 1 
+	icon=learning_positive
+	stackable = yes
+	}
 
 antagonize_council_modifier = {
 	councillor_opinion = -10
 	icon = diplomacy_negative
+	stackable = yes
 }
 
 antagonize_spouse_modifier = {
 	spouse_opinion = -30
 	icon = diplomacy_negative
+	stackable = yes
 }
