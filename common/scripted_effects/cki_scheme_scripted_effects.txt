@@ -463,7 +463,7 @@ mentor_diplomacy_success_effect = {
 	}
 	scope:owner = {			
 				#add_cki_trait_positive_xp_effect = yes
-				add_piety = 50
+				add_learning_lifestyle_xp = 100
 	}
 	
 }
@@ -482,7 +482,7 @@ mentor_martial_success_effect = {
 	}
 	scope:owner = {			
 				#add_cki_trait_positive_xp_effect = yes
-				add_piety = 50
+				add_learning_lifestyle_xp = 100
 	}
 	
 }
@@ -501,7 +501,7 @@ mentor_stewardship_success_effect = {
 	}
 	scope:owner = {			
 				#add_cki_trait_positive_xp_effect = yes
-				add_piety = 50
+				add_learning_lifestyle_xp = 100
 	}
 	
 }
@@ -520,7 +520,7 @@ mentor_intrigue_success_effect = {
 	}
 	scope:owner = {			
 				#add_cki_trait_positive_xp_effect = yes
-				add_piety = 50
+				add_learning_lifestyle_xp = 100
 	}
 	
 }
@@ -539,7 +539,7 @@ mentor_learning_success_effect = {
 	}
 	scope:owner = {			
 				#add_cki_trait_positive_xp_effect = yes
-				add_piety = 50
+				add_learning_lifestyle_xp = 100
 	}
 	
 }
