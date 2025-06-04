@@ -15,14 +15,14 @@ convert_scheme = {
 	is_secret = no
 	is_basic = yes
 	uses_resistance = yes
-	maximum_breaches = 365
+	maximum_breaches = 5
 	cooldown = { years = 30 }
 	
 	# Parameters
 	speed_per_skill_point = t1_spsp_owner_value
 	spymaster_speed_per_skill_point = 0
 	uses_resistance = no
-	base_progress_goal = 3
+	base_progress_goal = 365
 	base_maximum_success = 95
 	minimum_success = 5
 
