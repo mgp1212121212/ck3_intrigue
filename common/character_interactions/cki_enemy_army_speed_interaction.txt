@@ -22,9 +22,7 @@
 
 	is_shown = {
 		scope:actor = {
-			NOT = {
-				faith = scope:recipient.faith
-				}
+			is_ruler = yes
 		}
 		NOT = { scope:actor = scope:recipient }
 		NOT = { scope:recipient = {is_courtier_of = scope:actor} }
