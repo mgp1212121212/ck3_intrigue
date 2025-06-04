@@ -17,7 +17,72 @@ cki_track = {
 	#legitimacy_loss_mult = 0.25
 
 	#same_opinion = 20
-	icon = "cki_trait.dds"
+	icon = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = cki_trait.dds
+			}
+			triggered_desc = {
+				trigger = {
+					trigger_if = {
+						limit = { has_trait = cki_track }
+						AND = {
+							has_trait_xp = {
+								trait = cki_track
+								track = cki_positive
+								value >= 90
+							}
+							has_trait_xp = {
+								trait = cki_track
+								track = cki_negative
+								value <= 40
+							}
+						}
+					}
+				}
+				desc = cki_trait_high_low.dds
+			}
+			triggered_desc = {
+				trigger = {
+					has_trait = esr_social_standing
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 70
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 70
+						}
+					}
+				}
+				desc = cki_trait_high_high.dds
+			}
+			triggered_desc = {
+				trigger = {
+					AND = {
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_positive
+							value >= 0
+						}
+						has_trait_xp = {
+							trait = cki_track
+							track = cki_negative
+							value >= 50
+						}
+					}
+				}
+				desc = cki_trait_low_high.dds
+			}
+			desc = cki_trait.dds
+		}
+	}
 	name = {
 		first_valid = {
 			#King of Shadows - male
