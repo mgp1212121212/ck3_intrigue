@@ -35,17 +35,19 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Mod Thumbnail
     - Icons Schemes
     - Icons Trait
-        - Sub-Trait Icons (positive/negative)
-            - Schmeing Adept (low/low)
-            - Known Thief (low/high)
-            - Ruthless Schemer (high/high)
-            - King/Queen of Shadows (high/low)
+        - Sub-Trait Icons (positive/negative) [colour proposal]
+            - Schmeing Adept (low/low) [grey]
+            - Known Thief (low/high) [red-ish]
+            - Ruthless Schemer (high/high) [golden-red-ish]
+            - King/Queen of Shadows (high/low) [golden-ish]
         - Track Icons
-            - Prolific Schemer (positive)
-            - Known Schemer (negative)
-### Localization
+            - Prolific Schemer (positive) [gold or green]
+            - Known Schemer (negative) [red]
+### Localization/Flavor
     - Flavorize all localization
-### Code
+    - Works but can be improved
+        - Event Scenes Flavor
+### Logic
     - ai_will_do & ai_recipients & ai_potential for all schemes
     - Works but can be improved
         - Improve interaction trait-based stress further
