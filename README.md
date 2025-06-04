@@ -36,6 +36,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 ## Improvements/Todo
 ### Graphic Design
     - Mod Thumbnail
+    - Icons Warfare Interaction/Schemes
     - Icons Schemes
     - Icons Trait
         - Sub-Trait Icons (positive/negative) [colour proposal]
