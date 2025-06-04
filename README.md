@@ -24,38 +24,38 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 - Travel the Distance
 ------
 ## Compatibility
-- Overwrites no vanilla files, but overwrites some scheme & secret related effects vanilla functions.
+- Overwrites no vanilla files, but overwrites some scheme & secret-related effects vanilla functions.
 - Should be compatible with most mods. No testing on compatibility yet.
 ------
 ## Outstanding Bugs
 - Some missing localization
 ------
-## mprovements/Todo
+## Improvements/Todo
 ### Graphic Design
-    - Mod Thumbnail
-    - Icons Schemes
-    - Icons Trait
-        - Sub-Trait Icons (positive/negative)
-            - Schmeing Adept (low/low)
-            - Known Thief (low/high)
-            - Ruthless Schemer (high/high)
-            - King/Queen of Shadows (high/low)
-        - Track Icons
-            - Prolific Schemer (positive)
-            - Known Schemer (negative)
+- Mod Thumbnail
+- Icons Schemes
+- Icons Trait
+    - Sub-Trait Icons (positive/negative)
+        - Schmeing Adept (low/low)
+        - Known Thief (low/high)
+        - Ruthless Schemer (high/high)
+        - King/Queen of Shadows (high/low)
+    - Track Icons
+        - Prolific Schemer (positive)
+        - Known Schemer (negative)
 ### Localization
-    - Victim notifications localization
-    - Agent packages localization
-    - Rules localization
-    - Scheme Invalidated localization
-    - Flavorize all localization
+- Victim notifications localization
+- Agent packages localization
+- Rules localization
+- Scheme Invalidated localization
+   - Flavorize all localization
 ### Code
-    - ai_will_do & ai_recipients & ai_potential for all schemes
-    - Works but can be improved
-        - Improve interactions interface priority
-        - Improve interaction trait-based stress further
-        - Success chances & odds prediction
-        - Update countermeasure for schemes
+- ai_will_do & ai_recipients & ai_potential for all schemes
+- Works but can be improved
+    - Improve interactions interface priority
+    - Improve interaction trait-based stress further
+    - Success chances & odds prediction
+    - Update countermeasure for schemes
 ------
 ## New Features Plans/Ideas 
 - Economic Schemes/Interactions
