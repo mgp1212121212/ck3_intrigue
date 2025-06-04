@@ -30,7 +30,7 @@ Compatibility
 Outstanding Bugs
 - Some missing localization
 ------
-Improvements/Todo
+[b]Improvements/Todo[/b]
 - Graphic Design
     - Mod Thumbnail
     - Icons Schemes
