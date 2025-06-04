@@ -1,0 +1,31 @@
+﻿NScheme = {
+	SCHEMES_PER_TYPE = 1							# How many simultaneous schemes per type are allowed for a character
+	SCHEME_AGENT_INVITE_MAX_PROPOSAL_OPTIONS = 3    # The maximum number of options (tested bottom up) to use when checking from the UI if a potential agent "Can be convinced"
+	DAYS_BETWEEN_MONTHLY_CHECK = 30					# Schemes get their "monthly" update this often
+	DAYS_BETWEEN_SEMIYEARLY_CHECK = 180				# Schemes get this update twoice every year
+	SECRECY_REVEAL_CHANCE = 0.15					# The reveal chance is computed by multiplying the secrecy by this value
+	DEFAULT_OWNER_DISCOVERY_CHANCE = 0.5			# Default chance of the scheme owner being discovered (vs. one of the agents) unless scripted otherwise in the scheme type
+	SCHEME_MIN_SUCCESS_GROWTH = 1					# The absolut minimum growth of success chance
+	HOSTILE_SCHEME_MAX_SUCCESS_CHANCE = 90			# The absolute max success chance a hostile scheme can have
+	PERSONAL_SCHEME_MAX_SUCCESS_CHANCE = 90			# The absolute max success chance a personal scheme can have
+	POLITICAL_SCHEME_MAX_SUCCESS_CHANCE = 95		# The absolute max success chance a political scheme can have
+	CONTRACT_SCHEME_MAX_SUCCESS_CHANCE = 100		# The absolute max success chance a contract scheme can have
+
+	SCHEME_MAX_OPPORTUNITIES = 20 					# The maximum number of saved opportunities a schmeme can have
+	SCHEME_PHASE_DURATION_MINIMUM = 30 						# The minimum amount of days per scheme speed
+	SCHEME_PHASE_DURATION_TIER_BARONY = 5					# Characters whose highest title is a barony title adds this amount of speed to schemes targeting them
+	SCHEME_PHASE_DURATION_TIER_COUNTY = 10					# Characters whose highest title is a county title adds this amount of speed to schemes targeting them
+	SCHEME_PHASE_DURATION_TIER_DUCHY = 20					# Characters whose highest title is a duchy title adds this amount of speed to schemes targeting them
+	SCHEME_PHASE_DURATION_TIER_KINGDOM = 40					# Characters whose highest title is a kingdom title adds this amount of speed to schemes targeting them
+	SCHEME_PHASE_DURATION_TIER_EMPIRE = 80					# Characters whose highest title is an empire title adds this amount of speed to schemes targeting them
+
+	DEFAULT_ODDS_PREDICTION_LEVEL_BREAKPOINTS = { 10 20 30 40 }    # Breakpoints between odds descriptions presented to the player when starting a scheme.
+
+	AGENT_SPEED_RELATION_MULTIPLIER_SPYMASTER = 2.0		# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_SPOUSE = 2.0		# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_COUNCILLOR = 2.0	# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_REGENT = 2.0		# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_GUARDIAN = 2.0		# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_LOVER = 2.0			# The agents relation to the target
+	AGENT_SPEED_RELATION_MULTIPLIER_FRIEND = 2.0		# The agents relation to the target
+}

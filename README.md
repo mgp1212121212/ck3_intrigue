@@ -21,13 +21,14 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 - Levelled-Trait with positive & negative tracks.
     - Gain positive-track XP and bonuses as schemes are successful
     - Gain negative-track XP and maluses as schemes and secrets are exposed
+- Schemes have more chances to fail, be discovered, and agents are more difficult to recruit
 - Rules to activate/deactivates schemes & levelled-trait
 ------
 ## Requirements
 - Travel the Distance
 ------
 ## Compatibility
-- Overwrites no vanilla files, but overwrites some scheme & secret-related effects vanilla functions.
+- Overwrites no vanilla files, but overwrites some scheme & secret-related effects vanilla functions as well as NScheme from defines.
 - Should be compatible with most mods. No testing on compatibility yet.
 ------
 ## Outstanding Bugs
@@ -39,6 +40,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Icons Warfare Interaction/Schemes
     - Icons Schemes
     - Icons Trait
+        - The number of sub-icons/colour combinations can be higher than 4 as the trait is 10 with two tracks, which would allow a smoother color change as the user progress through tracks
         - Sub-Trait Icons (positive/negative) [colour proposal]
             - Schmeing Adept (low/low) [grey]
             - Known Thief (low/high) [red-ish]

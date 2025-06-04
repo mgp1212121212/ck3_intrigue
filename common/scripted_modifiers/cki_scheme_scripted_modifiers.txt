@@ -4,4 +4,507 @@
 
 ##################################################
 # Success Chance Modifiers
+## OVERWRITE VANILLA FUNCTION
+# Basic modifiers that should always apply to virtually every scheme.
+ai_agent_join_chance_basic_suite_modifier = {
+	# Base Reluctance, including negative AI Energy
+	modifier = {
+		add = -30
+        add = {
+			value = -30
+			# Energy can play a role.
+			if = {
+				limit = { ai_energy < 0 }
+				add = {
+					value = ai_energy
+					multiply = 0.5
+				}
+			}
+			# Courtiers fall in line.
+			if = {
+				limit = { host = scope:owner }
+				add = 20
+			}
+			# Plus, make people less willing to scheme against higher tier targets.
+			if = {
+				limit = {
+					scope:scheme = { is_scheme_target_type = character }
+				}
+				if = {
+					limit = { scope:target.highest_held_title_tier >= tier_empire }
+					add = -30
+				}
+				else_if = {
+					limit = { scope:target.highest_held_title_tier >= tier_kingdom }
+					add = -15
+				}
+				else_if = {
+					limit = { scope:target.highest_held_title_tier >= tier_duchy }
+					add = -5
+				}
+			}
+		}
+		desc = BASE_RELUCTANCE
+	}
 
+	# Nomad Yurt
+	modifier = {
+		add = {
+			value = 0
+			if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = nomad_yurt_realm_agent_acceptance_lvl_3
+					}
+				}
+				add = 30
+			}
+			else_if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = nomad_yurt_realm_agent_acceptance_lvl_2
+					}
+				}
+				add = 20
+			}
+			else_if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = nomad_yurt_realm_agent_acceptance_lvl_1
+					}
+				}
+				add = 10
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:owner = {
+					government_has_flag = government_is_nomadic
+				}
+			}
+			scope:owner.domicile ?= {
+				has_domicile_building_or_higher = agent_dread_yurt_01
+			}
+			OR = {
+				top_liege = scope:owner
+				host = scope:owner
+			}
+		}
+		desc = agent_dread_yurt_01_domicile_building
+	}
+
+	# Don't scheme easily against people in other realms.
+	modifier = {
+		add = -25
+		# Weird formatting to prevent errors.
+		scope:scheme = { is_scheme_target_type = character }
+		trigger_if = {
+			limit = {
+				scope:scheme = { is_scheme_target_type = character }
+			}
+			NOR = {
+				top_liege = scope:target.host.top_liege
+				host = scope:target.host.top_liege
+			}
+		}
+		desc = sway_foreign_target
+	}
+
+	# add willingness based on agent contribution after TIT-53044 is done
+	
+	# diplomacy
+	modifier = {
+		scope:scheme = {
+			scheme_skill = diplomacy
+		}
+		add = {
+			value = scope:owner.diplomacy
+			multiply = 0.5
+		}
+		desc = DIPLOMACY_SKILL_REASON
+	}
+	# martial
+	modifier = {
+		scope:scheme = {
+			scheme_skill = martial
+		}
+		add = {
+			value = scope:owner.martial
+			multiply = 0.5
+		}
+		desc = MARTIAL_SKILL_REASON
+	}
+	# stewardship
+	modifier = {
+		scope:scheme = {
+			scheme_skill = stewardship
+		}
+		add = {
+			value = scope:owner.stewardship
+			multiply = 0.5
+		}
+		desc = STEWARDSHIP_SKILL_REASON
+	}
+	# intrigue
+	modifier = {
+		scope:scheme = {
+			scheme_skill = intrigue
+		}
+		add = scope:owner.intrigue
+		desc = INTRIGUE_SKILL_REASON
+	}
+	# learning
+	modifier = {
+		scope:scheme = {
+			scheme_skill = learning
+		}
+		add = {
+			value = scope:owner.learning
+			multiply = 0.5
+		}
+		desc = LEARNING_SKILL_REASON
+	}
+	# prowess
+	modifier = {
+		scope:scheme = {
+			scheme_skill = prowess
+		}
+		add = {
+			value = scope:owner.prowess
+			multiply = 0.5
+		}
+		desc = PROWESS_SKILL_REASON
+	}
+	# intrigue boost to non-intrigue schemes
+	modifier = {
+		NOT = {
+			scope:scheme = {
+				scheme_skill = intrigue
+			}
+		}
+		add = {
+			value = scope:owner.intrigue
+			multiply = 0.5
+		}
+		desc = INTRIGUE_SKILL_REASON
+	}
+	# Your spymaster skill
+	modifier = {
+		exists = scope:owner.cp:councillor_spymaster
+		add = {
+			value = scope:owner.cp:councillor_spymaster.intrigue
+			multiply = 0.5
+		}
+		desc = SPYMASTER_INTRIGUE_SKILL_REASON
+	}
+	# Your second skill
+	modifier = {
+		exists = scope:owner.court_position:second_camp_officer
+		add = {
+			value = scope:owner.court_position:second_camp_officer.intrigue
+			multiply = 0.5
+		}
+		desc = SECOND_INTRIGUE_SKILL_REASON
+	}
+	# Coercion.
+	## Sent a gift.
+	modifier = {
+		add = {
+			value = 10
+			scope:recipient = {
+				# A bit more for greedy chars.
+				if = {
+					limit = { has_trait = greedy }
+					add = 10
+				}
+			}
+		}
+		scope:gift ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_GIFT
+	}
+	## Send a bigger gift.
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more for greedy chars.
+				if = {
+					limit = { has_trait = greedy }
+					add = 10
+				}
+			}
+		}
+		scope:gift_significant ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_GIFT_SIGNIFICANT
+	}
+	## Offer a hook on yourself.
+	modifier = {
+		add = 20
+		scope:offer_hook ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_OFFER_HOOK
+	}
+	## Offer a strong hook on yourself.
+	modifier = {
+		add = 50
+		scope:offer_hook_strong ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_OFFER_HOOK_STRONG
+	}
+	## Used a hook.
+	modifier = {
+		add = 100
+		scope:hook ?= yes
+		desc = SCHEME_WEAK_HOOK_USED
+	}
+	## Burnt opportunities.
+	modifier = {
+		add = 10
+		scope:opportunities_t1 ?= yes
+		desc = SCHEME_WITH_OPPORTUNITIES
+	}
+	modifier = {
+		add = 30
+		scope:opportunities_t2 ?= yes
+		desc = SCHEME_WITH_OPPORTUNITIES
+	}
+	## Offer prestige.
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more for arrogant chars.
+				if = {
+					limit = { has_trait = arrogant }
+					add = 10
+				}
+				# A bit less for humble ones.
+				if = {
+					limit = { has_trait = humble }
+					add = -10
+				}
+			}
+		}
+		scope:prestige ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_PRESTIGE
+	}
+	## Offer influence.
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more for ambitious chars.
+				if = {
+					limit = { has_trait = ambitious }
+					add = 10
+				}
+				# A bit less for content ones.
+				if = {
+					limit = { has_trait = content }
+					add = -10
+				}
+			}
+		}
+		scope:influence ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_INFLUENCE
+	}
+	## Offer council rights guaranteed in their vassal contract.
+	modifier = {
+		add = {
+			value = 30
+			scope:recipient = {
+				# A bit more for arrogant chars.
+				if = {
+					limit = { has_trait = arrogant }
+					add = 10
+				}
+				# A bit less for humble ones.
+				if = {
+					limit = { has_trait = humble }
+					add = -20
+				}
+			}
+		}
+		scope:council_rights ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_COUNCIL_RIGHTS
+	}
+	## Offer a county that's de jure theirs but which you control.
+	modifier = {
+		add = {
+			value = 50
+			# Higher tier characters are steadily less impressed.
+			subtract = {
+				value = scope:recipient.highest_held_title_tier
+				add = -1
+				multiply = 10
+			}
+		}
+		scope:de_jure_title ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_DE_JURE_TITLE
+	}
+	## Offer a county they claim but which you control.
+	modifier = {
+		add = {
+			value = 50
+			# Higher tier characters are steadily less impressed.
+			subtract = {
+				value = scope:recipient.highest_held_title_tier
+				add = -1
+				multiply = 10
+			}
+		}
+		scope:claimed_title ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_CLAIMED_TITLE
+	}
+	## Offer piety.
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more if they're zealous.
+				if = {
+					limit = { has_trait = zealous }
+					add = 10
+				}
+			}
+		}
+		scope:piety ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_PIETY
+	}
+	## Offer Herd
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more for ambitious chars.
+				if = {
+					limit = { has_trait = ambitious }
+					add = 10
+				}
+				# A bit less for content ones.
+				if = {
+					limit = { has_trait = content }
+					add = -10
+				}
+			}
+		}
+		scope:herd ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_HERD
+	}
+	## Released them from prison in exchange for scheme support (ep3_emperor_yearly.2130)
+	modifier = {
+		has_character_flag = ep3_2130_ex_prisoner
+		add = 1000
+		desc = SCHEME_OWE_FREEDOM
+	}
+	# Relations
+	## Rivals with scope:owner
+	modifier = {
+		add = -10
+		has_relation_rival = scope:owner
+		NOT = { has_relation_nemesis = scope:owner }
+		desc = "SCHEME_AGAINST_RIVAL"
+	}
+	## Nemeses should be even more inclined
+	modifier = {
+		add = -1000
+		has_relation_nemesis = scope:owner
+		desc = SCHEME_AGAINST_NEMESIS
+	}
+	## Friends with scope:owner
+	modifier = {
+		add = 50
+		has_relation_friend = scope:owner
+		NOT = { has_relation_best_friend = scope:owner }
+		desc = "SCHEME_FOR_FRIEND"
+	}
+	## Best friends should be even less inclined
+	modifier = {
+		add = 100
+		has_relation_best_friend = scope:owner
+		desc = SCHEME_FOR_BEST_FRIEND
+	}
+	modifier = {
+		add = 25
+		has_relation_lover = scope:owner
+		NOT = { has_relation_soulmate = scope:owner }
+		desc = SCHEME_FOR_LOVER
+	}
+	## As should soulmates
+	modifier = {
+		add = 100
+		has_relation_soulmate = scope:owner
+		desc = SCHEME_FOR_SOULMATE
+	}
+	## Nursed Child of scope:owner
+	modifier = {
+		add = 20
+		has_relation_nursed_child = scope:owner
+		desc = SCHEME_NURSED_CHILD
+	}
+	## Nursed Child of scope:recipient
+	modifier = {
+		add = -20
+		exists = scope:recipient
+		has_relation_nursed_child = scope:recipient
+		desc = SCHEME_NURSED_CHILD
+	}
+	## Wet Nurse of scope:owner
+	modifier = {
+		add = 20
+		has_relation_wet_nurse = scope:owner
+		desc = SCHEME_AGAINST_WET_NURSE
+	}
+	## Wet Nurse of scope:recipient
+	modifier = {
+		add = -20
+		exists = scope:recipient
+		has_relation_wet_nurse = scope:recipient
+		desc = SCHEME_AGAINST_WET_NURSE
+	}
+	## Loving (or at least non-hostile) spouse of scope:owner
+	modifier = {
+		add = 10
+		is_consort_of = scope:owner
+		opinion = {
+			target = scope:owner
+			value > 0
+		}
+		desc = "SCHEME_AGAINST_SPOUSE"
+	}
+	# Opinion
+	## How much does the prospective agent like scope:owner?
+	opinion_modifier = {
+		trigger = {
+			NOT = { this = scope:owner }
+		}
+		who = this
+		opinion_target = scope:owner
+		multiplier = 0.5
+		step = 5
+		desc = SCHEME_MY_OPINION_OF_YOU
+	}
+	# Edge Cases
+	## Agent will never scheme against themselves
+	modifier = {
+		add = -1000
+		exists = scope:scheme.scheme_target_character
+		this = scope:target
+		desc = COMPASSIONATE_REASON #SCHEME_NOT_AGAINST_SELF
+	}
+	## Agent is not diplomatically available
+	modifier = {
+		add = -1000
+		is_busy_in_events_localised = no
+		desc = SCHEME_NOT_DIPLOMATICALLY_AVAILABLE
+	}
+}
