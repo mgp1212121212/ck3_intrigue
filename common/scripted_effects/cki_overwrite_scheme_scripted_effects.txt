@@ -1,0 +1,269 @@
+﻿##########################
+# Scheme Scripted Effects
+##########################
+
+
+# Actually kill scope:target.
+murder_success_kill_effect = {
+	# If the scheme was discovered, reveal the murderer immediately.
+	if = {
+		limit = { exists = scope:scheme_discovered }
+		# Kill the target.
+		known_murder_effect = {
+			VICTIM = scope:target
+			MURDERER = scope:owner
+			EXPOSER = scope:murder_exposer
+		}
+		# Kill them. Kill them all.
+		murder_success_kill_entourage_too_effect = {
+			KNOWN_UNKNOWN = known
+			EXPOSER_REASON_PRE = EXPOSER
+			EXPOSER_REASON_POST = scope:murder_exposer
+			SHOW_UNKNOWN_ASSAILANT_TOOLTIP = no
+		}
+		scope:owner = {add_cki_trait_negative_xp_effect = yes}
+		scope:owner = {add_cki_trait_positive_xp_effect = yes}
+	}
+	# Otherwise, we process this anonymously.
+	else = {
+		# For scope:owner, we only show the effects as tooltips.
+		if = {
+			limit = { this = scope:owner }
+			show_as_tooltip = {
+				unknown_murder_effect = {
+					VICTIM = scope:target
+					MURDERER = scope:owner
+					REASON = $REASON$
+				}
+				scope:owner = {add_cki_trait_positive_xp_effect = yes}
+			}
+			# Kill them. Kill them all.
+			show_as_tooltip = {
+				murder_success_kill_entourage_too_effect = {
+					KNOWN_UNKNOWN = unknown
+					EXPOSER_REASON_PRE = REASON
+					EXPOSER_REASON_POST = death_mysterious
+					SHOW_UNKNOWN_ASSAILANT_TOOLTIP = no
+				}
+			}
+		}
+		# Whereas for the target, we process the whole lot.
+		else_if = {
+			limit = { this = scope:target }
+			custom_tooltip = murder_unknown_murder_against_you_was_successful
+			hidden_effect = {
+				unknown_murder_effect = {
+					VICTIM = scope:target
+					MURDERER = scope:owner
+					REASON = $REASON$
+				}
+			}
+			# Kill them. Kill them all.
+			murder_success_kill_entourage_too_effect = {
+				KNOWN_UNKNOWN = unknown
+				EXPOSER_REASON_PRE = REASON
+				EXPOSER_REASON_POST = death_mysterious
+				SHOW_UNKNOWN_ASSAILANT_TOOLTIP = yes
+			}
+		}
+	}
+}
+
+# Distribute murder failure effects.
+murder_failure_effect = {
+ 	# Add Watchful Modifier to the target
+	scope:target = {
+		add_character_modifier = {
+			modifier = watchful_modifier
+			days = watchful_modifier_duration
+		}
+	}
+	# If the attempt was discovered, process the consequences of that.
+	if = {
+		limit = { exists = scope:scheme_discovered }
+		# If we're a clan this affects unity
+		## Landed victims cost more unity.
+		if = {
+			limit = {
+				scope:target = { is_landed = yes }
+			}
+			add_clan_unity_interaction_effect = {
+				CHARACTER = scope:owner
+				TARGET = scope:target
+				VALUE = medium_unity_loss
+				DESC = clan_unity_murder_attempted.desc
+				REVERSE_NON_HOUSE_TARGET = no
+			}
+		}
+		## For unlanded characters, we don't care as much, but you still lose some.
+		else = {
+			add_clan_unity_interaction_effect = {
+				CHARACTER = scope:owner
+				TARGET = scope:target
+				VALUE = minor_unity_loss
+				DESC = clan_unity_murder_attempted.desc
+				REVERSE_NON_HOUSE_TARGET = no
+			}
+		}
+		## Tag scope:owner with a separate scope for portraits...
+		scope:owner = {
+			save_scope_as = owner_to_reveal
+			# ... and apply a little dread.
+			add_dread = minor_dread_gain
+		}
+		## Point out that yeah, attempted murder will sour someone's opinion of you.
+		attempted_murder_opinion_effect = {
+			VICTIM = scope:target
+			MURDERER = scope:owner
+		}
+		scope:owner = {add_cki_trait_negative_xp_effect = yes}
+
+	}
+	# Otherwise, we just add a murder attempt secret.
+	else = {
+		# Make sure we don't inadvertently reveal the scheme to the target.
+		if = {
+			limit = { this = scope:owner }
+			scope:owner = {
+				add_secret = {
+					type = secret_murder_attempt
+					target = scope:target
+				}
+			}
+		}
+	}
+	# Lastly, if our imaginary friend put us up to this, then we address that.
+	scope:owner = {
+		if = {
+			limit = {
+				any_owned_story = {
+					story_type = story_cycle_imaginary_friend
+					var:imaginary_friend_murder_target ?= scope:target
+				}
+			}
+			trigger_event = {
+				id = bp2_yearly.2024
+				days = 4
+			}
+		}
+	}
+}
+
+#Used in the immediate of the Scheme Owner's success event
+abduct_success_effect = {
+	
+	scope:target = {
+		add_character_flag = {
+			flag = was_abducted_block_notification_event
+			days = 2
+		}
+		trigger_event = abduct_outcome.5001
+	}
+
+	hard_imprison_character_effect = {
+		TARGET = scope:target
+		IMPRISONER = scope:owner
+	}
+    scope:owner = {add_cki_trait_positive_xp_effect = yes}
+    scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
+}
+
+abduct_failure_effect = {
+	#Add Watchful Modifier to the target
+	scope:target = {
+		show_as_tooltip = {
+			add_character_modifier = {
+				modifier = watchful_modifier
+				days = watchful_modifier_duration
+			}
+    		scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
+		}
+	}
+
+	scope:target = {
+		trigger_event = abduct_outcome.5002
+	}
+}
+
+fabricate_hook_discovery_effect = {
+	show_as_tooltip = { # Target dislikes you
+		custom_tooltip = fabricate_hook_i_may_not_fabricate_again
+		scope:target = {
+			add_opinion = {
+				target = scope:owner
+				modifier = fabricated_hook_against_court_opinion
+				years = 5
+			}
+		}
+        scope:owner = {add_cki_trait_negative_xp_effect = yes}
+		if = {
+			limit = {
+				exists = scope:target.court_owner
+				NOT = { scope:target = scope:target.court_owner }
+			}
+			scope:target.court_owner = {
+				add_opinion = {
+					target = scope:owner
+					modifier = fabricated_hook_against_court_opinion
+					years = 5
+				}
+			}
+		}
+	}
+
+	hidden_effect  = {
+		# Set a blocker for Fabricating further Hooks against Court in question
+		if = {
+			limit = {
+				exists = scope:target.court_owner
+			}
+			scope:target.court_owner = {
+				send_interface_message = {
+					type = fabricate_hook_bad_message
+					left_icon = scope:owner
+					title = hostile_scheme_discovery.3002.t
+
+					if = {
+						limit = {
+							NOT = { scope:owner = scope:target.court_owner}
+						}
+						fabricate_hook_block_scheme_owner_from_further_schemes_effect = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = scope:target.court_owner }
+					NOT = { scope:target.court_owner = scope:target }
+				}
+			}
+			scope:target = {
+				add_opinion = {
+					target = scope:owner
+					modifier = fabricated_hook_against_court_opinion
+					years = 5
+				}
+			}
+		}
+	}
+}
+
+#Used in event options
+fabricate_hook_success_effect = {
+	fabricate_hook_assign_appropriate_type_effect = {
+        TYPE = $TYPE$ # Sets the correct hook type to give
+    }
+    scope:owner = {add_cki_trait_positive_xp_effect = yes}
+    if = {
+        limit = { exists = scope:scheme_discovered }
+        fabricate_hook_discovery_effect = yes
+    }
+    if = {
+        limit = { exists = scope:scheme }
+        scope:scheme = {
+            end_scheme = yes
+        }
+    }
+}
