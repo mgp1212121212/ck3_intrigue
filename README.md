@@ -23,6 +23,10 @@ Current Features
 Requirements
 - Travel the Distance
 ------
+Compatibility
+- Overwrites no vanilla files, but overwrites some scheme & secret related effects vanilla functions.
+- Should be compatible with most mods. No testing on compatibility yet.
+------
 Outstanding Bugs
 - Some missing localization
 ------
