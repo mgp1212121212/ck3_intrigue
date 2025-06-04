@@ -3,7 +3,7 @@
 CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 
 ------
-Current Features
+##Current Features
 - Schemes
     - Hostile
         - Antagonize Council
@@ -20,18 +20,18 @@ Current Features
     - Gain negative-track XP and maluses as schemes and secrets are exposed
 - Rules to activate/deactivates schemes & levelled-trait
 ------
-Requirements
+##Requirements
 - Travel the Distance
 ------
-Compatibility
+##Compatibility
 - Overwrites no vanilla files, but overwrites some scheme & secret related effects vanilla functions.
 - Should be compatible with most mods. No testing on compatibility yet.
 ------
-Outstanding Bugs
+##Outstanding Bugs
 - Some missing localization
 ------
-[b]Improvements/Todo[/b]
-- Graphic Design
+##Improvements/Todo
+###Graphic Design
     - Mod Thumbnail
     - Icons Schemes
     - Icons Trait
@@ -43,13 +43,13 @@ Outstanding Bugs
         - Track Icons
             - Prolific Schemer (positive)
             - Known Schemer (negative)
-- Localization
+###Localization
     - Victim notifications localization
     - Agent packages localization
     - Rules localization
     - Scheme Invalidated localization
     - Flavorize all localization
-- Code
+###Code
     - ai_will_do & ai_recipients & ai_potential for all schemes
     - Works but can be improved
         - Improve interactions interface priority
@@ -57,7 +57,7 @@ Outstanding Bugs
         - Success chances & odds prediction
         - Update countermeasure for schemes
 ------
-New Features Plans/Ideas 
+##New Features Plans/Ideas 
 - Economic Schemes/Interactions
 	- Trade Agreement (income)
 	- Research Agreement (development)
@@ -66,6 +66,6 @@ New Features Plans/Ideas
 - Start fires in capital (development hit)
 - ... 
 ------
-Testing
+##Testing
 - Scheme Invalidations
 - Everything
