@@ -72,7 +72,10 @@ enemy_army_speed_scheme_opinion = {
 	opinion = -15 
 	monthly_change = 0.25
 }
-
+enemy_raid_supply_scheme_opinion = {
+	opinion = -30 
+	monthly_change = 0.5
+}
 #stole_my_herd_crime = {
 #	opinion = -50
 #	monthly_change = 0.30

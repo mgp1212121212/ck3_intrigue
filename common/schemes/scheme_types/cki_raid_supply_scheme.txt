@@ -1,13 +1,13 @@
 ﻿
 #############################
-# enemy_army_speed SCHEME
+# raid_supply SCHEME
 #############################
-enemy_army_speed = {
+raid_supply = {
 	# Basic Setup
 	skill = intrigue
-	desc = enemy_army_speed_general_desc
-	success_desc = "ENEMY_ARMY_SPEED_SUCCESS_DESC"
-	icon = icon_enemy_army_speed
+	desc = raid_supply_general_desc
+	success_desc = "RAID_SUPPLY_SUCCESS_DESC"
+	icon = icon_raid_supply
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile
@@ -92,7 +92,7 @@ enemy_army_speed = {
 	}
 	# Base Chances
 	base_success_chance = {
-		base = -10
+		base = -50
 		scheme_type_skill_success_chance_modifier = { SKILL = MARTIAL }
 		#Distance modifier
 		ttd_major_distance_modifier = yes
@@ -154,7 +154,7 @@ enemy_army_speed = {
 		save_scope_as = scheme
 		scheme_target_character = { save_scope_as = target }
 		scheme_owner = { save_scope_as = owner }
-		enemy_army_speed_prep_effect = yes
+		raid_supply_prep_effect = yes
 	}
 	on_invalidated = {
 		scheme_target_character = {

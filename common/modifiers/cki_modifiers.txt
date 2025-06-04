@@ -55,3 +55,10 @@ army_speed_scheme_modifier = {
 	icon = martial_positive
 	stackable = no
 }
+
+enemy_raid_supply_scheme_modifier = {
+	supply_duration = -0.1
+}
+raid_supply_scheme_modifier = {
+	supply_duration = 0.1
+}

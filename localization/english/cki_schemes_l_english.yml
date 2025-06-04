@@ -144,6 +144,36 @@
  cki_scheme_critical_moments.1084.desc:0 "Your scheme failed and you were discovered"
  cki_scheme_critical_moments.1084.a:0 "Damnation"
 
+#Critical Enemy Army Speed
+ cki_scheme_critical_moments.1091.t:0 "Total Success"
+ cki_scheme_critical_moments.1091.desc:0 "Your scheme was successful and you were undiscovered"
+ cki_scheme_critical_moments.1091.a:0 "Perfect"
+ cki_scheme_critical_moments.1092.t:0 "Partial Success"
+ cki_scheme_critical_moments.1092.desc:0 "Your scheme was successful but you were discovered"
+ cki_scheme_critical_moments.1092.a:0 "I guess I'll have to live with it"
+ cki_scheme_critical_moments.1093:0 "Partial Failure"
+ cki_scheme_critical_moments.1093.t:0 "Partial Failure"
+ cki_scheme_critical_moments.1093.desc:0 "Your were unable to successfully complete your scheme but remained undiscovered"
+ cki_scheme_critical_moments.1093.a:0 "Damnation"
+ cki_scheme_critical_moments.1094.t:0 "Total Failure"
+ cki_scheme_critical_moments.1094.desc:0 "Your scheme failed and you were discovered"
+ cki_scheme_critical_moments.1094.a:0 "Damnation"
+
+#Critical Raid Supply
+ cki_scheme_critical_moments.1111.t:0 "Total Success"
+ cki_scheme_critical_moments.1111.desc:0 "Your scheme was successful and you were undiscovered"
+ cki_scheme_critical_moments.1111.a:0 "Perfect"
+ cki_scheme_critical_moments.1112.t:0 "Partial Success"
+ cki_scheme_critical_moments.1112.desc:0 "Your scheme was successful but you were discovered"
+ cki_scheme_critical_moments.1112.a:0 "I guess I'll have to live with it"
+ cki_scheme_critical_moments.1113:0 "Partial Failure"
+ cki_scheme_critical_moments.1113.t:0 "Partial Failure"
+ cki_scheme_critical_moments.1113.desc:0 "Your were unable to successfully complete your scheme but remained undiscovered"
+ cki_scheme_critical_moments.1113.a:0 "Damnation"
+ cki_scheme_critical_moments.1114.t:0 "Total Failure"
+ cki_scheme_critical_moments.1114.desc:0 "Your scheme failed and you were discovered"
+ cki_scheme_critical_moments.1114.a:0 "Damnation"
+
 ## Scheme Victim Notifications
 # Theft Scheme
  cki_scheme_critical_moments.1005.t:0 "Victim of a Theft"
@@ -381,7 +411,8 @@
  mentor_scheme_failure_opinion:0 "Tried to mentor me"
  antagonize_council_opinion:0 "Told lies to my council"
  antagonize_spouse_opinion:0 "Told lies to my spouse"
-
+ enemy_army_speed_scheme_opinion:0 "Mislead Me in Warfare"
+ enemy_raid_supply_scheme_opinion:0 "Raided my Supply Routes during War"
 # Modifiers
  tarnish_rep_modifier:0 "Tarnished Reputation"
  mentor_diplomacy_modifier:0 "Mentored in Diplomacy"
@@ -394,6 +425,8 @@
  antagonize_spouse_modifier:0 "Spouse heard rumours"
  enemy_army_speed_scheme_modifier:0 "Army Misinformed"
  army_speed_scheme_modifier:0 "Army Scouts"
+ enemy_raid_supply_scheme_modifier:0 "Enemy Raiding Supply Routes"
+ raid_supply_scheme_modifier:0 "Raiding Enemy Supply Routes"
 
 ## Secrets
 # Secret Types

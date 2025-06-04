@@ -13,9 +13,11 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
         - Instigate Revolt
         - Tarnish Reputation
         - Theft
-        - Warfare Misinformation (-enemy_army_speed)
     - Personal
         - Mentor Skill
+    - Warfare
+        - Warfare Misinformation (-enemy_army_speed)
+        - Raid Supply Routes (-enemy_supply_duration/+supply_duration)
 - Levelled-Trait with positive & negative tracks.
     - Gain positive-track XP and bonuses as schemes are successful
     - Gain negative-track XP and maluses as schemes and secrets are exposed
@@ -49,22 +51,19 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Works but can be improved
         - Event Scenes Flavor
 ### Logic
-    - ai_will_do & ai_recipients & ai_potential for all schemes
+    - ai_will_do & ai_recipients & ai_potential & ai_blockers for all schemes
+    - Add rules for warfare schemes
     - Works but can be improved
         - Improve interaction trait-based stress further
         - Success chances & odds prediction
         - Update countermeasure for schemes
 ------
 ## New Features Plans/Ideas 
-    - Economic Schemes/Interactions
-        - Trade Agreement (income)
-        - Research Agreement (development)
     - Targetted find secrets
     - Investigate true parents
     - Start fires in capital (development hit)
     - Warfare Schemes
         - Deploy Scouts (+army_speed)
-        - Attack Enemy Supply Routes (-enemy_army_supply)
         - Guerrila Warfare (+enemy_hostile_territory_attrition)
 ------
 ## Testing

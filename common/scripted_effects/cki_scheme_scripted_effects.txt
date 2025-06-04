@@ -751,6 +751,7 @@ enemy_army_speed_success_effect = {
 	}
 	
 }
+
 enemy_army_speed_partial_success_effect = {
 
 	scope:target = {
@@ -766,11 +767,10 @@ enemy_army_speed_partial_success_effect = {
 	}
 	scope:owner = {			
 				add_cki_trait_positive_xp_effect = yes
-				add_cki_trait_negative_xp_effect = yes
+				add_cki_trait_negative_xp_small_effect = yes
 	}
 	
 }
-
 
 enemy_army_speed_partial_failure_effect = {
 	#Add Watchful Modifier to the target
@@ -792,7 +792,7 @@ enemy_army_speed_partial_failure_effect = {
 					modifier = enemy_army_speed_scheme_opinion
 				}	
 			}
-			scope:owner = {add_cki_trait_negative_xp_effect = yes}
+			scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
 	}
 }
 
@@ -819,6 +819,99 @@ enemy_army_speed_failure_effect = {
 			scope:owner = {add_cki_trait_negative_xp_effect = yes}
 	}
 }
+
+
+
+##################################################
+# Raid Supply Routes Scheme Effects
+raid_supply_scheme_prep_effect = {
+    scheme_owner = { trigger_event = cki_scheme_critical_moments.1110 }
+}
+
+raid_supply_success_effect = {
+
+    scope:target = {
+        add_stress = 20
+        add_character_modifier = {
+            modifier = raid_supply_scheme_modifier
+            years = 1
+        }
+    }
+    scope:owner = {         
+                add_cki_trait_positive_xp_effect = yes
+    }
+    
+}
+
+raid_supply_partial_success_effect = {
+
+    scope:target = {
+        add_stress = 20
+        add_character_modifier = {
+            modifier = raid_supply_scheme_modifier
+            years = 1
+        }
+        add_opinion = {
+            target = scope:owner
+            modifier = raid_supply_scheme_opinion
+        }
+    }
+    scope:owner = {         
+                add_cki_trait_positive_xp_effect = yes
+                add_cki_trait_negative_xp_effect = yes
+    }
+    
+}
+
+raid_supply_partial_failure_effect = {
+    #Add Watchful Modifier to the target
+    scope:target = {    
+        add_character_modifier = {
+            modifier = watchful_modifier
+            days = watchful_modifier_duration
+        }
+    }
+    # Determine if we can retry based on secrecy
+    scope:scheme = {
+            scope:scheme = {
+                        end_scheme = yes
+                    }
+            scope:target = {
+                # ADD OPINION MODIFIER
+                add_opinion = {
+                    target = scope:owner
+                    modifier = raid_supply_scheme_opinion
+                }   
+            }
+            scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
+    }
+}
+
+raid_supply_failure_effect = {
+    #Add Watchful Modifier to the target
+    scope:target = {    
+        add_character_modifier = {
+            modifier = watchful_modifier
+            days = watchful_modifier_duration
+        }
+    }
+    # Determine if we can retry based on secrecy
+    scope:scheme = {
+            scope:scheme = {
+                        end_scheme = yes
+                    }
+            scope:target = {
+                # ADD OPINION MODIFIER
+                add_opinion = {
+                    target = scope:owner
+                    modifier = raid_supply_scheme_opinion
+                }   
+            }
+            scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
+    }
+}
+
+
 
 ################################################
 # Levelled trait XP changes
