@@ -47,7 +47,7 @@ cki_track = {
 			}
 			triggered_desc = {
 				trigger = {
-					has_trait = esr_social_standing
+					has_trait = cki_track
 					AND = {
 						has_trait_xp = {
 							trait = cki_track

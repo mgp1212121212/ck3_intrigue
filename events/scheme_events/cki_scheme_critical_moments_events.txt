@@ -692,7 +692,7 @@ cki_scheme_critical_moments.1004 = {
 			years = 5
 		}
 		scope:target = {
-			trigger_event = cki_scheme_critical_moments.1006 
+			trigger_event = cki_scheme_critical_moments.1007 
 		}
 	}
 
