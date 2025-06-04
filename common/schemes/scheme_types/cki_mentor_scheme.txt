@@ -97,20 +97,20 @@ mentor_diplomacy_scheme = {
 				value = scope:owner.diplomacy
 				multiply = 1
 			}
-			desc = SCHEME_LEARNING_MODIFIER
+			desc = SCHEME_DIPLOMACY_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 1
+				multiply = 0.5
 			}
 			desc = SCHEME_LEARNING_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
-				value = scope:owner.learning
+				value = scope:target.learning
 				multiply = 1
 			}
 			desc = SCHEME_LEARNING_TARGET_MODIFIER
@@ -332,20 +332,20 @@ mentor_martial_scheme = {
 				value = scope:owner.martial
 				multiply = 1
 			}
-			desc = SCHEME_LEARNING_MODIFIER
+			desc = SCHEME_MARTIAL_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 1
+				multiply = 0.5
 			}
 			desc = SCHEME_LEARNING_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
-				value = scope:owner.learning
+				value = scope:target.learning
 				multiply = 1
 			}
 			desc = SCHEME_LEARNING_TARGET_MODIFIER
@@ -568,20 +568,20 @@ mentor_stewardship_scheme = {
 				value = scope:owner.stewardship
 				multiply = 1
 			}
-			desc = SCHEME_LEARNING_MODIFIER
+			desc = SCHEME_STEWARDSHIP_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 1
+				multiply = 0.5
 			}
 			desc = SCHEME_LEARNING_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
-				value = scope:owner.learning
+				value = scope:target.learning
 				multiply = 1
 			}
 			desc = SCHEME_LEARNING_TARGET_MODIFIER
@@ -815,20 +815,20 @@ mentor_intrigue_scheme = {
 				value = scope:owner.intrigue
 				multiply = 1
 			}
-			desc = SCHEME_LEARNING_MODIFIER
+			desc = SCHEME_INTRIGUE_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 1
+				multiply = 0.5
 			}
 			desc = SCHEME_LEARNING_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
-				value = scope:owner.learning
+				value = scope:target.learning
 				multiply = 1
 			}
 			desc = SCHEME_LEARNING_TARGET_MODIFIER
@@ -1057,14 +1057,14 @@ mentor_learning_scheme = {
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 1
+				multiply = 0.5
 			}
 			desc = SCHEME_LEARNING_MODIFIER
 			scope:owner.learning > 0
 		}
 		modifier = {
 			add = {
-				value = scope:owner.learning
+				value = scope:target.learning
 				multiply = 1
 			}
 			desc = SCHEME_LEARNING_TARGET_MODIFIER

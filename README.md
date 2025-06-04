@@ -62,7 +62,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Warfare Schemes
         - Deploy Scouts (+army_speed)
         - Feed Misinformation (-enemy_army_speed)
-        - Attack Enemy Supply Routes (-enemy)
+        - Attack Enemy Supply Routes (-enemy_army_supply)
         - Guerrila Warfare (+enemy_hostile_territory_attrition)
 ------
 ## Testing

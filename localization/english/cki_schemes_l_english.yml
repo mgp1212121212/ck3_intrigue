@@ -285,8 +285,8 @@
 # Mentor Scheme
  start_mentor_interaction:0 "Mentor"
  start_mentor_interaction_desc:0 "Scheme to mentor the target and increase their skills"
- start_mentor_interaction_notification:0 "Starting an Mentor scheme"
- start_mentor_interaction.t.options:0 "Select skill focus"
+ start_mentor_interaction_notification:0 "Starting an Mentor Scheme"
+ start_mentor_interaction.t.options:0 "Select Skill Focus"
  mentor_scheme:1 "Mentor"
  mentor_scheme_general_desc:0 "Mentor"
  mentor_scheme_action:0 "Mentor"
@@ -299,6 +299,11 @@
  mentor_stewardship_scheme:0 "Mentor in Stewardship"
  mentor_intrigue_scheme:0 "Mentor in Intrigue"
  mentor_learning_scheme:0 "Mentor in Learning"
+ mentor_diplomacy:0 "Mentor in Diplomacy"
+ mentor_martial:0 "Mentor in Martial"
+ mentor_stewardship:0 "Mentor in Stewardship"
+ mentor_intrigue:0 "Mentor in Intrigue"
+ mentor_learning:0 "Mentor in Learning"
  mentor_diplomacy_scheme:0 "Diplomacy"
  mentor_diplomacy_scheme_action:0 "Mentor in Diplomacy"
  mentor_diplomacy_scheme_desc:0 "Mentor in Diplomacy"
@@ -425,7 +430,12 @@
  cki_scheme_critical_moments.2004.a:0 "Damnation"
 
 ## Scheme Window Localization
- SCHEME_SUCCESS_LEARNING:1 "Target's learning': $VALUE|+0=$"
+ SCHEME_LEARNING_TARGET_MODIFIER:1 "Target's Learning: $VALUE|+0=$"
+ SCHEME_DIPLOMACY_MODIFIER:1 "Your Diplomacy: $VALUE|+0=$"
+ SCHEME_MARTIAL_MODIFIER:1 "Your Martial: $VALUE|+0=$"
+ SCHEME_INTRIGUE_MODIFIER:1 "Your Intrigue: $VALUE|+0=$"
+ SCHEME_STEWARDSHIP_MODIFIER:1 "Your Stewardship: $VALUE|+0=$"
+ 
  SCHEME_FERVOR_TARGET:1 "Target's Faith Fervor: $VALUE|+0=$"
  SCHEME_FERVOR:1 "Your Faith's Fervor: $VALUE|+0=$"
  scheme_education_learning_1:1 "[GetTrait('education_learning_1').GetName( owner.Self )]: $VALUE|+0=$"
