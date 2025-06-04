@@ -180,7 +180,6 @@
 	ai_frequency = 36
 
 	ai_potential = {
-		gold < 500
 	}
 
 	ai_will_do = {

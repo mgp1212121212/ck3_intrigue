@@ -581,6 +581,7 @@ antagonize_council_scheme_prep_effect = {
 
 antagonize_council_success_effect = {
 	scope:target = {
+		add_stress = 5
 		add_character_modifier = {
 			modifier = antagonize_council_modifier
 			years = 5
@@ -593,6 +594,7 @@ antagonize_council_success_effect = {
 
 antagonize_council_partial_success_effect = {
 	scope:target = {
+		add_stress = 10
 		add_character_modifier = {
 			modifier = antagonize_council_modifier
 			years = 5
@@ -664,6 +666,7 @@ antagonize_spouse_scheme_prep_effect = {
 
 antagonize_spouse_success_effect = {
 	scope:target = {
+		add_stress = 5
 		add_character_modifier = {
 			modifier = antagonize_spouse_modifier
 			years = 5
@@ -676,6 +679,7 @@ antagonize_spouse_success_effect = {
 
 antagonize_spouse_partial_success_effect = {
 	scope:target = {
+		add_stress = 10
 		add_character_modifier = {
 			modifier = antagonize_spouse_modifier
 			years = 5

@@ -716,6 +716,15 @@ cki_scheme_critical_moments.1005 = {
 
 	option = {
 		name = cki_scheme_critical_moments.1005.a
+		scope:target = {
+			if = {limit = {has_trait=greedy}
+				add_stress = major_stress_impact_gain
+			}
+			elseif = {limit = {has_trait=generous}
+				add_stress = minor_stress_impact_loss
+			}
+			
+		}
 	}
 }
 
@@ -730,6 +739,15 @@ cki_scheme_critical_moments.1006 = {
 
 	option = {
 		name = cki_scheme_critical_moments.1006.a
+		scope:target = {
+			if = {limit = {has_trait=greedy}
+				add_stress = major_stress_impact_gain
+			}
+			elseif = {limit = {has_trait=generous}
+				add_stress = minor_stress_impact_loss
+			}
+			
+		}
 	}
 }
 
@@ -744,6 +762,13 @@ cki_scheme_critical_moments.1007 = {
 
 	option = {
 		name = cki_scheme_critical_moments.1007.a
+		scope:target = {
+			if = {limit = {has_trait=greedy}
+				add_stress = minor_stress_impact_gain
+			}
+			else = {}
+			
+		}
 	}
 }
 
