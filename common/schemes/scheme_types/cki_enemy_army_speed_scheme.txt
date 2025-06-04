@@ -30,7 +30,7 @@ enemy_army_speed = {
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-
+		is_at_war_with = scope:target
 		scope:target = {
 			is_adult = yes
 			is_imprisoned = no
@@ -77,7 +77,7 @@ enemy_army_speed = {
 	
 	valid = {
 		is_incapable = no
-		NOT = { is_at_war_with = scope:target }
+		is_at_war_with = scope:target
 		scope:target = {
 			OR = {
 				exists = location
@@ -154,7 +154,7 @@ enemy_army_speed = {
 		save_scope_as = scheme
 		scheme_target_character = { save_scope_as = target }
 		scheme_owner = { save_scope_as = owner }
-		enemy_army_speed_prep_effect = yes
+		enemy_army_speed_scheme_prep_effect = yes
 	}
 	on_invalidated = {
 		scheme_target_character = {
@@ -175,21 +175,6 @@ enemy_army_speed = {
 				}
 			}
 		}
-		else_if = {	
-			limit = {
-				scope:owner = {
-					is_at_war_with = scope:target
-				}
-			}
-			scope:owner = {
-				send_interface_toast = {
-					title = cki_scheme_invalidated_title
-					custom_tooltip = cki_scheme_invalidated_war
-					left_icon = scope:target
-				}
-			}
-		}
-
 		if = {
 			limit = {
 				scope:target = { 

@@ -1,4 +1,4 @@
-﻿enemy_army_speed_interaction = {
+﻿raid_supply_interaction = {
 	icon = icon_convert
 	category = interaction_category_hostile
 	common_interaction = yes
@@ -6,7 +6,7 @@
 	send_name = START_SCHEME
 
 	interface_priority = 10
-	scheme = enemy_army_speed
+	scheme = raid_supply
 	ignores_pending_interaction_block = yes
 
 	ai_targets = {
@@ -22,23 +22,23 @@
 
 	is_shown = {
 		scope:actor = {
-			NOT = {
-				faith = scope:recipient.faith
-				}
+			is_ruler = yes
 		}
 		NOT = { scope:actor = scope:recipient }
 		NOT = { scope:recipient = {is_courtier_of = scope:actor} }
-		has_game_rule = cki_rule_convert_active
+		scope:actor = {is_at_war_with = scope:recipient}
+		#has_game_rule = cki_rule_raid_supply_active
 	}
 	
 
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
-				type = convert
+				type = raid_supply
 				target_character = scope:recipient
 			}
 		}
+		scope:actor = {is_at_war_with = scope:recipient}
 		scope:recipient = {is_ruler=yes}
 		#limit range for landless adventurers
 		trigger_if = {
@@ -67,7 +67,7 @@
 				right_icon = scope:recipient
 
 				begin_scheme_basic_effect = {
-					SCHEME_TYPE = enemy_army_speed
+					SCHEME_TYPE = raid_supply
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}

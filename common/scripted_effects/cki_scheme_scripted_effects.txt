@@ -733,6 +733,7 @@ antagonize_spouse_failure_effect = {
 
 ##################################################
 # enemy_army_speed Scheme Effects
+
 enemy_army_speed_scheme_prep_effect = {
 	scheme_owner = { trigger_event = cki_scheme_critical_moments.1090 }
 }
@@ -785,13 +786,6 @@ enemy_army_speed_partial_failure_effect = {
 			scope:scheme = {
 						end_scheme = yes
 					}
-			scope:target = {
-				# ADD OPINION MODIFIER
-				add_opinion = {
-					target = scope:owner
-					modifier = enemy_army_speed_scheme_opinion
-				}	
-			}
 			scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
 	}
 }
@@ -833,12 +827,16 @@ raid_supply_success_effect = {
     scope:target = {
         add_stress = 20
         add_character_modifier = {
-            modifier = raid_supply_scheme_modifier
+            modifier = enemy_raid_supply_scheme_modifier
             years = 1
         }
     }
     scope:owner = {         
-                add_cki_trait_positive_xp_effect = yes
+        add_cki_trait_positive_xp_effect = yes
+		add_character_modifier = {
+            modifier = raid_supply_scheme_modifier
+            years = 1
+        }
     }
     
 }
@@ -876,13 +874,6 @@ raid_supply_partial_failure_effect = {
             scope:scheme = {
                         end_scheme = yes
                     }
-            scope:target = {
-                # ADD OPINION MODIFIER
-                add_opinion = {
-                    target = scope:owner
-                    modifier = raid_supply_scheme_opinion
-                }   
-            }
             scope:owner = {add_cki_trait_negative_xp_small_effect = yes}
     }
 }

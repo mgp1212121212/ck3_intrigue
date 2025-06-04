@@ -250,6 +250,23 @@
  cki_scheme_critical_moments.1087.desc:0 "scheme owner attempted to tell lies to your spouse about your infidelities"
  cki_scheme_critical_moments.1087.a:0 "Revenge is best served cold"
 
+ # War Misinformation Scheme
+ cki_scheme_critical_moments.1096.t:0 "War Misinformation"
+ cki_scheme_critical_moments.1096.desc:0 "You caught scheme owner feeding you false military information, and you're confused about your plan"
+ cki_scheme_critical_moments.1096.a:0 "I'll overcome this"
+ cki_scheme_critical_moments.1097.t:0 "war Misinformation"
+ cki_scheme_critical_moments.1097.desc:0 "You caught scheme owner feeding you false military information"
+ cki_scheme_critical_moments.1097.a:0 "Tricks won't help them"
+
+ # Raid Supply Scheme
+ cki_scheme_critical_moments.1116.t:0 "Army Supply Route Raided"
+ cki_scheme_critical_moments.1116.desc:0 "Scheme owner raided your armies supply routes."
+ cki_scheme_critical_moments.1116.a:0 "I'll still win this war"
+ cki_scheme_critical_moments.1117.t:0 "Attempt to Raid Army Supply Routes"
+ cki_scheme_critical_moments.1117.desc:0 "Scheme owner attempted to raid your armies supply routes."
+ cki_scheme_critical_moments.1117.a:0 "Tricks won't help them"
+
+
 ## Schemes
 # Steal Scheme
  start_theft_interaction:0 "Steal"
@@ -304,6 +321,7 @@
  start_convert_interaction_desc:0 "Scheme to convert the target to your religion"
  start_convert_interaction_notification:0 "Starting an convert scheme"
  convert_scheme:1 "Convert"
+ convert_scheme_interaction:1 "Convert"
  convert_scheme_general_desc:0 "Convert"
  convert_scheme_action:0 "Convert"
  convert_scheme_desc:0 "Convert [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip]"
@@ -374,6 +392,35 @@
  scheme_interaction_tt_antagonize_spouse_approved:1 "Attempt to Antagonize [recipient.GetShortUINameNoTooltip]'s Spouse"
  antagonize_spouse_success_message:0 "Antagonize Spouse Successful"
 
+ # Enemy Army Speed Scheme
+ start_enemy_army_speed_interaction:0 "Give Misinformation"
+ start_enemy_army_speed_interaction_desc:0 "Scheme to feed Warfare Stategic Misinformation"
+ start_enemy_army_speed_interaction_notification:0 "Starting an Give Misinformation scheme"
+ enemy_army_speed_interaction:1 "Feed Military Misinformation"
+ enemy_army_speed:0 "Feed Military Misinformation"
+ enemy_army_speed_scheme:1 "Feed Military Misinformation"
+ enemy_army_speed_general_desc:0 "Give Misinformation"
+ enemy_army_speed_action:0 "Give Misinformation to"
+ enemy_army_speed_desc:0 "Give Misinformation against [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip]"
+ enemy_army_speed_desc_general:0 "enemy_army_speed_desc_gen"
+ scheme_interaction_tt_enemy_army_speed_approved:1 "Attempt to feed Warfare Stategic Misinformation"
+ enemy_army_speed_scheme_success_message:0 "Give Misinformation Successful"
+
+ # Raid Supply Scheme
+ start_raid_supply_interaction:0 "Raid Supply Routes"
+ start_raid_supply_interaction_desc:0 "Scheme to Raid Army Supply Routes"
+ start_raid_supply_interaction_notification:0 "Starting an Raid Army Supply Routes scheme"
+ raid_supply_scheme:1 "Raid Supply Routes"
+ raid_supply_interaction:1 "Raid Supply Routes"
+ raid_supply:1 "Raid Supply Routes"
+ raid_supply_general_desc:0 "Raid Supply Routes"
+ raid_supply_action:0 "Raid Supply Routes of"
+ raid_supply_desc:0 "Raid Supply Routes against [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip]"
+ raid_supply_desc_general:0 "raid_supply_desc_gen"
+ scheme_interaction_tt_raid_supply_approved:1 "Attempt to Raid [recipient.GetShortUINameNoTooltip]'s Supply Routes"
+ raid_supply_success_message:0 "Raid Supply Routes Successful"
+ raid_supply_scheme_success_message:0 "Raid Supply Routes Successful"
+
 ## Scheme Invalidations
  cki_scheme_invalidated_title:0 "Scheme Invalidated Title"
  cki_scheme_invalidated_dead:0 "Targer is dead"
@@ -412,7 +459,7 @@
  antagonize_council_opinion:0 "Told lies to my council"
  antagonize_spouse_opinion:0 "Told lies to my spouse"
  enemy_army_speed_scheme_opinion:0 "Mislead Me in Warfare"
- enemy_raid_supply_scheme_opinion:0 "Raided my Supply Routes during War"
+ raid_supply_scheme_opinion:0 "Raided my Supply Routes during War"
 # Modifiers
  tarnish_rep_modifier:0 "Tarnished Reputation"
  mentor_diplomacy_modifier:0 "Mentored in Diplomacy"
