@@ -92,7 +92,7 @@ convert_scheme = {
 	}
 	# Base Chances
 	base_success_chance = {
-		base = 0
+		base = -50
 		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
 		#Distance modifier
 		ttd_major_distance_modifier = yes
