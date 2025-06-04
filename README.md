@@ -47,6 +47,7 @@ Improvements/Todo
     - Flavorize all localization
 - Code
     - ai_probability ai_will_do & ai_recipients for all schemes
+    - add trait-based stress hits to victims when schemes complete
     - Works but can be improved
         - Improve interactions interface priority
         - Improve interaction trait-based stress further
@@ -64,4 +65,5 @@ New Features Plans/Ideas
 ------
 Testing
 - Test Custom Secret Exposed Effect
+- Scheme Invalidations
 - All
