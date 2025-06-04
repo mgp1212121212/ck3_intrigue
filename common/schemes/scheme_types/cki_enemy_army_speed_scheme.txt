@@ -34,7 +34,7 @@ enemy_army_speed = {
 		scope:target = {
 			is_adult = yes
 			is_imprisoned = no
-			NOT = {scope:target.faith = scope:actor.faith}
+			is_ruler = yes
 		}
 
 		#AI blockers
