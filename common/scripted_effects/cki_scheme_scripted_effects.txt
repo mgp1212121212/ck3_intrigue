@@ -833,10 +833,10 @@ raid_supply_success_effect = {
     }
     scope:owner = {         
         add_cki_trait_positive_xp_effect = yes
-		add_character_modifier = {
-            modifier = raid_supply_scheme_modifier
-            years = 1
-        }
+		# add_character_modifier = {
+        #     modifier = raid_supply_scheme_modifier
+        #     years = 1
+        # }
     }
     
 }
