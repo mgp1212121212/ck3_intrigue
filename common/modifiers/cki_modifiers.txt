@@ -43,21 +43,21 @@ antagonize_spouse_modifier = {
 
 
 enemy_army_speed_scheme_modifier = {
-	movement_speed = -0.3
-	naval_movement_speed_mult = -0.3
+	movement_speed = -0.5
+	naval_movement_speed_mult = -0.5
 	icon = martial_negative
 	stackable = no
 }
 
 army_speed_scheme_modifier = {
-	movement_speed = 0.1
+	movement_speed = 0.
 	naval_movement_speed_mult = 0.1
 	icon = martial_positive
 	stackable = no
 }
 
 enemy_raid_supply_scheme_modifier = {
-	supply_duration = -0.3
+	supply_duration = -0.5
 }
 raid_supply_scheme_modifier = {
 	supply_duration = 0.1
