@@ -74,6 +74,7 @@ theft_scheme = {
 	}
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {

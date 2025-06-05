@@ -11,6 +11,7 @@
 	send_name = START_SCHEME
 
 	is_shown = {
+		is_adult = yes
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_theft_active
 		scope:recipient = {
