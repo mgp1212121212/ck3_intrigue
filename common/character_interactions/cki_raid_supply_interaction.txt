@@ -1,5 +1,5 @@
 ﻿raid_supply_interaction = {
-	icon = icon_convert
+	icon = icon_raid_supply
 	category = interaction_category_hostile
 	common_interaction = yes
 
