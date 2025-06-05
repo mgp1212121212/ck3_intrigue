@@ -11,7 +11,7 @@
 	send_name = START_SCHEME
 
 	is_shown = {
-		is_adult = yes
+		scope:actor = {is_adult = yes}
 		NOT = { scope:recipient = scope:actor }
 		scope:recipient = {
 			is_ruler = yes

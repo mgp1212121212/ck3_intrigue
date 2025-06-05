@@ -594,8 +594,7 @@
  setting_cki_rule_trait_inactive:0 "Inactive"
  setting_cki_rule_trait_inactive_desc:0 "Inactive"
 
-
- rule_cki_rule_warfare:0 "CKI Warfare Schemes"
+ rule_cki_rule_warfare:0 "Warfare Schemes"
  setting_cki_rule_warfare_active:0 "Active"
  setting_cki_rule_warfare_active_desc:0 "Active"
  setting_cki_rule_warfare_inactive:0 "Inactive"
