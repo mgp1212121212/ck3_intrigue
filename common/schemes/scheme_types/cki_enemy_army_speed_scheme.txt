@@ -15,7 +15,7 @@ enemy_army_speed = {
 	is_secret = no
 	is_basic = yes
 	uses_resistance = yes
-	maximum_breaches = 365
+	maximum_breaches = 5
 	cooldown = { years = 2 }
 	
 	# Parameters
