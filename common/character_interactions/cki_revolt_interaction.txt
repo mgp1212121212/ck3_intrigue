@@ -175,10 +175,14 @@
 	}
 	
 	auto_accept = yes
-	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_targets = { 
+		ai_recipients = neighboring_rulers 
+		ai_recipients = peer_vassals
+	}
 	ai_frequency = 36
 
 	ai_potential = {
+		is_ruler = yes
 	}
 
 	ai_will_do = {

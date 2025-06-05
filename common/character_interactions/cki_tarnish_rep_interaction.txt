@@ -179,24 +179,37 @@
 
 	ai_will_do = {
 		# They shouldn't always do this.
-		base = -100
-
+		base = 0
 		# Obvious factor.
 		opinion_modifier = {
 			opinion_target = scope:recipient
 			multiplier = -1
 		}
 		ai_value_modifier = { ai_honor = -1 }
+		# Rival
+		modifier = {
+			add = 70
+			scope:recipient = {
+				has_relation_rival = scope:actor
+		}
+		#Friends of friends
+		modifier = {
+			add = -25
+			scope:actor = { #Friends of friends
+				any_relation = {
+					type = friend
+					any_relation = {
+						type = friend
+						this = scope:recipient
+					}
+				}
+			}
+		}
 		# Traits.
 		## Disloyal.
 		modifier = {
-			add = 80
+			add = 30
 			has_trait = disloyal
-		}
-		## Ambitious.
-		modifier = {
-			add = 75
-			has_trait = ambitious
 		}
 		## Arrogant.
 		modifier = {
@@ -222,11 +235,6 @@
 		modifier = {
 			add = -100
 			has_trait = content
-		}
-		## Greedy.
-		modifier = {
-			add = 80
-			has_trait = greedy
 		}
 	}
 }

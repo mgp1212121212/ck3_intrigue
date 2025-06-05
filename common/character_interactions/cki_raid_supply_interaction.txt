@@ -10,15 +10,10 @@
 	ignores_pending_interaction_block = yes
 
 	ai_targets = {
-		ai_recipients = vassals
-		ai_recipients = peer_vassals
-		max = 10
-	}
-	ai_targets = {
-		ai_recipients = neighboring_rulers
+		ai_recipients = war_enemies
 		max = 5
 	}
-	ai_frequency = 48
+	ai_frequency = 12
 
 	is_shown = {
 		is_adult = yes
@@ -56,7 +51,7 @@
 		}
 	}
 
-	desc = scheme_interaction_tt_convert_approved
+	desc = scheme_interaction_tt_raid_supply_approved
 
 	on_accept = {
 		scope:actor = {
@@ -83,10 +78,9 @@
 	
 	ai_potential = {
 		primary_title.tier >= tier_county
+		is_at_war = yes
 		NOR = {
 			has_trait = lazy
-			has_trait = paranoid
-			scheme_generic_ai_blocker_trigger = yes
 			primary_title = {
 				is_mercenary_company = yes
 			}
@@ -97,6 +91,24 @@
 	
 	ai_will_do = {
 		base = 0
-
+		# At War
+		modifier = {
+			add = 50
+			scope:actor = {is_at_war_with = scope:target}
+		}
+		# Opinion
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = -1
+		}
+		# Intrigue
+		modifier = {
+			add = scope:actor.intrigue
+			multiply = 2
+		}
+		# Martial
+		modifier = {
+			add = scope:actor.martial
+		}
 	}
 }

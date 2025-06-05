@@ -177,15 +177,26 @@
 	}
 	
 	auto_accept = yes
-	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_targets = { 
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		ai_recipients = liege
+	 }
 	ai_frequency = 36
 
 	ai_potential = {
+		is_adult = yes
+		intrigue > 10
+		gold < 500
+		OR = {
+			is_ruler = yes
+			intrigue > 18
+		}
 	}
 
 	ai_will_do = {
 		# They shouldn't always do this.
-		base = -100
+		base = -20
 
 		# Obvious factor.
 		opinion_modifier = {

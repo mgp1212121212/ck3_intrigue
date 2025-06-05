@@ -28,7 +28,7 @@ antagonize_spouse_scheme = {
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-
+		is_married = yes
 		scope:target = {
 			is_adult = yes
 			is_imprisoned = no

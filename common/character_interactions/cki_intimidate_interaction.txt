@@ -114,42 +114,51 @@ start_intimidate_interaction = {
 	}
 	
 	auto_accept = yes
-	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_targets = { 
+		ai_recipients = neighboring_rulers
+		ai_recipients = liege
+		ai_recipients = vassals
+		ai_recipients = peer_vassals
+
+	}
 	ai_frequency = 36
 
 	ai_potential = {
+		is_ruler = yes
+		is_adult = yes
+		prowess > 10
 	}
 
 	ai_will_do = {
 		# They shouldn't always do this.
-		base = -100
+		base = -0
 
 		# Obvious factor.
 		opinion_modifier = {
 			opinion_target = scope:recipient
-			multiplier = -1
+			multiplier = -2
 		}
 		ai_value_modifier = { ai_honor = -1 }
+		# Prowess
+		modifier = {
+			add = scope:actor.prowess
+			multiply = 2
+		}
 		# Traits.
 		## Disloyal.
 		modifier = {
-			add = 80
+			add = 30
 			has_trait = disloyal
 		}
 		## Ambitious.
 		modifier = {
-			add = 75
+			add = 20
 			has_trait = ambitious
 		}
 		## Arrogant.
 		modifier = {
-			add = 25
+			add = 35
 			has_trait = arrogant
-		}
-		## Fickle.
-		modifier = {
-			add = 25
-			has_trait = fickle
 		}
 		## Callous.
 		modifier = {
@@ -161,15 +170,20 @@ start_intimidate_interaction = {
 			add = -50
 			has_trait = compassionate
 		}
+		## Humble
+		modifier = {
+			add = -75
+			has_trait = fickle
+		}
 		## Content.
 		modifier = {
 			add = -100
 			has_trait = content
 		}
-		## Greedy.
+		## Infertile
 		modifier = {
-			add = 80
-			has_trait = greedy
+			add = 20
+			has_trait = infertile
 		}
 	}
 }
