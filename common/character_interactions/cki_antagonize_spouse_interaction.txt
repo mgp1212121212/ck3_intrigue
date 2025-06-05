@@ -170,21 +170,58 @@
 	}
 	
 	auto_accept = yes
-	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		ai_recipients = top_realm_domicile_owners
+		max = 30
+	}
 	ai_frequency = 36
 
 	ai_potential = {
-		gold < 500
+		is_adult = yes
+		intrigue >= medium_skill_rating
+		NOR = {
+			has_trait = content
+			any_scheme = {
+				OR = {
+					scheme_type = murder
+					scheme_type = abduct
+					scheme_type = claim_throne
+					scheme_type = fabricate_hook
+					scheme_type = steal_back_artifact
+				}
+			}
+		}
 	}
 
 	ai_will_do = {
 		# They shouldn't always do this.
-		base = -100
+		base = 0
 
-		# Obvious factor.
-		opinion_modifier = {
-			opinion_target = scope:recipient
-			multiplier = -1
+		# Opinion
+		modifier = {
+			add = -50
+			
+			opinion = {
+				target = scope:recipient
+				value >= high_positive_opinion
+			}
 		}
 		ai_value_modifier = { ai_honor = -1 }
 		# Traits.
