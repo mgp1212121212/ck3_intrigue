@@ -51,7 +51,7 @@
 		}
 	}
 
-	desc = scheme_interaction_tt_convert_approved
+	desc = scheme_interaction_tt_enemy_army_speed_approved
 
 	on_accept = {
 		scope:actor = {
