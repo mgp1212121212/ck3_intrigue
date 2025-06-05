@@ -21,6 +21,7 @@
 	ai_frequency = 48
 
 	is_shown = {
+		is_adult = yes
 		scope:actor = {
 			is_ruler = yes
 		}

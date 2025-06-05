@@ -11,9 +11,10 @@
 	send_name = START_SCHEME
 
 	is_shown = {
+		is_adult = yes
 		NOT = { scope:recipient = scope:actor }
 		has_game_rule = cki_rule_mentor_active
-		scope:recipient = {age>10}
+		scope:recipient = {age>=10}
 		
 	}
 

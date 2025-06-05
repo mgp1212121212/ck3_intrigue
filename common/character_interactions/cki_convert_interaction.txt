@@ -21,6 +21,7 @@
 	ai_frequency = 48
 
 	is_shown = {
+		is_adult = yes
 		scope:actor = {
 			NOT = {
 				faith = scope:recipient.faith
@@ -39,7 +40,9 @@
 				target_character = scope:recipient
 			}
 		}
-		scope:recipient = {is_ruler=yes}
+		scope:recipient = {
+			is_ruler=yes
+			age >= 10}
 		#limit range for landless adventurers
 		trigger_if = {
 			limit = {

@@ -77,6 +77,7 @@ convert_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
@@ -92,9 +93,11 @@ convert_scheme = {
 	}
 	# Base Chances
 	base_success_chance = {
-		base = -50
+		base = -100
 		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
 		#Distance modifier
+		ttd_major_distance_modifier = yes
+		ttd_major_distance_modifier = yes
 		ttd_major_distance_modifier = yes
 		# Countermeasures.
 		apply_calculated_scheme_success_chance_adjustments_modifier = yes

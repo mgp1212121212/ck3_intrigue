@@ -43,8 +43,8 @@ antagonize_spouse_modifier = {
 
 
 enemy_army_speed_scheme_modifier = {
-	movement_speed = -0.1
-	naval_movement_speed_mult = -0.1
+	movement_speed = -0.3
+	naval_movement_speed_mult = -0.3
 	icon = martial_negative
 	stackable = no
 }

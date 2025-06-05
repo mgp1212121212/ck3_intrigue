@@ -76,6 +76,7 @@ mentor_diplomacy_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
@@ -311,6 +312,7 @@ mentor_martial_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
@@ -547,6 +549,8 @@ mentor_stewardship_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
@@ -794,6 +798,7 @@ mentor_intrigue_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
@@ -1030,6 +1035,7 @@ mentor_learning_scheme = {
 	
 	valid = {
 		is_incapable = no
+		is_adult = yes
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			OR = {
