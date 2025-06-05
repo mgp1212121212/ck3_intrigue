@@ -93,11 +93,10 @@ convert_scheme = {
 	}
 	# Base Chances
 	base_success_chance = {
-		base = -100
+		base = -50
+		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
 		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
 		#Distance modifier
-		ttd_major_distance_modifier = yes
-		ttd_major_distance_modifier = yes
 		ttd_major_distance_modifier = yes
 		# Countermeasures.
 		apply_calculated_scheme_success_chance_adjustments_modifier = yes
@@ -110,9 +109,6 @@ convert_scheme = {
 			}
 			desc = SCHEME_PIETY_LEVEL_MODIFIER
 			scope:owner.piety_level > 0
-			scope:owner.culture = {
-				has_cultural_parameter = language_success_chance_per_piety_level
-			}
 		}
 		
 		#Intellect good
