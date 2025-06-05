@@ -7,7 +7,7 @@ mentor_diplomacy_scheme = {
 	skill = learning
 	desc = mentor_scheme_general_desc
 	success_desc = "MENTOR_SUCCESS_DESC"
-	icon = icon_mentor
+	icon = learning
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = personal

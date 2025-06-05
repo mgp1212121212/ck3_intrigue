@@ -7,7 +7,7 @@ enemy_army_speed = {
 	skill = intrigue
 	desc = enemy_army_speed_general_desc
 	success_desc = "ENEMY_ARMY_SPEED_SUCCESS_DESC"
-	icon = icon_enemy_army_speed
+	icon = martial
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile

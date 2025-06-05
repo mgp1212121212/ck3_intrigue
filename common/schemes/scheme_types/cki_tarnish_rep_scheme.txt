@@ -7,7 +7,7 @@ tarnish_rep_scheme = {
 	skill = diplomacy
 	desc = tarnish_rep_scheme_general_desc
 	success_desc = "TARNISH_REP_SUCCESS_DESC"
-	icon = icon_tarnish_rep
+	icon = diplomacy
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile

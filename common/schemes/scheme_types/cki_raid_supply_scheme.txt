@@ -7,7 +7,7 @@ raid_supply = {
 	skill = intrigue
 	desc = raid_supply_general_desc
 	success_desc = "RAID_SUPPLY_SUCCESS_DESC"
-	icon = icon_raid_supply
+	icon = martial
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile

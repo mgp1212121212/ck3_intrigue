@@ -6,7 +6,7 @@ antagonize_council_scheme = {
 	skill = intrigue
 	desc = antagonize_council_scheme_general_desc
 	success_desc = "THEFT_SUCCESS_DESC"
-	icon = icon_antagonize_council
+	icon = intrigue
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = hostile
