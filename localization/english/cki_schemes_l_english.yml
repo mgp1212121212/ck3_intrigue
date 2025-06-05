@@ -588,11 +588,18 @@
  setting_cki_rule_theft_earned:0 "Unlock"
  setting_cki_rule_theft_earned_desc:0 "Unlock"
 
- rule_cki_rule_trait:0 "CKI Trait"
+ rule_cki_rule_trait:0 "Levelled Trait"
  setting_cki_rule_trait_active:0 "Active"
  setting_cki_rule_trait_active_desc:0 "Active"
  setting_cki_rule_trait_inactive:0 "Inactive"
  setting_cki_rule_trait_inactive_desc:0 "Inactive"
+
+
+ rule_cki_rule_warfare:0 "CKI Warfare Schemes"
+ setting_cki_rule_warfare_active:0 "Active"
+ setting_cki_rule_warfare_active_desc:0 "Active"
+ setting_cki_rule_warfare_inactive:0 "Inactive"
+ setting_cki_rule_warfare_inactive_desc:0 "Inactive"
 
 
 ## Character Interaction Scheme Agent Packages

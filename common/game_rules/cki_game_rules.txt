@@ -99,3 +99,13 @@ cki_rule_trait = {
     #cki_rule_antagonize_spouse_earned = {flag = GG_can_change_rule}
     
 }
+cki_rule_warfare = {
+    default = cki_rule_warfare_active
+
+    categories = { CKI }
+
+    cki_rule_warfare_active = {flag = GG_can_change_rule}
+    cki_rule_warfare_inactive = {flag = GG_can_change_rule}
+    #cki_rule_awarfare_earned = {flag = GG_can_change_rule}
+    
+}

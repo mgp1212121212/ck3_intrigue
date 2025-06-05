@@ -23,7 +23,7 @@
 		NOT = { scope:actor = scope:recipient }
 		NOT = { scope:recipient = {is_courtier_of = scope:actor} }
 		scope:actor = {is_at_war_with = scope:recipient}
-		#has_game_rule = cki_rule_raid_supply_active
+		has_game_rule = cki_rule_warfare_active
 	}
 	
 
