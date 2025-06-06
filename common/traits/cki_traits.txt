@@ -177,6 +177,7 @@ cki_track = {
 				}
 				desc = trait_cki_default
 			}
+			desc = trait_cki_default
 		}
 	}
 
