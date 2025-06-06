@@ -37,7 +37,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 ## Improvements/Todo
 ### Graphic Design
     - Mod Thumbnail
-    - Schemes Icons
+    - Schemes Custom Icons
 ### Localization/Flavor
     - Flavorize all localization
     - Works but can be improved
