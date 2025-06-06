@@ -44,6 +44,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
         - Event Scenes Flavor
 ### Logic
     - Works but can be improved
+        - ai_will_do for schemes interaction
         - Improve interaction trait-based stress further
         - Success chances & odds prediction
         - Update countermeasure for schemes
