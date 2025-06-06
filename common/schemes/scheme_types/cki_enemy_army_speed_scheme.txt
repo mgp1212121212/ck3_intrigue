@@ -93,8 +93,9 @@ enemy_army_speed = {
 	}
 	# Base Chances
 	base_success_chance = {
-		base = -10
+		base = 0
 		scheme_type_skill_success_chance_modifier = { SKILL = MARTIAL }
+		scheme_type_skill_success_chance_modifier = { SKILL = INTRIGUE }
 		scheme_type_skill_success_chance_modifier = { SKILL = INTRIGUE }
 		#Distance modifier
 		ttd_major_distance_modifier = yes
