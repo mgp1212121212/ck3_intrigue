@@ -1971,8 +1971,8 @@ cki_scheme_critical_moments.1055 = {
 cki_scheme_critical_moments.1056 = {
 	type = character_event
 	window = scheme_failed_event
-	title = cki_scheme_critical_moments.1054.t
-	desc = cki_scheme_critical_moments.1054.desc
+	title = cki_scheme_critical_moments.1056.t
+	desc = cki_scheme_critical_moments.1056.desc
 	theme = generic_intrigue_scheme
 
 	left_portrait = {
@@ -1987,7 +1987,7 @@ cki_scheme_critical_moments.1056 = {
 	}
 
 	option = {
-		name = cki_scheme_critical_moments.1054.a
+		name = cki_scheme_critical_moments.1056.a
 
 		mentor_failure_effect = yes
 		scope:scheme = {
