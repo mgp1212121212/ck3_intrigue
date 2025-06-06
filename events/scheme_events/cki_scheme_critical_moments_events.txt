@@ -1,4 +1,4 @@
-namespace = cki_scheme_critical_moments
+﻿namespace = cki_scheme_critical_moments
 ##############MOD
 
 # End of Scheme -- Redirects to relevent result event for scheme

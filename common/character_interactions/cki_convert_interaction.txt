@@ -36,7 +36,7 @@
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
-				type = convert
+				type = convert_scheme
 				target_character = scope:recipient
 			}
 		}

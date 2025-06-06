@@ -1,4 +1,4 @@
-yearly_playable_pulse = {
+﻿yearly_playable_pulse = {
 	events = {
         cki_scheme_critical_moments.0003
     }
