@@ -113,18 +113,13 @@
 		}
 		# Convert Co-religionists
 		modifier = {
-			add = 50
-			scope:actor = {
-				culture = {
-					has_cultural_parameter = rulers_want_to_converts_of_coreligionists
-				}
-			}
+			add = 20
 			scope:actor.religion = scope:recipient.religion
 		}
 		# Child Target
 		modifier = {
 			add = 20
-			scope:target = {
+			scope:recipient = {
 				is_adult = no
 			}
 		}

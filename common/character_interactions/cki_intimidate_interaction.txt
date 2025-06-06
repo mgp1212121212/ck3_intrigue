@@ -126,7 +126,6 @@ start_intimidate_interaction = {
 	ai_potential = {
 		is_ruler = yes
 		is_adult = yes
-		scope:actor.prowess > 10
 	}
 
 	ai_will_do = {
@@ -142,7 +141,7 @@ start_intimidate_interaction = {
 		# Prowess
 		modifier = {
 			add = scope:actor.prowess
-			multiply = 2
+			multiplier = 2
 		}
 		# Traits.
 		## Disloyal.

@@ -6,58 +6,49 @@
 mentor_diplomacy_modifier = {
 	diplomacy = 1 
 	icon=diplomacy_positive
-	stackable = yes
 	}
 mentor_martial_modifier = {
 	martial = 1 
 	icon=martial_positive
-	stackable = yes
 	}
 mentor_stewardship_modifier = {
 	stewardship = 1 
 	icon=stewardship_positive
-	stackable = yes
 	}
 mentor_intrigue_modifier = {
 	intrigue = 1 
 	icon=intrigue_positive
-	stackable = yes
 	}
 mentor_learning_modifier = {
 	learning = 1 
 	icon=learning_positive
-	stackable = yes
 	}
 
 antagonize_council_modifier = {
 	councillor_opinion = -10
 	icon = diplomacy_negative
-	stackable = yes
 }
 
 antagonize_spouse_modifier = {
 	spouse_opinion = -30
 	icon = diplomacy_negative
-	stackable = yes
 }
 
 
 enemy_army_speed_scheme_modifier = {
-	movement_speed = -0.5
-	naval_movement_speed_mult = -0.5
+	movement_speed = -0.25
+	naval_movement_speed_mult = -0.25
 	icon = martial_negative
-	stackable = no
 }
 
 army_speed_scheme_modifier = {
 	movement_speed = 0.
 	naval_movement_speed_mult = 0.1
 	icon = martial_positive
-	stackable = no
 }
 
 enemy_raid_supply_scheme_modifier = {
-	supply_duration = -0.5
+	supply_duration = -0.2
 }
 raid_supply_scheme_modifier = {
 	supply_duration = 0.1

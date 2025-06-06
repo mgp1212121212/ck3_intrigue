@@ -110,7 +110,7 @@
 		# Intrigue
 		modifier = {
 			add = scope:actor.intrigue
-			multiply = 2
+			multiplier = 2
 		}
 		# Martial
 		modifier = {

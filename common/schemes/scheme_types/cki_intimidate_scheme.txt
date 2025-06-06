@@ -126,11 +126,6 @@ intimidate_scheme = {
 			scope:owner = { has_character_modifier = hostile_schemes_distracted_modifier }
 			desc = hostile_schemes_distracted_modifier
 		}
-		modifier = {
-			desc = scheme_intimidation_dread
-			add = dread
-			multiply = 0.5
-		}
 	}
 	base_secrecy = {
 		add = secrecy_base_value

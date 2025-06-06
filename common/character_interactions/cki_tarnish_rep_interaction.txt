@@ -191,6 +191,7 @@
 			add = 70
 			scope:recipient = {
 				has_relation_rival = scope:actor
+			}
 		}
 		#Friends of friends
 		modifier = {

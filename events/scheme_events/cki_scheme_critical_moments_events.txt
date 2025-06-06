@@ -720,7 +720,7 @@ cki_scheme_critical_moments.1005 = {
 			if = {limit = {has_trait=greedy}
 				add_stress = major_stress_impact_gain
 			}
-			elseif = {limit = {has_trait=generous}
+			else_if = {limit = {has_trait=generous}
 				add_stress = minor_stress_impact_loss
 			}
 			
@@ -743,7 +743,7 @@ cki_scheme_critical_moments.1006 = {
 			if = {limit = {has_trait=greedy}
 				add_stress = major_stress_impact_gain
 			}
-			elseif = {limit = {has_trait=generous}
+			else_if = {limit = {has_trait=generous}
 				add_stress = minor_stress_impact_loss
 			}
 			

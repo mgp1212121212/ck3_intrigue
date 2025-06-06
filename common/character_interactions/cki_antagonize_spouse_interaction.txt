@@ -228,18 +228,20 @@
 		modifier = {
 			add = 70
 			scope:recipient = {
-				every_spouse = {
+				any_spouse = {
 					OR = {
 						has_relation_lover = scope:actor
 						has_relation_soulmate = scope:actor
 					}
 				}
+			}
 		}
 		# Rival
 		modifier = {
 			add = 70
 			scope:recipient = {
 				has_relation_rival = scope:actor
+			}
 		}
 		#Friends of friends
 		modifier = {
@@ -300,5 +302,3 @@
 		}
 	}
 }
-
-
