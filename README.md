@@ -37,20 +37,7 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 ## Improvements/Todo
 ### Graphic Design
     - Mod Thumbnail
-    - Icons Schemes
-    - Icons Interactions
-        - Warfare Misinformation
-        - Raid Supply Route
-    - Icons Trait
-        - The number of sub-icons/colour combinations can be higher than 4 as the trait is 10 with two tracks, which would allow a smoother color change as the user progress through tracks
-        - Sub-Trait Icons (positive/negative) [colour proposal]
-            - Schmeing Adept (low/low) [grey]
-            - Known Thief (low/high) [red-ish]
-            - Ruthless Schemer (high/high) [golden-red-ish]
-            - King/Queen of Shadows (high/low) [golden-ish]
-        - Track Icons
-            - Prolific Schemer (positive) [gold or green]
-            - Known Schemer (negative) [red]
+    - Schemes Icons
 ### Localization/Flavor
     - Flavorize all localization
     - Works but can be improved

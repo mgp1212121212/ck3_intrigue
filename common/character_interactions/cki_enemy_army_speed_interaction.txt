@@ -101,12 +101,7 @@
 	auto_accept = yes
 	
 	ai_will_do = {
-		base = 0
-		# At War
-		modifier = {
-			add = 50
-			scope:actor = {is_at_war_with = scope:target}
-		}
+		base = 50
 		# Opinion
 		opinion_modifier = {
 			opinion_target = scope:recipient
