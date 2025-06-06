@@ -37,8 +37,10 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
 ## Improvements/Todo
 ### Graphic Design
     - Mod Thumbnail
-    - Icons Warfare Interaction/Schemes
     - Icons Schemes
+    - Icons Interactions
+        - Warfare Misinformation
+        - Raid Supply Route
     - Icons Trait
         - The number of sub-icons/colour combinations can be higher than 4 as the trait is 10 with two tracks, which would allow a smoother color change as the user progress through tracks
         - Sub-Trait Icons (positive/negative) [colour proposal]
@@ -54,8 +56,6 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Works but can be improved
         - Event Scenes Flavor
 ### Logic
-    - ai_will_do & ai_recipients & ai_potential & ai_blockers for all schemes
-    - Add rules for warfare schemes
     - Works but can be improved
         - Improve interaction trait-based stress further
         - Success chances & odds prediction

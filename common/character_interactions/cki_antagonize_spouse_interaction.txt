@@ -191,7 +191,7 @@
 		ai_recipients = top_realm_domicile_owners
 		max = 30
 	}
-	ai_frequency = 36
+	ai_frequency = 60
 
 	ai_potential = {
 		is_adult = yes

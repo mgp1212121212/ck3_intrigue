@@ -172,7 +172,7 @@
 		ai_recipients = liege
 		max = 10
 	}
-	ai_frequency = 36
+	ai_frequency = 60
 
 	ai_potential = {
 		learning > 12

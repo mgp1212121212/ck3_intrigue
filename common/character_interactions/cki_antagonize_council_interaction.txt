@@ -185,7 +185,7 @@
 		ai_recipients = peer_vassals
 		max = 10
 	}
-	ai_frequency = 36
+	ai_frequency = 60
 
 	ai_potential = {
 		is_adult = yes

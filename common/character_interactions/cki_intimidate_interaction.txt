@@ -121,7 +121,7 @@ start_intimidate_interaction = {
 		ai_recipients = peer_vassals
 
 	}
-	ai_frequency = 36
+	ai_frequency = 60
 
 	ai_potential = {
 		is_ruler = yes
