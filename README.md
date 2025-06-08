@@ -43,11 +43,14 @@ CK3 Mod focused on schemes, interactions, and overall scheming balancing.
     - Works but can be improved
         - Event Scenes Flavor
 ### Logic
+    - Rework Convert ai_will_do & outcome target choice.
     - Works but can be improved
         - ai_will_do for schemes interaction
         - Improve interaction trait-based stress further
         - Success chances & odds prediction
         - Update countermeasure for schemes
+### BUGS
+    -  For unavailable schemes, "DEBUG_THEY_HAVE_MORE_GOLD_TRIGGER" is depicted. 
 ------
 ## New Features Plans/Ideas 
     - Targetted find secrets
