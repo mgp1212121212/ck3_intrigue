@@ -10,7 +10,7 @@ convert_scheme = {
 	icon = learning
 
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
-	category = hostile
+	category = personal
 	target_type = character
 	is_secret = no
 	is_basic = yes
@@ -95,13 +95,22 @@ convert_scheme = {
 	base_success_chance = {
 		base = -50
 		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
-		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
+		scheme_type_skill_success_chance_modifier = { SKILL = DIPLOMACY }
 		#Distance modifier
+		ttd_major_distance_modifier = yes
 		ttd_major_distance_modifier = yes
 		# Countermeasures.
 		apply_calculated_scheme_success_chance_adjustments_modifier = yes
 		hostile_scheme_base_chance_modifier = yes
-		
+		#Opinion of owner
+		opinion_modifier = {
+			who = scope:target
+			opinion_target = scope:owner
+			min = -100
+			max = 20
+			multiplier = 1
+			step = 5
+		}
 		modifier = {
 			add = {
 				value = scope:owner.piety_level
@@ -110,7 +119,12 @@ convert_scheme = {
 			desc = SCHEME_PIETY_LEVEL_MODIFIER
 			scope:owner.piety_level > 0
 		}
-		
+		#Language
+		modifier = {
+			add = 5
+			desc = YOU_SPEAK_THE_LANGUAGE
+			scope:owner = { knows_language_of_culture = scope:target.culture }
+		}
 		#Intellect good
 		modifier = {
 			desc = "scheme_intellect_good_1"
@@ -141,12 +155,6 @@ convert_scheme = {
 			desc = "SCHEME_TRAIT_ZEALOUS"
 			add = -100
 		}
-
-		modifier = {
-			desc = "SCHEME_SUCCESS_LEARNING"
-			add = scope:target.learning
-			multiply = -1
-		}
 		modifier = {
 			desc = "SCHEME_FERVOR"
 			add = {
@@ -158,7 +166,7 @@ convert_scheme = {
 			desc = "SCHEME_FERVOR_TARGET"
 			add = {
 				add = scope:target.faith.fervor
-				multiply = -0.5
+				multiply = -0.75
 			}
 		}
 		modifier = {

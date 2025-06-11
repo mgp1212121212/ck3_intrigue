@@ -395,7 +395,7 @@ convert_success_effect = {
 		add_stress = 20
 		add_opinion = {
 			target = scope:owner
-			modifier = convert_scheme_success_opinion
+			modifier = convert_scheme_failure_opinion
 		}
 		set_character_faith = scope:owner.faith
 	}
@@ -405,7 +405,9 @@ convert_success_effect = {
 	}
 	
 }
+convert_refusal_effect = {
 
+}
 
 convert_failure_effect = {
 	#Add Watchful Modifier to the target

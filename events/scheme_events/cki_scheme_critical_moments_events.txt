@@ -1529,8 +1529,6 @@ cki_scheme_critical_moments.1041 = {
 
 	option = {
 		name = cki_scheme_critical_moments.1041.a
-		convert_success_effect = yes
-
 		scope:scheme = {
 			end_scheme = yes
 		}
@@ -1579,9 +1577,41 @@ cki_scheme_critical_moments.1045 = {
 	title = cki_scheme_critical_moments.1045.t
 	desc = cki_scheme_critical_moments.1045.desc
 	theme = generic_intrigue_scheme
-
 	option = {
 		name = cki_scheme_critical_moments.1045.a
+		scope:owner = {
+			trigger_event = cki_scheme_critical_moments.1048
+			convert_success_effect = yes
+			ai_chance = {
+				base = 40 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+				
+				modifier = {  # You can change the value based on a variety of things, in this case it is the traits of the AI character
+					add = 40
+					has_trait = cynical
+				}
+				modifier = {
+					add = -100 
+					has_trait = zealous
+				}
+				opinion_modifier = {
+					who = scope:target
+					opinion_target = scope:owner
+					min = -100
+					max = 50
+					multiplier = 1
+					step = 5
+				}
+			}
+		} 
+	}
+	option = {
+		name = cki_scheme_critical_moments.1045.b
+		scope:owner = {
+			trigger_event = cki_scheme_critical_moments.1049 
+			ai_chance = {
+				base = 50
+			}
+		}
 	}
 }
 
@@ -1598,6 +1628,37 @@ cki_scheme_critical_moments.1047 = {
 		name = cki_scheme_critical_moments.1047.a
 	}
 }
+# Victim Decision Notification
+# Converted
+cki_scheme_critical_moments.1048 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1048.t
+	desc = cki_scheme_critical_moments.1048.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1048.a
+	}
+}
+# Not Converted
+cki_scheme_critical_moments.1049 = {
+	type = character_event
+	window = scheme_target_event
+	title = cki_scheme_critical_moments.1049.t
+	desc = cki_scheme_critical_moments.1049.desc
+	theme = generic_intrigue_scheme
+	left_portrait = scope:owner
+
+	option = {
+		name = cki_scheme_critical_moments.1049.a
+		convert_refusal_effect = yes
+	}
+}
+
+
+
 #######################################################
 ### Results event for the Mentor scheme.
 #######################################################

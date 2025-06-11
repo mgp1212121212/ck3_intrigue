@@ -214,11 +214,18 @@
  cki_scheme_critical_moments.1037.a: "Now he knows his station"
 # Convert Faith Scheme
  cki_scheme_critical_moments.1045.t: "Manipulated into Converting"
- cki_scheme_critical_moments.1045.desc: "scheme owner converted you to his faith"
+ cki_scheme_critical_moments.1045.desc: "Scheme owner has convinced you to reconsider your faith."
  cki_scheme_critical_moments.1045.a: "It feels so weird"
+ cki_scheme_critical_moments.1045.b: "My faith is too strong"
  cki_scheme_critical_moments.1047.t: "Attempt to Convert"
  cki_scheme_critical_moments.1047.desc: "Attempt to Convert"
  cki_scheme_critical_moments.1047.a: "My faith is too strong"
+ cki_scheme_critical_moments.1048.t: "Converted"
+ cki_scheme_critical_moments.1048.desc: "Your aquaintance was convinced by your arguments and converted to your faith"
+ cki_scheme_critical_moments.1048.a: "God is great"
+ cki_scheme_critical_moments.1049.t: "Refusal to Convert"
+ cki_scheme_critical_moments.1049.desc: "Your aquaintance was not convinced by your arguments and did not convert to your faith"
+ cki_scheme_critical_moments.1049.a: "Damnation"
 
 # Mentor Scheme
  cki_scheme_critical_moments.1057.t: "Successfully Mentored"
@@ -327,8 +334,8 @@
  convert_scheme_desc: "Convert [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip]"
  convert_scheme_desc_general: "Convert_desc_gen"
  scheme_interaction_tt_convert_approved:1 "Attempt to Convert [recipient.GetShortUINameNoTooltip]"
- convert_success_message: "Convert Successful"
- convert_interaction_notification: "Successful Convert Scheme"
+ convert_success_message: "Convert Scheme Successful"
+ convert_interaction_notification: "Convert Scheme Successful"
 
 # Mentor Scheme
  start_mentor_interaction: "Mentor"
@@ -454,6 +461,7 @@
  intimidate_scheme_failure_opinion: "Tried to intimidate me"
  convert_scheme_success_opinion: "Manipulated me into converting religion"
  convert_scheme_failure_opinion: "Tried to convert me"
+ convert_scheme_failure_owner_opinion: "Refused to convert"
  mentor_scheme_success_opinion: "Mentored me"
  mentor_scheme_failure_opinion: "Tried to mentor me"
  antagonize_council_opinion: "Told lies to my council"
@@ -473,6 +481,9 @@
  army_speed_scheme_modifier: "Army Scouts"
  enemy_raid_supply_scheme_modifier: "Enemy Raiding Supply Routes"
  raid_supply_scheme_modifier: "Raiding Enemy Supply Routes"
+
+ #Scheme Modifier
+ SCHEME_SUCCESS_LEARNING: "Target's Learning: $VALUE|+0=$"
 
 ## Secrets
 # Secret Types
@@ -523,7 +534,7 @@
 
 
 ## Rules
- rule_cki_rule_antagonize_council: "Antagonize Council Scheme"
+ rule_cki_rule_antagonize_council: "#Y Schemes Expanded:#!  Antagonize Council Scheme"
  setting_cki_rule_antagonize_council_active: "Active"
  setting_cki_rule_antagonize_council_active_desc: "Active"
  setting_cki_rule_antagonize_council_inactive: "Inactive"
@@ -531,7 +542,7 @@
  setting_cki_rule_antagonize_council_earned: "Unlock"
  setting_cki_rule_antagonize_council_earned_desc: "Unlock"
 
- rule_cki_rule_antagonize_spouse: "Antagonize Spouse Scheme"
+ rule_cki_rule_antagonize_spouse: "#Y Schemes Expanded:#!  Antagonize Spouse Scheme"
  setting_cki_rule_antagonize_spouse_active: "Active"
  setting_cki_rule_antagonize_spouse_active_desc: "Active"
  setting_cki_rule_antagonize_spouse_inactive: "Inactive"
@@ -539,7 +550,7 @@
  setting_cki_rule_antagonize_spouse_earned: "Unlock"
  setting_cki_rule_antagonize_spouse_earned_desc: "Unlock"
 
- rule_cki_rule_convert: "Convert Scheme"
+ rule_cki_rule_convert: "#Y Schemes Expanded:#!  Convert Scheme"
  setting_cki_rule_convert_active: "Active"
  setting_cki_rule_convert_active_desc: "Active"
  setting_cki_rule_convert_inactive: "Inactive"
@@ -547,7 +558,7 @@
  setting_cki_rule_convert_earned: "Unlock"
  setting_cki_rule_convert_earned_desc: "Unlock"
 
- rule_cki_rule_intimidate: "Intimidate Scheme"
+ rule_cki_rule_intimidate: "#Y Schemes Expanded:#!  Intimidate Scheme"
  setting_cki_rule_intimidate_active: "Active"
  setting_cki_rule_intimidate_active_desc: "Active"
  setting_cki_rule_intimidate_inactive: "Inactive"
@@ -555,7 +566,7 @@
  setting_cki_rule_intimidate_earned: "Unlock"
  setting_cki_rule_intimidate_earned_desc: "Unlock"
 
- rule_cki_rule_mentor: "Mentor Scheme"
+ rule_cki_rule_mentor: "#Y Schemes Expanded:#!  Mentor Scheme"
  setting_cki_rule_mentor_active: "Active"
  setting_cki_rule_mentor_active_desc: "Active"
  setting_cki_rule_mentor_inactive: "Inactive"
@@ -563,7 +574,7 @@
  setting_cki_rule_mentor_earned: "Unlock"
  setting_cki_rule_mentor_earned_desc: "Unlock"
 
- rule_cki_rule_revolt: "Instigate Revolt Scheme"
+ rule_cki_rule_revolt: "#Y Schemes Expanded:#!  Instigate Revolt Scheme"
  setting_cki_rule_revolt_active: "Active"
  setting_cki_rule_revolt_active_desc: "Active"
  setting_cki_rule_revolt_inactive: "Inactive"
@@ -571,7 +582,7 @@
  setting_cki_rule_revolt_earned: "Unlock"
  setting_cki_rule_revolt_earned_desc: "Unlock"
 
- rule_cki_rule_tarnish_rep: "Tarnish Reputation Scheme"
+ rule_cki_rule_tarnish_rep: "#Y Schemes Expanded:#!  Tarnish Reputation Scheme"
  setting_cki_rule_tarnish_rep_active: "Active"
  setting_cki_rule_tarnish_rep_active_desc: "Active"
  setting_cki_rule_tarnish_rep_inactive: "Inactive"
@@ -579,7 +590,7 @@
  setting_cki_rule_tarnish_rep_earned: "Unlock"
  setting_cki_rule_tarnish_rep_earned_desc: "Unlock"
 
- rule_cki_rule_theft: "Theft Scheme"
+ rule_cki_rule_theft: "#Y Schemes Expanded:#!  Theft Scheme"
  setting_cki_rule_theft_active: "Active"
  setting_cki_rule_theft_active_desc: "Active"
  setting_cki_rule_theft_inactive: "Inactive"
@@ -587,13 +598,13 @@
  setting_cki_rule_theft_earned: "Unlock"
  setting_cki_rule_theft_earned_desc: "Unlock"
 
- rule_cki_rule_trait: "Levelled Trait"
+ rule_cki_rule_trait: "#Y Schemes Expanded:#!  Levelled Trait"
  setting_cki_rule_trait_active: "Active"
  setting_cki_rule_trait_active_desc: "Active"
  setting_cki_rule_trait_inactive: "Inactive"
  setting_cki_rule_trait_inactive_desc: "Inactive"
 
- rule_cki_rule_warfare: "Warfare Schemes"
+ rule_cki_rule_warfare: "#Y Schemes Expanded:#!  Warfare Schemes"
  setting_cki_rule_warfare_active: "Active"
  setting_cki_rule_warfare_active_desc: "Active"
  setting_cki_rule_warfare_inactive: "Inactive"

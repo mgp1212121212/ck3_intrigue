@@ -12,7 +12,7 @@
 	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
-		max = 10
+		max = 5
 	}
 	ai_targets = {
 		ai_recipients = neighboring_rulers
@@ -42,7 +42,8 @@
 		}
 		scope:recipient = {
 			is_ruler=yes
-			age >= 10}
+			age >= 10
+		}
 		#limit range for landless adventurers
 		trigger_if = {
 			limit = {
@@ -77,17 +78,25 @@
 			}
 			stress_impact = {
 				zealous = medium_stress_impact_loss
-				honest = medium_stress_impact_gain
+				honest = small_stress_impact_gain
 				cynical = medium_stress_impact_gain
 			}
 		}
 	}
 	
 	ai_potential = {
-		primary_title.tier >= tier_county
+		OR = {
+			primary_title.tier >= tier_duchy
+			AND = {
+				primary_title.tier >= tier_county
+				is_clergy = yes
+			}
+		}
+		learning >= 10
 		NOR = {
 			has_trait = lazy
 			has_trait = paranoid
+			has_trait = cynical
 			scheme_generic_ai_blocker_trigger = yes
 			primary_title = {
 				is_mercenary_company = yes
@@ -101,19 +110,19 @@
 		base = 0
 		# Open Minded
 		modifier = {
-			add = -20
+			add = -50
 			scope:actor = {
 				has_perk = open_minded_perk
 			}
 		}
 		# Leaning Skill is medium
 		modifier = {
-			add = 20
+			add = 10
 			learning >= medium_skill_rating
 		}
 		# Convert Co-religionists
 		modifier = {
-			add = 20
+			add = 5
 			scope:actor.religion = scope:recipient.religion
 		}
 		# Child Target
@@ -146,7 +155,7 @@
 		}
 		# Close family ruler
 		modifier = {
-			add = 80
+			add = 20
 			scope:recipient = {
 				is_close_family_of = scope:actor
 				is_ruler = yes
@@ -154,7 +163,7 @@
 		}
 		# Clergy/pious people want to convert people
 		modifier = { 
-			add = 50
+			add = 20
 			scope:actor = {
 				exists = faith.religious_head
 				OR = {
