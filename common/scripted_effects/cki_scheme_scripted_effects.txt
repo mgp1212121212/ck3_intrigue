@@ -390,7 +390,6 @@ convert_scheme_prep_effect = {
 }
 
 convert_success_effect = {
-
 	scope:target = {
 		add_stress = 20
 		add_opinion = {
@@ -402,11 +401,23 @@ convert_success_effect = {
 	scope:owner = {			
 				add_cki_trait_positive_xp_effect = yes
 				add_piety = 50
-	}
-	
+	}	
 }
 convert_refusal_effect = {
-
+	scope:target = {
+		add_stress = 50
+		add_opinion = {
+			target = scope:owner
+			modifier = convert_scheme_failure_opinion
+		}
+		set_character_faith = scope:owner.faith
+	}
+	scope:owner = {			
+		add_opinion = {
+			target = scope:target
+			modifier = convert_scheme_failure_owner_opinion
+		}
+	}
 }
 
 convert_failure_effect = {
