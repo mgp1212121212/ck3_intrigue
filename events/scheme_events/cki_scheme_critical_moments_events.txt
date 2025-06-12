@@ -1581,36 +1581,35 @@ cki_scheme_critical_moments.1045 = {
 		name = cki_scheme_critical_moments.1045.a
 		scope:owner = {
 			trigger_event = cki_scheme_critical_moments.1048
-			convert_success_effect = yes
-			ai_chance = {
-				base = 40 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
-				
-				modifier = {  # You can change the value based on a variety of things, in this case it is the traits of the AI character
-					add = 40
-					has_trait = cynical
-				}
-				modifier = {
-					add = -100 
-					has_trait = zealous
-				}
-				opinion_modifier = {
-					who = scope:target
-					opinion_target = scope:owner
-					min = -100
-					max = 50
-					multiplier = 1
-					step = 5
-				}
-			}
 		} 
+		ai_chance = {
+			base = 40 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+			
+			modifier = {  # You can change the value based on a variety of things, in this case it is the traits of the AI character
+				add = 40
+				has_trait = cynical
+			}
+			modifier = {
+				add = -100 
+				has_trait = zealous
+			}
+			opinion_modifier = {
+				who = scope:target
+				opinion_target = scope:owner
+				min = -100
+				max = 50
+				multiplier = 1
+				step = 5
+			}
+		}
 	}
 	option = {
 		name = cki_scheme_critical_moments.1045.b
 		scope:owner = {
 			trigger_event = cki_scheme_critical_moments.1049 
-			ai_chance = {
-				base = 50
-			}
+		}
+		ai_chance = {
+			base = 50
 		}
 	}
 }
@@ -1640,6 +1639,7 @@ cki_scheme_critical_moments.1048 = {
 
 	option = {
 		name = cki_scheme_critical_moments.1048.a
+		convert_success_effect = yes
 	}
 }
 # Not Converted
