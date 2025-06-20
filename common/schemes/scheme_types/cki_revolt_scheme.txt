@@ -33,6 +33,7 @@ revolt_scheme = {
 			is_adult = yes
 			is_imprisoned = no
 			gold>0
+			highest_held_title_tier >= tier_county
 		}
 
 		#AI blockers
