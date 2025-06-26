@@ -1,6 +1,6 @@
 ﻿start_antagonize_council_interaction = {
 	icon = icon_antagonize_council  #ICON
-	common_interaction = yes
+	#common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
 
