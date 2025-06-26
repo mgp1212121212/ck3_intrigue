@@ -1,6 +1,6 @@
 ﻿start_tarnish_rep_interaction = {
 	icon = icon_tarnish_rep  #ICON
-	common_interaction = yes
+	#common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
 
