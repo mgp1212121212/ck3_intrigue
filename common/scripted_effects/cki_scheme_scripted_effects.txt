@@ -410,7 +410,7 @@ convert_refusal_effect = {
 			target = scope:owner
 			modifier = convert_scheme_failure_opinion
 		}
-		set_character_faith = scope:owner.faith
+		#set_character_faith = scope:owner.faith
 	}
 	scope:owner = {			
 		add_opinion = {
