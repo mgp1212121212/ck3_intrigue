@@ -2,7 +2,7 @@
 ###### intimidate SCHEME
 start_intimidate_interaction = {
 	icon = icon_intimidate  #ICON
-	common_interaction = yes
+	#common_interaction = yes
 	interface_priority = 10
 	category = interaction_category_hostile
 
